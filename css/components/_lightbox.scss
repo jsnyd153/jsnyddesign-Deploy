@@ -1,0 +1,122 @@
+@use '../abstracts' as *;
+
+
+//position across the whole page
+#lightbox{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 1000;
+	--grid_layout:[left_edge] var(--true_margin) [main_start] 1fr [inset_start] 1fr 1fr 1fr 1fr 1fr [grid_middle] 1fr 1fr 1fr 1fr  1fr [inset_end] 1fr [main_end] var(--true_margin) [right_edge];
+	display: grid;
+	grid-column-gap: var(--gap);
+	grid-template-columns:var(--grid_layout);
+	grid-template-rows:1fr auto 1fr;
+
+	.background_block{
+		z-index: 1;
+		.background_fill{
+			background: rgba(0,0,0,.9);
+		}
+	}
+
+		.grid_area.block{
+			position: relative;
+			grid-row: 2;
+			grid-column:main_start / main_end;
+			z-index: 2;
+			height: 100%;
+			overflow-y:scroll;
+			display: grid;
+			grid-gap:var(--gap);
+
+			@include lg() {
+			grid-column:3 / -3;
+
+			}
+
+			>.content{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: var(--gap);
+
+				.image_area{
+					margin: auto 0 0 0;
+				}
+				.text_area{
+					margin: 0 0 auto 0;
+					.spacer{
+						margin-bottom: var(--page_margin);
+					}
+					
+				}
+
+			}
+
+			//hide scroll bar
+			&::-webkit-scrollbar{
+				display: none;
+			}
+			-ms-overflow-style: none;  /* IE and Edge */
+			scrollbar-width: none;  /* Firefox */
+			
+		}
+
+iframe{
+	width: 100%;
+	aspect-ratio:16 / 9;
+	max-height: 100vh;
+}
+	&.hidden{
+		display: none;
+	}
+
+
+	button{
+		z-index: 3;
+	}
+
+}
+
+#lightboxClose{
+	grid-row: 1;
+	grid-column: main_start / main_end;
+	height: calc(var(--gap) * 2);
+	margin: auto;
+}
+
+#lightboxPrev{
+	grid-row: 3;
+	grid-column: 7;
+	
+}
+#lightboxNext{
+	grid-row: 3;
+	grid-column: 8;
+
+}
+
+@include lg() {
+	#lightboxClose{
+		grid-row: 1;
+		grid-column: span 2 / 15;
+	}
+	
+	#lightboxPrev{
+		grid-row: 2;
+		grid-column: 1 / span 2;
+	}
+	#lightboxNext{
+		grid-row: 2;
+		grid-column: span 2 / 15;
+	}
+}
+
+@include xl() {
+	#lightboxClose{
+		grid-row: 1;
+		grid-column: 14;
+	}
+	
+}

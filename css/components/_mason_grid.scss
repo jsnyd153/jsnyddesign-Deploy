@@ -1,0 +1,71 @@
+@use '../abstracts' as *;
+
+
+
+.mason_grid{
+
+	> .content{
+		column-width: 20rem;
+		column-gap: var(--gap);
+		.image_area{
+			margin-bottom: var(--gap);
+			position: relative;
+			transition: .3s transform;
+			&:hover{
+				// transform:scale(1.15);
+				// z-index: 100;
+			}
+			.content{
+				figcaption{
+					position: absolute;
+					top: 85%;
+					left: 50%;
+					transform: translateX(-50%);
+					background: var(--text_color_opp);
+					max-width: 75%;
+					width:15rem;
+					font-size: .875rem;
+					border-radius: .25rem;
+					opacity: 0;
+					transition: .4s left, .2s opacity;
+					p{
+						color: var(--text_color_primary);
+						padding: 1em 2em;
+						font-size: inherit;
+					}
+					&::after{
+						@include psuedo_block();
+						width: 0; 
+						height: 0; 
+						border-left: 1em solid transparent;
+						border-bottom: 1em solid var(--text_color_opp); 
+						border-right:1em solid transparent;
+						top: -1em;
+						left: 50%;
+						transform: translateX(-50%);
+
+					}
+				}
+			}
+		}
+	}
+
+	&.hovered{
+		.image_area{
+			opacity: .65;
+		}
+		.image_area:hover{
+			opacity: 1;
+			z-index: 1;
+			transform: scale(1.1);
+			figcaption{
+				opacity: 1;
+				top: calc(100% + .5em);
+				
+			}
+		}
+	}
+
+
+
+}

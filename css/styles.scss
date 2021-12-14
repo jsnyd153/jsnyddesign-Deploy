@@ -1,0 +1,65 @@
+@use 'abstracts' as *;
+@use 'components';
+@use 'blocks';
+// @use 'custom_sections';
+
+@import url(https://use.typekit.net/qcn8avg.css);
+
+@font-face {
+  font-family: "grandslang";
+  src: url("../fonts/GrandSlang-Roman.woff") format('woff');
+}
+
+// Base Overrides
+
+html, body{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+img, video{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection, ::-moz-selection {
+  color: $gold; /* WebKit/Blink Browsers */
+  background-color: rgba(#E8A80C, 0.05); /* WebKit/Blink Browsers */
+}
+
+  img{
+  	&::selection, &::-moz-selection {
+  	background-color: $gold;
+  	}
+  }
+
+  h1,h2,h3{
+  	&::selection, &::-moz-selection{
+  	color: $gold_2; /* WebKit/Blink Browsers */
+  	}
+  }
+
+
+
+
+  
+  footer{
+    position: relative;
+    padding-bottom:4.625rem;
+  }
+  #postfoot{
+    background:$dark;
+    position:absolute;
+    width:100%;
+    opacity: .75;
+    bottom:0;
+    p{
+      color:$offwhite;
+      font-size: .875rem;
+      text-align: center;
+      padding:.875rem;
+    }
+  }

@@ -1,0 +1,48 @@
+#checkforrepeat{
+  --hello:world;
+}
+
+//colors
+$white:               #ffffff;
+$offwhite:            #F9F9F9;
+$gold:                #F9DA01;
+$gold_2:              #E8A80C;
+$gold_3:              #D67516;
+$grey:                #D0D1D4;
+$grey_2:              #C1C1BF;
+$dark:                #232B3A;
+$dark_2:              #081821;
+$dark_3:              #050001;
+$black:               #000000;
+
+
+$white_shadow:               rgba(#ffffff, 0.25);
+$offwhite_shadow:            rgba(#F9F9F9, 0.25);
+$gold_shadow:                rgba(#F9DA01, 0.25);
+$gold_2_shadow:              rgba(#E8A80C, 0.25);
+$gold_3_shadow:              rgba(#D67516, 0.25);
+$grey_shadow:                rgba(#D0D1D4, 0.25);
+$grey_2_shadow:              rgba(#C1C1BF, 0.25);
+$dark_shadow:                rgba(#232B3A, 0.25);
+$dark_2_shadow:              rgba(#081821, 0.25);
+$dark_3_shadow:              rgba(#050001, 0.25);
+$black_shadow:               rgba(#000000, 0.25);
+
+
+
+$colors_full:        (
+
+  'white'                $white     $white_shadow     $dark_3,
+  'offwhite'             $offwhite  $offwhite_shadow  $dark_3,
+  'gold'                 $gold      $gold_shadow      $dark_3,
+  'gold_2'               $gold_2    $gold_2_shadow    $dark_3,
+  'gold_3'               $gold_3    $gold_3_shadow    $dark_3,
+  'grey'                 $grey      $grey_shadow      $dark_3,
+  'grey_2'               $grey_2    $grey_2_shadow    $dark_3,
+  'dark'                 $dark      $dark_shadow      $offwhite,
+  'dark_2'               $dark_2    $dark_2_shadow    $offwhite,
+  'dark_3'               $dark_3    $dark_3_shadow    $offwhite,
+  'black'                $black     $black_shadow     $offwhite,
+
+);
+

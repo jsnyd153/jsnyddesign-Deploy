@@ -1,0 +1,177 @@
+
+
+// functions for scss color adjustments
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+
+//text selectors
+@mixin header_tags {
+  h1, h2, h3 ,h4 ,h5 ,h6 {
+    @content;
+  }
+}
+
+@mixin text_nodes {
+  h1, h2, h3 ,h4 ,h5 ,h6, p {
+    @content;
+  }
+}
+
+
+
+//basic setting for pseudo element
+@mixin psuedo_block(){
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+// sets and image to cover it's container - parent must have position property
+@mixin image_cover() {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+//sets up container for use with @image_cover
+@mixin cover_container(){
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+//makes a copy of the main column grid on the element - default 12 columns
+@mixin repeat_main_grid() {
+    display: grid;
+    grid-gap: var(--gap);
+    grid-template-columns: repeat(var(--main_columns), 1fr);
+}
+
+
+//custom box-shadow mixin
+@mixin box-shadow($x-axis: 0, $y-axis: .375rem, $blur: 1rem, $color: (--accent_shadow)) {
+  -webkit-box-shadow: $x-axis $y-axis $blur $color;
+  -moz-box-shadow: $x-axis $y-axis $blur $color;
+  box-shadow: $x-axis $y-axis $blur $color;
+}
+
+
+//Adds a border with equivilent negative margin 
+//Expand the hoverable area of an element without changing positions
+//Use case - tilting hover effect
+@mixin expand_hitbox($top:1, $right:1, $bottom:1, $left:1, $color:transparent){
+  margin: calc(var(--gap) * -#{$top}) calc(var(--gap) * -#{$right}) calc(var(--gap) * -#{$bottom}) calc(var(--gap) * -#{$left});
+  border-top: calc(var(--gap) * #{$top}) solid $color;
+  border-bottom: calc(var(--gap) * #{$bottom})solid $color;
+  border-left: calc(var(--gap) * #{$left}) solid $color;
+  border-right: calc(var(--gap) * #{$right}) solid $color;
+}
+
+
+@mixin transform_center(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+@mixin flex_center_vertical(){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex_center_horizontal(){
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin hover_underline() {
+    &::after{
+      color: inherit;
+      content:"";
+      display: block;
+      position: absolute;
+      bottom: -.125rem;
+      left: 0;
+      height: .125rem;
+      width: 0%;
+      transition: .15s all;
+      background: currentColor;
+    }
+
+    &:hover{
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+
+
+  @mixin hover_underline_span() {
+
+
+    span{
+      position: relative;
+      &::after{
+        color: inherit;
+        content:"";
+        display: block;
+        position: absolute;
+        bottom: -.125rem;
+        left: 0;
+        height: .125rem;
+        width: 0%;
+        transition: .15s all;
+        background: currentColor;
+      }
+    }
+
+    &:hover, &:focus{
+      span{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+
+  }
+
+  @mixin nav_transition_in(){
+    max-height: 3em;
+    opacity: .9;
+    transition: .5s .3s max-height, .3s .3s opacity;
+  }
+
+  @mixin nav_transition_out(){
+    opacity: 0;
+    max-height: 0;
+    transition: .3s max-height, .3s opacity;
+    overflow: hidden;
+  }

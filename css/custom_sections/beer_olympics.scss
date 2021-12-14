@@ -1,0 +1,148 @@
+@use '../abstracts' as *;
+
+
+// =================================================
+// =================================================
+// Page specific Styles - BEER OLYMPICS
+// =================================================
+// =================================================
+
+
+#boc-overlaping_phones{
+	overflow: hidden;
+	.image_area{
+		position: relative;
+	}
+	img:nth-child(2){
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}//overlaping_phones
+
+#boc-player_select{
+	.image_area{
+
+		grid-column: 2 / span 8;
+
+		@include lg() {
+			grid-column: 3 / span 4;
+		}
+
+
+		.content{
+			position: relative;
+			.frame{
+				pointer-events: none;
+				position: relative;
+				z-index: 10;
+			}
+			.screen_content{
+				position: absolute;
+				left: 8.3%;
+				width: 67%;
+				top: 4.39%;
+				height: 80.632%;
+				border-radius: 20px;
+			}
+			.film_strip{
+				position: absolute;
+				top: 50%;
+				left:8.2%;
+				height: 20%;
+				overflow: hidden;
+				width: 130%;
+				z-index: 11;
+				mask-image: linear-gradient(90deg, black 80%, transparent 100%);
+                mask-mode: alpha;
+				@include lg() {
+					width: 200%;
+				}
+				img{
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: auto;
+
+				}
+			}
+		}
+	}
+
+
+}//player_select
+
+#boc-mobile_screen_grid{
+ 
+@include md() {
+    margin-top:5rem;
+}
+
+    .grid_area{
+        margin: 12.5% 0;
+        
+        --items_per_row:3;
+    
+    @include md() {
+        --items_per_row:5;
+        margin-right: -10%;
+    }
+    
+    
+        @include xl() {
+            margin-right: 0%;
+        }
+    
+        >.content{
+            .image_area{
+                position: relative;
+                padding: 0;
+                .content{
+                    img{
+                        width: 100%;
+                        height: auto;
+                        margin: 0;
+                        border-radius: 1rem;
+
+                    }
+                }
+    
+                &:nth-child(1), &:nth-child(4), &:nth-child(7){
+                    top: 1 / 6 * 100%;
+                }
+                &:nth-child(2), &:nth-child(5), &:nth-child(8){
+                    top: 0;
+                }
+                &:nth-child(3), &:nth-child(6), &:nth-child(9){
+                    top: 2 / 6 * 100%;
+                }
+    
+    
+                @include md() {
+                    &:nth-child(1), &:nth-child(n+5){
+                        top: 0;
+                    }
+                    &:nth-child(2), &:nth-child(2n+5){
+                        top: -2 / 6 * 100%;
+                    }
+                    &:nth-child(3), &:nth-child(3n+5){
+    
+                        top: -1 / 6 * 100%;
+                    }
+                    &:nth-child(4), &:nth-child(4n+5){
+                        top:0;
+                    }
+                    &:nth-child(5), &:nth-child(5n+5){
+                        top: 3 / 6 * 100%;
+                    }
+                }
+    
+    
+            }//image_area
+        }
+    }
+    
+    }
+    

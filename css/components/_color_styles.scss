@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+
+:root{
+    @each $type in $colors_full {
+      --#{nth($type, 1)}: #{nth($type, 2)};
+    }
+  }
+  
+  
+  body{
+    --text_color_primary: #{$offwhite};
+    --text_color_emphasis: #{$white};
+    --text_color_low: #{$grey};
+    --text_color_accent: #{$gold};
+    --text_color_opp: #{$dark_2};
+    --blend_background:screen;
+  
+    &.light{
+      --text_color_primary: #{$dark_2};
+      --text_color_emphasis: #{$dark_3};
+      --text_color_low: #{$dark};
+      --text_color_accent: #{$gold_2};
+      --text_color_opp: #{$offwhite};
+      --blend_background:multiply;
+    }
+  }
+  
+  
+  // Accent color utility class
+  
+  
+  //Color Utility Classes
+  
+    @each $type in $colors_full {
+      .accent-#{nth($type, 1)} {
+      --accent:#{nth($type, 2)};
+      --accent_shadow: #{nth($type, 3)};
+      }
+    }
+  

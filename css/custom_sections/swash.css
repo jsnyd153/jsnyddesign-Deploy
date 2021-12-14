@@ -1,0 +1,27 @@
+#checkforrepeat {
+  --hello:world;
+}
+
+.flipper {
+  position: relative;
+}
+.flipper .leftTrigger, .flipper .rightTrigger {
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+}
+.flipper .rightTrigger {
+  right: 0;
+}
+.flipper img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flipper .rightTrigger:hover ~ img.right {
+  display: none;
+}
+/*# sourceMappingURL=swash.css.map */

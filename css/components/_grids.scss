@@ -1,0 +1,205 @@
+@use '../abstracts' as *;
+
+$main_columns:				12;
+$total_columns:             $main_columns + 2;
+
+:root{
+
+	--main_columns: #{$main_columns};
+
+	--gap: 0.75rem;
+	--page_margin:1.25rem;
+	--true_margin:calc(var(--page_margin) - var(--gap));
+
+	--unit_type_A:1.5rem;
+	--unit_type_B:2.5rem;
+
+	@include sm {
+		--gap: 1rem;
+		--page_margin:1.5rem;
+	}
+
+	@include md {
+		--gap: 1.25rem;
+		--card_gap: var(--gap);
+		--page_margin:1.875rem;
+		--unit_type_A:2.5rem;
+		--unit_type_B:3.75rem;
+	}
+
+	@include lg {
+		--gap: 1.5rem;
+		--page_margin:3.125rem;
+		--unit_type_A:3em;
+		--unit_type_B:4.5rem;
+	}
+
+	@include xl {
+		--gap: 1.875rem;
+		--page_margin:5rem;
+		--unit_type_A:3.5rem;
+		--unit_type_B:6rem;
+	}
+
+	@include xxl {
+		--gap: 1.875rem;
+		--page_margin:calc(50vw - 40rem);
+	}
+}
+
+
+
+
+main, footer, header{
+	--grid_layout:[left_edge] var(--true_margin) [main_start] 1fr [inset_start] 1fr 1fr 1fr 1fr 1fr [grid_middle] 1fr 1fr 1fr 1fr  1fr [inset_end] 1fr [main_end] var(--true_margin) [right_edge];
+	display: grid;
+	grid-column-gap: var(--gap);
+	grid-template-columns:var(--grid_layout);
+
+}
+
+section{
+	grid-column:1 /-1;
+	display: grid;
+	grid-gap: var(--gap);
+	grid-template-columns: var(--grid_layout);
+	position: relative;
+	// set up column system classes - applies to .block elements
+	.block{
+		//default values - span across the main grid
+		//to change where a block sits on the grid, update the variable
+
+
+		// choose number of columns to extend across
+		--column_span:12;
+		// choose start position if you don't want centered
+		--column_start:2;
+		grid-column: var(--column_start) / span var(--column_span);
+
+
+		
+		@for $i from 1 through 14 {
+			&.col-#{$i} {
+				--column_span:#{$i};
+				--column_start:#{round((14 - $i) / 2 + 1)};
+			}
+			&.start-#{$i} {
+				grid-column-start:$i + 1;
+			}
+		}//for loop column classes
+
+
+		@include sm {
+			@for $i from 1 through 14 {
+				&.col-sm-#{$i} {
+				--column_span:#{$i};
+				--column_start:#{round((14 - $i) / 2 + 1)};
+				}
+				&.start-sm-#{$i} {
+					grid-column-start:$i + 1;
+				}
+			}//for loop column classes
+		}
+
+		@include md {
+			@for $i from 1 through 14 {
+				&.col-md-#{$i} {
+				--column_span:#{$i};
+				--column_start:#{round((14 - $i) / 2 + 1)};
+				}
+				&.start-md-#{$i} {
+					grid-column-start:$i + 1;
+				}
+			}//for loop column classes
+		}
+
+		@include lg {
+			@for $i from 1 through 14 {
+				&.col-lg-#{$i} {
+				--column_span:#{$i};
+				--column_start:#{round((14 - $i) / 2 + 1)};
+				}
+				&.start-lg-#{$i} {
+					grid-column-start:$i + 1;
+				}
+			}//for loop column classes
+		}
+
+		@include xl {
+			@for $i from 1 through 14 {
+				&.col-xl-#{$i} {
+				--column_span:#{$i};
+				--column_start:#{round((14 - $i) / 2 + 1)};
+				}
+				&.start-xl-#{$i} {
+					grid-column-start:$i + 1;
+				}
+			}//for loop column classes
+		}
+
+}//> block
+
+	> .grid_area{
+		--items_per_row:2;
+		display: grid;
+		grid-gap: var(--gap);
+		grid-template-columns: repeat(var(--items_per_row), 1fr);
+
+		>.content{
+			display: contents;
+		}
+
+			@include md() {
+				--items_per_row:3;
+			}
+			@include lg() {
+				--items_per_row:4;
+			}
+
+			@for $i from 1 through 6 {
+				&.grid-#{$i} {
+					--items_per_row:#{$i};
+				}
+				@include sm() {
+					&.grid-sm-#{$i} {
+						--items_per_row:#{$i};
+					}
+				}
+				@include md() {
+					&.grid-sm-#{$i} {
+						--items_per_row:#{$i};
+					}
+				}
+				@include lg() {
+					&.grid-sm-#{$i} {
+						--items_per_row:#{$i};
+					}
+				}
+				@include xl() {
+					&.grid-sm-#{$i} {
+						--items_per_row:#{$i};
+					}
+				}
+
+			}//for loop column classes
+
+	}//grid_area
+
+
+	// Custom Padding
+	&.padding_none{
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	&.padding_medium{
+		padding-top: calc(var(--gap) * 2);
+		padding-bottom: calc(var(--gap) * 2);
+	}
+	&.padding_large{
+		padding-top: calc(var(--gap) * 3);
+		padding-bottom: calc(var(--gap) * 3);
+	}
+
+
+}

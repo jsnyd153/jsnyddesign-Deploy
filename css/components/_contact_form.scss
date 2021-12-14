@@ -1,0 +1,231 @@
+
+@use '../abstracts' as *;
+
+//================================================
+// contact form
+//================================================
+
+#contact_form{
+
+.content{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: var(--gap);
+
+	@include md() {
+		grid-template-columns: repeat(8, 1fr);
+	}
+}
+
+	.contact_icons{
+		grid-column: span 1;
+		@include flex_center_horizontal();
+		align-items: center;
+		margin-top: 1.5rem;
+
+		@include md() {
+				flex-direction: column;
+				justify-content: flex-start;
+			}
+
+		a{
+			display: block;
+			color: var(--text_color_primary);
+			text-decoration: none;
+			opacity: .7;
+			transition: .15s all;
+			margin: 0 1rem 1rem 1rem;
+
+			@include md() {
+				flex-direction: column;
+				justify-content: flex-start;
+				margin: 0 0 1rem 0;
+			}
+
+			svg{
+				display: block;
+				color: inherit;
+				width: 2.5rem;
+				*{
+					fill:currentColor;
+				}
+			}
+			&:hover{
+				opacity: 1;
+			}
+			&:focus{
+				outline: 1px solid currentColor;
+			}
+		}//a
+	}
+
+
+	.form_container{
+		grid-row: 1;
+
+		@include md() {
+			grid-column: 2 / -1;
+		}
+
+		>div{
+			height: 100%;
+		}
+	}
+
+
+}
+
+//================================================
+// jotForm form
+//================================================
+
+.form_container{
+	iframe{
+		width: 100%;
+		min-height: 400px;
+	}
+}
+
+.jotform-form{
+	padding: 0;
+	margin: 0;
+
+	*{
+		padding: 0;
+		margin: 0;
+
+	}
+
+	.form-all{
+			background-color: rgba(0,0,0,0);
+			border: 0;
+			width: 100%;
+			max-width: 1200px;
+			display: flex block;
+
+			ul.form-section{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-column-gap: var(--gap);
+				grid-row-gap: calc(var(--gap) / 2);
+				width:100%;
+			}
+
+			li.form-line{
+				label.form-label{
+					width:100%;
+					font-size: 1rem;
+					color: var(--text_color_emphasis);
+					font-weight: 400;
+					font-family: inherit;
+					margin-bottom: .5rem;
+					display: block;
+				}
+				.form-input-wide{
+					width:100%;
+					position: relative;
+					input,textarea{
+						width: calc(100% - 30px);
+						border: 1px solid var(--text_color_emphasis);
+						background: rgba(0,0,0,0);
+						box-shadow: 0 0px 0px #000 inset;
+						font-size: 1.125rem;
+						line-height: 1.1;
+						color: var(--text_color_emphasis);
+						padding: .625rem .9375rem;
+						font-family: inherit;
+						&:focus{
+							outline:0px solid var(--text_color_accent);
+							border: 1px solid var(--text_color_accent);
+							background: rgba(255,255,255,.1);
+						}
+						&::placeholder{
+							font-size: 1.125rem;
+							line-height: 1.1;
+							color: var(--text_color_primary);
+							// color: red;
+							opacity: .3;
+							font-family: inherit;
+						}
+					}
+
+				}
+
+				.form-sub-label-container{
+					width:100%;
+					input{
+
+					}
+					label.form-sub-label{
+						position: absolute;
+						top: .25rem;
+						left: 0;
+						font-size: 1.125rem;
+						line-height: 1.1;
+						color: var(--text_color_primary);
+						opacity: .3;
+						padding: .625rem .9375rem;
+					}
+				}
+
+				&.form-line-active{
+					background: transparent;
+					label.form-sub-label{
+						opacity: 0;
+					}
+				}
+
+				.form-input-wide{
+					.form-buttons-wrapper{
+						button.submit-button{
+							span{
+
+							}
+							svg{
+
+							}
+						}
+					}
+				}
+
+			}//li.form-line
+
+			#id_5{
+				grid-column: span 2;
+				@include md() {
+					grid-column: span 1;
+				}
+			}
+			#id_3{
+				grid-column: span 2;
+				@include md() {
+					grid-column: span 1;
+				}
+			}
+			#id_4{
+				grid-column: span 2;
+			}
+			#id_9{
+				grid-column: span 2;
+			}
+			#id_10{
+				grid-column: span 2;
+			}
+	}
+
+
+
+}
+
+
+#contact_form{
+	.form-submitted{
+		border: 0px solid red;
+		>.content{
+			display: flex;
+			flex-direction: column;
+			gap:0;
+			margin:var(--gap);
+		}
+}
+}

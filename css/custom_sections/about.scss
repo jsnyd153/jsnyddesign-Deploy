@@ -1,0 +1,136 @@
+@use '../abstracts' as *;
+
+
+// =================================================
+// =================================================
+// Page specific Styles - About
+// =================================================
+// =================================================
+
+
+#play_change_adapt-animation{
+
+    --spacing:8%;
+
+    >.content{
+        position: relative;
+        width: 100%;
+        padding-top:100%;
+
+        div{
+            position: absolute;
+            width:76%;
+            height:76%;
+            outline-offset:-.125rem;
+        }
+    }
+}
+
+#play{
+    top: 8%;
+    right: 8%;
+    z-index: 4;
+    
+}
+#change{
+    top: 24%;
+    right: 24%;
+    z-index:2;
+    outline: .0625rem solid $dark;
+    img{
+        opacity: 0;
+    }
+}
+#adapt{
+    top: 0%;
+    right: 0%;
+    z-index:1;
+    outline: .0625rem solid $dark;
+    img{
+        opacity: 0;
+    }
+}
+#box{
+    top: 16%;
+    right: 16%;
+    background:$dark_2;
+    z-index:3;
+}
+
+
+
+// #play{
+//     z-index: 2;
+//     background: $dark;
+//     opacity: .5;
+//     img{
+//         opacity: 0;
+//     }
+// }
+
+// #box{
+//     outline: .0625rem solid $dark;
+//     background:none;
+// }
+
+// #change{
+//     z-index:4;
+//     outline: 0 solid $dark;
+//     img{
+//         opacity: 1;
+//     }
+// }
+
+
+// #play{
+//     z-index: 2;
+//     background: $white;
+//     opacity: .7;
+//     img{
+//         opacity: 0;
+//     }
+    
+// }
+// #change{
+//     z-index:3;
+//     outline: .0625rem solid $dark_2;
+//     img{
+//         opacity: 0;
+//     }
+// }
+// #adapt{
+//     z-index:4;
+//     outline: 0rem solid $dark;
+//     img{
+//         opacity: 1;
+//     }
+// }
+// #box{
+//     background:$dark;
+//     z-index:1;
+// }
+
+
+.list_hover{
+    li{
+        position: relative;
+        &::after{
+            display: block;
+            content: '';
+            position: absolute;
+            height: 0;
+            width: 0;
+            border-bottom:  .0625rem solid $offwhite;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .25s all;
+        }
+    }
+    .active{
+        &::after{
+            height: 0;
+            width: calc(100% + 1.1em);
+        }
+    }
+}

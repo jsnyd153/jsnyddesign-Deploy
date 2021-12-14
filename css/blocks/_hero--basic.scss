@@ -1,0 +1,41 @@
+@import '../abstracts';
+
+
+//================================================
+// Hero Basic
+//================================================
+
+.hero--basic {
+
+	margin-top: 3rem;
+	min-height: 50vh;
+
+	@include md() {
+		margin-top: 5rem;
+	}
+
+	.image_area{
+		grid-column: 1/-1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+
+		figure{
+			mix-blend-mode: var(--blend_background);
+			p{
+				position: absolute;
+				bottom: var(--y_position);
+				left: var(--x_position);
+				width: 80%;
+			}
+		}
+	}
+
+	@media only screen and (orientation: landscape) {
+		padding: 0 5vw;
+	}
+
+
+}//hero--basic

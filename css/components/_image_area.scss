@@ -1,0 +1,86 @@
+@use '../abstracts' as *;
+
+
+.image_area{
+
+
+//mobile screen mockups
+    &.mobile_screen{
+
+        //with no frame
+		&.no_frame{
+				position: relative;
+				transition: .3s border;
+				border-radius: 2rem;
+                border: 1px solid transparent;
+                padding:var(--gap);
+
+                &::before{
+                    @include psuedo_block();
+                    background: var(--text_color_emphasis);
+                    mix-blend-mode: overlay;
+                    border-radius: inherit;
+                    opacity: .05;
+                    transition: .2s opacity;
+                }
+				
+				.content{
+					position: relative;
+					img{
+						pointer-events: none;
+					}
+					img, video{
+						display: block;
+						border-radius: 1.5rem;
+						max-width: 20rem;
+						margin: auto;
+					}
+					video{
+						position: absolute;
+						inset: 0;
+                        margin: auto;
+					}
+				}
+
+                //play video version on hover
+				&:hover{
+					&::before{
+                        opacity: .5;
+                    }
+					.content{
+
+						video::-webkit-media-controls {
+						    display:none !important;
+						}
+					}
+				}
+		}//no_frame
+
+		&.with_frame{
+			.content{
+					position: relative;
+				.frame{
+					pointer-events: none;
+					position: relative;
+					z-index: 10;
+				}
+				.screen_content{
+					position: absolute;
+					left: 8.3%;
+					width: 67%;
+					top: 4.39%;
+					height: 80.632%;
+					border-radius: 20px;
+				}
+			}
+		}
+	}//mobile_screen
+
+
+
+		&.inset_border{
+			padding:var(--gap);
+			border:.0625rem solid var(--text_color_primary);
+		}
+
+}

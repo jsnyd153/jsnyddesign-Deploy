@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+svg {
+	.stroke{
+		fill:none;
+		stroke:currentColor;
+	}
+
+	//for stroke width classes [size-#]
+	@for $i from 1 through 10 {
+		.size-#{$i} {
+		stroke-width:#{$i};
+		}
+	}
+
+//for color classes [stroke-#]
+ @each $type in $colors_full {
+    .stroke-#{nth($type, 1)} {
+		stroke:#{nth($type, 2)};
+    }
+  }
+
+//for color classes [fill-#]
+   @each $type in $colors_full {
+    .fill-#{nth($type, 1)} {
+		fill:#{nth($type, 2)};
+    }
+  }
+
+}//svg
+
+.arrow{
+	font-size: inherit;
+	color: inherit;
+	fill:none;
+	*{
+		stroke:currentColor;
+	}
+
+	//change to weight based measurements
+	&.medium{
+		*{
+			stroke-width:16.667%;
+		}
+	}
+
+	&.bold{
+		*{
+			stroke-width:33.333%;
+		}
+	}
+
+
+//direction of arrow
+	&.top-left{
+		transform: rotate(180deg) translateY(-10%);
+	}
+	&.top-right{
+		transform: rotate(270deg) translateX(-10%);
+	}
+	&.bottom-right{
+		transform: rotate(0);
+	}
+	&.bottom-left{
+		transform: rotate(90deg);
+	}
+}
+
+
+//for svg stroke icons in buttons
+
+.button.thin{
+	svg{
+		display: inline-block;
+		font-size: inherit;
+		color: inherit;
+		fill:none;
+		height: 1.25em;
+		*{
+			stroke:currentColor;
+			stroke-width:2;
+		}
+	}
+}
+
