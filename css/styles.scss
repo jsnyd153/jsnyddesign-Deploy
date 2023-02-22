@@ -1,7 +1,9 @@
 @use 'abstracts' as *;
-@use 'components';
-@use 'blocks';
+@use 'components' as *;
+@use 'blocks' as *;
 // @use 'custom_sections';
+// I'm updated
+/* Updated */
 
 @import url(https://use.typekit.net/qcn8avg.css);
 
@@ -10,7 +12,7 @@
   src: url("../fonts/GrandSlang-Roman.woff") format('woff');
 }
 
-// Base Overrides
+
 
 html, body{
     width:100%;
