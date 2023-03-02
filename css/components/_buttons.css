@@ -1,0 +1,234 @@
+#checkforrepeat {
+  --hello:world;
+}
+
+a.button,
+span.button,
+.jotform-form button.submit-button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0.715em 1.4285em;
+  background: none;
+  border: 1px solid var(--text_color_primary);
+  color: var(--text_color_primary);
+  text-decoration: none;
+  transition: 0.3s all;
+  text-transform: uppercase;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  a.button,
+span.button,
+.jotform-form button.submit-button {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  a.button,
+span.button,
+.jotform-form button.submit-button {
+    font-size: 1.125rem;
+  }
+}
+a.button::before, a.button::after,
+span.button::before,
+span.button::after,
+.jotform-form button.submit-button::before,
+.jotform-form button.submit-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 0;
+  transition: 0.3s all;
+  background-color: var(--text_color_primary);
+  z-index: -1;
+}
+a.button::after,
+span.button::after,
+.jotform-form button.submit-button::after {
+  left: auto;
+  right: 0;
+  opacity: 0.5;
+  transition: 0.3s 0.3s all;
+}
+a.button:hover, a.button:focus, a.button.hover,
+span.button:hover,
+span.button:focus,
+span.button.hover,
+.jotform-form button.submit-button:hover,
+.jotform-form button.submit-button:focus,
+.jotform-form button.submit-button.hover {
+  color: var(--text_color_opp);
+}
+a.button:hover::before, a.button:hover::after, a.button:focus::before, a.button:focus::after, a.button.hover::before, a.button.hover::after,
+span.button:hover::before,
+span.button:hover::after,
+span.button:focus::before,
+span.button:focus::after,
+span.button.hover::before,
+span.button.hover::after,
+.jotform-form button.submit-button:hover::before,
+.jotform-form button.submit-button:hover::after,
+.jotform-form button.submit-button:focus::before,
+.jotform-form button.submit-button:focus::after,
+.jotform-form button.submit-button.hover::before,
+.jotform-form button.submit-button.hover::after {
+  width: 100%;
+  transition: 0.3s all;
+}
+a.button:hover::before, a.button:focus::before, a.button.hover::before,
+span.button:hover::before,
+span.button:focus::before,
+span.button.hover::before,
+.jotform-form button.submit-button:hover::before,
+.jotform-form button.submit-button:focus::before,
+.jotform-form button.submit-button.hover::before {
+  transition: 0.3s 0.3s all;
+}
+a.button svg,
+span.button svg,
+.jotform-form button.submit-button svg {
+  margin-left: 0.5em;
+  height: 0.8em;
+  width: 0.8em;
+  color: inherit;
+  transition: 0.3s margin;
+}
+a.button svg .stroke,
+span.button svg .stroke,
+.jotform-form button.submit-button svg .stroke {
+  color: inherit;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-miterlimit: 10;
+}
+a.button svg .fill,
+span.button svg .fill,
+.jotform-form button.submit-button svg .fill {
+  color: inherit;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-miterlimit: 10;
+}
+a.button.small,
+span.button.small,
+.jotform-form button.submit-button.small {
+  font-size: 0.875rem;
+}
+
+a:hover span.button {
+  color: var(--text_color_opp);
+}
+a:hover span.button::before, a:hover span.button::after {
+  width: 100%;
+  transition: 0.3s all;
+}
+a:hover span.button::before {
+  transition: 0.3s 0.3s all;
+}
+
+.jotform-form button.submit-button {
+  text-shadow: 0 0 #fff;
+  cursor: pointer;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px 0px rgb(221, 221, 221);
+}
+.jotform-form button.submit-button:hover svg {
+  margin-left: 1em;
+}
+
+.image--slider button,
+#lightbox button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  background: transparent;
+  color: var(--text_color_opp);
+  font-size: 0rem;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s all;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0.125rem solid #4f5561;
+  width: 3.5rem;
+  height: 3.5rem;
+  position: relative;
+  border-radius: 50%;
+  margin: 1rem calc(var(--gap) / 2) 0;
+}
+@media (min-width: 1024px) {
+  .image--slider button,
+#lightbox button {
+    margin: calc(var(--gap) / 2) 0;
+  }
+}
+.image--slider button svg,
+#lightbox button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+.image--slider button svg .stroke,
+#lightbox button svg .stroke {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  transition: 0.3s all;
+}
+.image--slider button svg .fill,
+#lightbox button svg .fill {
+  fill: var(--text_color_primary);
+  stroke-miterlimit: 10;
+  transition: 0.3s all;
+}
+.image--slider button:hover, .image--slider button:focus,
+#lightbox button:hover,
+#lightbox button:focus {
+  border: 0.125rem solid var(--text_color_emphasis);
+  transition: 0.1s all;
+}
+.image--slider button:hover svg, .image--slider button:focus svg,
+#lightbox button:hover svg,
+#lightbox button:focus svg {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.image--slider button:hover svg .stroke, .image--slider button:focus svg .stroke,
+#lightbox button:hover svg .stroke,
+#lightbox button:focus svg .stroke {
+  transition: 0.1s all;
+}
+.image--slider button:hover svg .fill, .image--slider button:focus svg .fill,
+#lightbox button:hover svg .fill,
+#lightbox button:focus svg .fill {
+  fill: var(--text_color_emphasis);
+  transition: 0.1s all;
+}
+
+@media (min-width: 1024px) {
+  .image--slider .prev_button {
+    transform: rotate(90deg);
+  }
+}
+@media (min-width: 1024px) {
+  .image--slider .next_button {
+    transform: rotate(90deg);
+  }
+}
+
+#lightbox button {
+  margin: auto;
+}

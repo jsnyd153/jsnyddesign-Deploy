@@ -1,0 +1,89 @@
+#checkforrepeat {
+  --hello:world;
+}
+
+:root {
+  --white: #ffffff;
+  --offwhite: #F9F9F9;
+  --gold: #F9DA01;
+  --gold_2: #E8A80C;
+  --gold_3: #D67516;
+  --grey: #D0D1D4;
+  --grey_2: #C1C1BF;
+  --dark: #232B3A;
+  --dark_2: #081821;
+  --dark_3: #050001;
+  --black: #000000;
+}
+
+body {
+  --text_color_primary: #F9F9F9;
+  --text_color_emphasis: #ffffff;
+  --text_color_low: #D0D1D4;
+  --text_color_accent: #F9DA01;
+  --text_color_opp: #081821;
+  --blend_background: screen;
+}
+body.light {
+  --text_color_primary: #081821;
+  --text_color_emphasis: #050001;
+  --text_color_low: #232B3A;
+  --text_color_accent: #E8A80C;
+  --text_color_opp: #F9F9F9;
+  --blend_background: multiply;
+}
+
+.accent-white {
+  --accent: #ffffff;
+  --accent_shadow: rgba(255, 255, 255, 0.25);
+}
+
+.accent-offwhite {
+  --accent: #F9F9F9;
+  --accent_shadow: rgba(249, 249, 249, 0.25);
+}
+
+.accent-gold {
+  --accent: #F9DA01;
+  --accent_shadow: rgba(249, 218, 1, 0.25);
+}
+
+.accent-gold_2 {
+  --accent: #E8A80C;
+  --accent_shadow: rgba(232, 168, 12, 0.25);
+}
+
+.accent-gold_3 {
+  --accent: #D67516;
+  --accent_shadow: rgba(214, 117, 22, 0.25);
+}
+
+.accent-grey {
+  --accent: #D0D1D4;
+  --accent_shadow: rgba(208, 209, 212, 0.25);
+}
+
+.accent-grey_2 {
+  --accent: #C1C1BF;
+  --accent_shadow: rgba(193, 193, 191, 0.25);
+}
+
+.accent-dark {
+  --accent: #232B3A;
+  --accent_shadow: rgba(35, 43, 58, 0.25);
+}
+
+.accent-dark_2 {
+  --accent: #081821;
+  --accent_shadow: rgba(8, 24, 33, 0.25);
+}
+
+.accent-dark_3 {
+  --accent: #050001;
+  --accent_shadow: rgba(5, 0, 1, 0.25);
+}
+
+.accent-black {
+  --accent: #000000;
+  --accent_shadow: rgba(0, 0, 0, 0.25);
+}

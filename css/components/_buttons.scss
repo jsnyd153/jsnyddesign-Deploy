@@ -1,219 +1,214 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 //================================================
 // Button Styles
 //================================================
 
-a.button, span.button, .jotform-form button.submit-button {
-	display: inline-flex;
-	align-items: center;
-	font-size: .875rem;
-	font-weight: 300;
-	line-height: 1;
-	padding: .715em 1.4285em;
-	background: none;
-	border: 1px solid var(--text_color_primary);
-	color: var(--text_color_primary);
-	text-decoration: none;
-	transition: .3s all;
-	text-transform: uppercase;
-	position: relative;
+a.button,
+span.button,
+.jotform-form button.submit-button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0.715em 1.4285em;
+  background: none;
+  border: 1px solid var(--text_color_primary);
+  color: var(--text_color_primary);
+  text-decoration: none;
+  transition: 0.3s all;
+  text-transform: uppercase;
+  position: relative;
 
-	@include md() {
-		//add size changed here for md
-	}
+  @include md() {
+    //add size changed here for md
+  }
 
-	@include lg() {
-		font-size: 1rem;
-	}
+  @include lg() {
+    font-size: 1rem;
+  }
 
-	@include xl() {
-		font-size: 1.125rem;
-	}
+  @include xl() {
+    font-size: 1.125rem;
+  }
 
-	&::before, &::after{
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		height: 100%;
-		left: 0;
-		width: 0;
-		transition: .3s all;
-		background-color: var(--text_color_primary);
-		z-index: -1;
-	}
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 0;
+    transition: 0.3s all;
+    background-color: var(--text_color_primary);
+    z-index: -1;
+  }
 
-	&::after{
-		left: auto;
-		right: 0;
-		opacity: .5;
-		transition: .3s .3s all;
-	}
+  &::after {
+    left: auto;
+    right: 0;
+    opacity: 0.5;
+    transition: 0.3s 0.3s all;
+  }
 
+  &:hover,
+  &:focus,
+  &.hover {
+    color: var(--text_color_opp);
 
-	&:hover, &:focus, &.hover {
+    &::before,
+    &::after {
+      width: 100%;
+      transition: 0.3s all;
+    }
+    &::before {
+      transition: 0.3s 0.3s all;
+    }
+  } //Hover Focus
 
-		color: var(--text_color_opp);
+  //for svg icon after next to button text
+  svg {
+    margin-left: 0.5em;
+    height: 0.8em;
+    width: 0.8em;
+    color: inherit;
+    transition: 0.3s margin;
+    .stroke {
+      color: inherit;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1;
+      stroke-miterlimit: 10;
+    }
+    .fill {
+      color: inherit;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1;
+      stroke-miterlimit: 10;
+    }
+  }
 
-		&::before, &::after{
-			width: 100%;
-			transition: .3s all;
-		}
-		&::before{
-			transition: .3s .3s all;
-		}
-		
-	} //Hover Focus
-
-	//for svg icon after next to button text
-	svg {
-		margin-left: .5em;
-		height: .8em;
-		width: .8em;
-		color: inherit;
-		transition: .3s margin;
-		.stroke {
-			color: inherit;
-			fill: none;
-			stroke: currentColor;
-			stroke-width: 1;
-			stroke-miterlimit: 10;
-		}
-		.fill {
-			color: inherit;
-			fill: none;
-			stroke: currentColor;
-			stroke-width: 1;
-			stroke-miterlimit: 10;
-		}
-	}
-
-
-	&.small{
-			font-size: .875rem;
-	}
+  &.small {
+    font-size: 0.875rem;
+  }
 }
 
+a:hover {
+  span.button {
+    color: var(--text_color_opp);
 
-a:hover{
-	span.button{
-		color: var(--text_color_opp);
-
-		&::before, &::after{
-			width: 100%;
-			transition: .3s all;
-		}
-		&::before{
-			transition: .3s .3s all;
-		}
-	}
+    &::before,
+    &::after {
+      width: 100%;
+      transition: 0.3s all;
+    }
+    &::before {
+      transition: 0.3s 0.3s all;
+    }
+  }
 }
-
-
 
 //button overries to make jotform button look the same as other buttons
-.jotform-form{
-	button.submit-button{
+.jotform-form {
+  button.submit-button {
+    text-shadow: 0 0 #fff;
+    cursor: pointer;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px 0px rgba(221, 221, 221, 1);
 
-		text-shadow: 0 0 #fff;
-		cursor: pointer;
-		border-radius: 0px;
-		box-shadow: 0px 0px 0px 0px rgba(221,221,221,1);
-
-		&:hover{
-			svg{
-				margin-left: 1em;
-			}
-		}
-
-	}
+    &:hover {
+      svg {
+        margin-left: 1em;
+      }
+    }
+  }
 }
-
-
-
-
 
 //=============================================
 // arrow buttons
 //============================================
-.image--slider, #lightbox{
-
-button {
-	display: inline-block;
-	border: none;
-	padding: 0;
-	text-decoration: none;
-	background: transparent;
-	color: var(--text_color_opp);
-	font-size: 0rem;
-	cursor: pointer;
-	text-align: center;
-	transition: .3s all;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	border: 0.125rem solid tint($dark, 20%);
-	width: 3.5rem;
-	height: 3.5rem;
-	position: relative;
-	border-radius: 50%;
-	margin: 1rem calc(var(--gap) / 2) 0;
-	@include lg() {
-		margin: calc(var(--gap) / 2) 0;
-	}
-	//Can these be simplified based on the base svg styles
-	svg {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 50%;
-		.stroke {
-			fill: none;
-			stroke: $white;
-			stroke-width: 2;
-			stroke-miterlimit: 10;
-			transition: .3s all;
-		}
-		.fill {
-			fill: var(--text_color_primary);
-			stroke-miterlimit: 10;
-			transition: .3s all;
-		}
-	}
-	&:hover, &:focus {
-		border: 0.125rem solid var(--text_color_emphasis);
-		transition: .1s all;
-		svg {
-			transform: translate(-50%, -50%) scale(1.05);
-			.stroke {
-				transition: .1s all;
-			}
-			.fill {
-				fill: var(--text_color_emphasis);
-				transition: .1s all;
-			}
-		}
-	}
-} //button styles
-
+.image--slider,
+#lightbox {
+  button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    background: transparent;
+    color: var(--text_color_opp);
+    font-size: 0rem;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s all;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0.125rem solid tint($dark, 20%);
+    width: 3.5rem;
+    height: 3.5rem;
+    position: relative;
+    border-radius: 50%;
+    margin: 1rem calc(var(--gap) / 2) 0;
+    @include lg() {
+      margin: calc(var(--gap) / 2) 0;
+    }
+    //Can these be simplified based on the base svg styles
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      .stroke {
+        fill: none;
+        stroke: $white;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        transition: 0.3s all;
+      }
+      .fill {
+        fill: var(--text_color_primary);
+        stroke-miterlimit: 10;
+        transition: 0.3s all;
+      }
+    }
+    &:hover,
+    &:focus {
+      border: 0.125rem solid var(--text_color_emphasis);
+      transition: 0.1s all;
+      svg {
+        transform: translate(-50%, -50%) scale(1.05);
+        .stroke {
+          transition: 0.1s all;
+        }
+        .fill {
+          fill: var(--text_color_emphasis);
+          transition: 0.1s all;
+        }
+      }
+    }
+  } //button styles
 }
 
-.image--slider{
-	.prev_button {
-		@include lg() {
-			transform: rotate(90deg);
-		}
-	}
-	.next_button {
-		@include lg() {
-			transform: rotate(90deg);
-		}
-	}
+.image--slider {
+  .prev_button {
+    @include lg() {
+      transform: rotate(90deg);
+    }
+  }
+  .next_button {
+    @include lg() {
+      transform: rotate(90deg);
+    }
+  }
 }
 
-#lightbox{
-	button{
-		margin:auto;
-	}
+#lightbox {
+  button {
+    margin: auto;
+  }
 }
