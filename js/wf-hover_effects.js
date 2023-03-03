@@ -116,12 +116,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       /* Apply the calculated transformation */
       element.style.transform = string;
+
+      console.log("moved" + string);
     }
 
     /* Add listener for mouseout event, remove the rotation */
     element.addEventListener("mouseout", function () {
       element.style.transform =
         "perspective(100px) scale(1) rotateX(0) rotateY(0)";
+      console.log("out");
     });
 
     /* Add listener for mousedown event, to simulate click */
