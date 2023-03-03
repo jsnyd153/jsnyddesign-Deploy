@@ -120,7 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(
         "moved: y=" +
           yRotation +
+          ", yval=" +
+          yVal +
           ", x=" +
+          xRotation +
+          ", xVal=" +
           xRotation +
           ", height=" +
           height +
