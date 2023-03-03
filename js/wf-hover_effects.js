@@ -66,12 +66,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "perspective(500px) scale(1.1) rotateX(0) rotateY(0)";
     });
   });
-}); /* Store the element in el  - tilt 1*/
+}); /* Store the element in el */
 
 document.addEventListener("DOMContentLoaded", function () {
+  /* Store the element in el */
   const elements = document.querySelectorAll('[tilt="2"]');
 
   elements.forEach(function (element) {
+    const target = element.getElementsByClassName("content")[0];
+
+    // console.log(target)
+
     /* Get the height and width of the element */
     const height = element.clientHeight;
     const width = element.clientWidth;
@@ -96,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const yVal = e.layerY;
 
       /*
-       * Calculate rotation valuee along the Y-axis
+       * Calculate rotation value along the Y-axis
        * Here the multiplier 20 is to
        * Control the rotation
        * You can change the value and see the results
@@ -115,28 +120,26 @@ document.addEventListener("DOMContentLoaded", function () {
         "deg)";
 
       /* Apply the calculated transformation */
-      element.style.transform = string;
+      target.style.transform = string;
     }
 
     /* Add listener for mouseout event, remove the rotation */
     element.addEventListener("mouseout", function () {
-      element.style.transform =
+      target.style.transform =
         "perspective(100px) scale(1) rotateX(0) rotateY(0)";
     });
 
-    /* Add listener for mousedown event, to simulate click */
-    // element.addEventListener("mousedown", function () {
-    //   element.style.transform =
-    //     "perspective(100px) scale(0.9) rotateX(0) rotateY(0)";
-    // });
+    // /* Add listener for mousedown event, to simulate click */
+    // element.addEventListener('mousedown', function() {
+    //   element.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
+    // })
 
-    /* Add listener for mouseup, simulate release of mouse click */
-    // element.addEventListener("mouseup", function () {
-    //   element.style.transform =
-    //     "perspective(100px) scale(1) rotateX(0) rotateY(0)";
-    // });
+    // /* Add listener for mouseup, simulate release of mouse click */
+    // element.addEventListener('mouseup', function() {
+    //   element.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
+    // })
   });
-}); /* Store the element in el  - tilt 2*/
+}); /* Store the element in el */
 
 // class HoverButton {
 //   constructor(el) {
