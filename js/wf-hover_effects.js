@@ -117,7 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
       /* Apply the calculated transformation */
       element.style.transform = string;
 
-      console.log("moved" + string);
+      console.log(
+        "moved: y=" +
+          yRotation +
+          ", x=" +
+          xRotation +
+          ", height=" +
+          height +
+          ", width=" +
+          width
+      );
     }
 
     /* Add listener for mouseout event, remove the rotation */
