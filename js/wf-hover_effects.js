@@ -1,4 +1,3 @@
-//      * Add a listener for mousemove event
 document.addEventListener("DOMContentLoaded", function () {
   let isHoverable = window.matchMedia("(pointer:fine)").matches;
 
