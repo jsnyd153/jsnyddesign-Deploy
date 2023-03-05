@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   } else {
     console.log("no hover");
-    return;
+    initMobileFocus();
   }
 
   function init_Tilt1() {
@@ -167,4 +167,22 @@ document.addEventListener("DOMContentLoaded", function () {
       // });
     });
   } /* Store the element in el  - tilt 2*/
+
+  function initMobileFocus() {
+    const focusItem = document.querySelectorAll('[hover_focus="scroll"');
+
+    focusItem.forEach((element, index) => {
+      console.log(this);
+
+      ScrollTrigger.create({
+        trigger: element,
+        id: index + 1,
+        start: "top center",
+        end: () => `+=${element.clientHeight}`,
+        toggleActions: "play reverse none reverse",
+        toggleClass: { targets: element, className: "hover_focus" },
+        //markers: true
+      });
+    });
+  }
 });
