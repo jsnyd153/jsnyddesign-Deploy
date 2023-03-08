@@ -1,0 +1,274 @@
+/*css/components/colors.scss*/
+.background_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.background_area .background_fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.background_area .background_fill img,
+.background_area .background_fill video,
+.background_area .background_fill iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.background_area .background_fill {
+  background-color: var(--background_color);
+}
+
+.has-white-background {
+  --background_color: rgba(255, 255, 255, 0.25);
+}
+.has-white-background ~ * {
+  --background_color: rgba(255, 255, 255, 0.25);
+}
+.has-white-background.background_fill {
+  --background_color: rgba(255, 255, 255, 0.25);
+}
+
+.is-white {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.has-white-fill {
+  fill: rgba(255, 255, 255, 0.25);
+}
+
+.has-white-stroke {
+  stroke: rgba(255, 255, 255, 0.25);
+}
+
+.has-gold-300-background {
+  --background_color: rgba(249, 218, 1, 0.25);
+}
+.has-gold-300-background ~ * {
+  --background_color: rgba(249, 218, 1, 0.25);
+}
+.has-gold-300-background.background_fill {
+  --background_color: rgba(249, 218, 1, 0.25);
+}
+
+.is-gold-300 {
+  color: rgba(249, 218, 1, 0.25);
+}
+
+.has-gold-300-fill {
+  fill: rgba(249, 218, 1, 0.25);
+}
+
+.has-gold-300-stroke {
+  stroke: rgba(249, 218, 1, 0.25);
+}
+
+.has-gold-500-background {
+  --background_color: rgba(232, 168, 12, 0.25);
+}
+.has-gold-500-background ~ * {
+  --background_color: rgba(232, 168, 12, 0.25);
+}
+.has-gold-500-background.background_fill {
+  --background_color: rgba(232, 168, 12, 0.25);
+}
+
+.is-gold-500 {
+  color: rgba(232, 168, 12, 0.25);
+}
+
+.has-gold-500-fill {
+  fill: rgba(232, 168, 12, 0.25);
+}
+
+.has-gold-500-stroke {
+  stroke: rgba(232, 168, 12, 0.25);
+}
+
+.has-gold-700-background {
+  --background_color: rgba(214, 117, 22, 0.25);
+}
+.has-gold-700-background ~ * {
+  --background_color: rgba(214, 117, 22, 0.25);
+}
+.has-gold-700-background.background_fill {
+  --background_color: rgba(214, 117, 22, 0.25);
+}
+
+.is-gold-700 {
+  color: rgba(214, 117, 22, 0.25);
+}
+
+.has-gold-700-fill {
+  fill: rgba(214, 117, 22, 0.25);
+}
+
+.has-gold-700-stroke {
+  stroke: rgba(214, 117, 22, 0.25);
+}
+
+.has-grey-100-background {
+  --background_color: rgba(249, 249, 249, 0.25);
+}
+.has-grey-100-background ~ * {
+  --background_color: rgba(249, 249, 249, 0.25);
+}
+.has-grey-100-background.background_fill {
+  --background_color: rgba(249, 249, 249, 0.25);
+}
+
+.is-grey-100 {
+  color: rgba(249, 249, 249, 0.25);
+}
+
+.has-grey-100-fill {
+  fill: rgba(249, 249, 249, 0.25);
+}
+
+.has-grey-100-stroke {
+  stroke: rgba(249, 249, 249, 0.25);
+}
+
+.has-grey-200-background {
+  --background_color: rgba(208, 209, 212, 0.25);
+}
+.has-grey-200-background ~ * {
+  --background_color: rgba(208, 209, 212, 0.25);
+}
+.has-grey-200-background.background_fill {
+  --background_color: rgba(208, 209, 212, 0.25);
+}
+
+.is-grey-200 {
+  color: rgba(208, 209, 212, 0.25);
+}
+
+.has-grey-200-fill {
+  fill: rgba(208, 209, 212, 0.25);
+}
+
+.has-grey-200-stroke {
+  stroke: rgba(208, 209, 212, 0.25);
+}
+
+.has-grey-400-background {
+  --background_color: rgba(193, 193, 191, 0.25);
+}
+.has-grey-400-background ~ * {
+  --background_color: rgba(193, 193, 191, 0.25);
+}
+.has-grey-400-background.background_fill {
+  --background_color: rgba(193, 193, 191, 0.25);
+}
+
+.is-grey-400 {
+  color: rgba(193, 193, 191, 0.25);
+}
+
+.has-grey-400-fill {
+  fill: rgba(193, 193, 191, 0.25);
+}
+
+.has-grey-400-stroke {
+  stroke: rgba(193, 193, 191, 0.25);
+}
+
+.has-grey-700-background {
+  --background_color: rgba(35, 43, 58, 0.25);
+}
+.has-grey-700-background ~ * {
+  --background_color: rgba(35, 43, 58, 0.25);
+}
+.has-grey-700-background.background_fill {
+  --background_color: rgba(35, 43, 58, 0.25);
+}
+
+.is-grey-700 {
+  color: rgba(35, 43, 58, 0.25);
+}
+
+.has-grey-700-fill {
+  fill: rgba(35, 43, 58, 0.25);
+}
+
+.has-grey-700-stroke {
+  stroke: rgba(35, 43, 58, 0.25);
+}
+
+.has-grey-800-background {
+  --background_color: rgba(8, 24, 33, 0.25);
+}
+.has-grey-800-background ~ * {
+  --background_color: rgba(8, 24, 33, 0.25);
+}
+.has-grey-800-background.background_fill {
+  --background_color: rgba(8, 24, 33, 0.25);
+}
+
+.is-grey-800 {
+  color: rgba(8, 24, 33, 0.25);
+}
+
+.has-grey-800-fill {
+  fill: rgba(8, 24, 33, 0.25);
+}
+
+.has-grey-800-stroke {
+  stroke: rgba(8, 24, 33, 0.25);
+}
+
+.has-grey-900-background {
+  --background_color: rgba(5, 0, 1, 0.25);
+}
+.has-grey-900-background ~ * {
+  --background_color: rgba(5, 0, 1, 0.25);
+}
+.has-grey-900-background.background_fill {
+  --background_color: rgba(5, 0, 1, 0.25);
+}
+
+.is-grey-900 {
+  color: rgba(5, 0, 1, 0.25);
+}
+
+.has-grey-900-fill {
+  fill: rgba(5, 0, 1, 0.25);
+}
+
+.has-grey-900-stroke {
+  stroke: rgba(5, 0, 1, 0.25);
+}
+
+.has-black-background {
+  --background_color: rgba(0, 0, 0, 0.25);
+}
+.has-black-background ~ * {
+  --background_color: rgba(0, 0, 0, 0.25);
+}
+.has-black-background.background_fill {
+  --background_color: rgba(0, 0, 0, 0.25);
+}
+
+.is-black {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.has-black-fill {
+  fill: rgba(0, 0, 0, 0.25);
+}
+
+.has-black-stroke {
+  stroke: rgba(0, 0, 0, 0.25);
+}

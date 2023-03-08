@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>app test page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/components/match_card.css" />
+  </head>
+
+  <body class="">
+    <div class="container">
+      <div class="card" expanded="false" timing="default">
+        <div class="match_label">
+          <span>1</span>
+        </div>
+        <!--  -->
+        <div class="team_container">
+          <div class="team_row current">
+            <div class="player_names">
+              <span class="current_player">Matt Shipp</span>
+              <span class="seperator"></span>
+              <span class="partner_player">Johnny Walker</span>
+            </div>
+            <div class="team_score">
+              <span>0</span>
+            </div>
+          </div>
+          <!--  -->
+          <div class="team_row opponents">
+            <div class="player_names">
+              <span class="versus">vs</span>
+              <span class="opponent_player">Abin Cheriyan</span>
+              <span class="seperator"></span>
+              <span class="opponent_player">Yang Yang</span>
+            </div>
+            <div class="team_score">
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="button_container">
+          <button>Enter score</button>
+        </div>
+        <div class="match_score--container">
+          <div class="match_score">
+            <span class="score_current">0</span>
+            <span>-</span>
+            <span class="score_opponent">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycbwnaQrYzI1QPrmTsIeoghIWP2cvk-a7pM66Wc73xQ6OhBSqiGRDb73eOzlZcF6QkuKPNA/exec"
+    >
+      <input name="Email" type="email" placeholder="Email" required />
+      <input name="Name" type="text" placeholder="Name" required />
+      <button type="submit">Send</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(".card").each(function () {
+        $(this).clone().appendTo(".container").attr("expanded", "true");
+      });
+      $(".card").each(function () {
+        $(this).clone().appendTo(".container").attr("timing", "complete");
+        $(this).clone().appendTo(".container").attr("timing", "current");
+      });
+    </script>
+  </body>
+</html>

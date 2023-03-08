@@ -1,0 +1,155 @@
+@use "../abstracts" as *;
+
+//================================================
+/*css/components/_backgrounds.scss*/
+//================================================
+
+//backgorund object behind everything (contains noise effect)
+.root_background,
+.main_navigation--full .background_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+
+  .background_fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    overflow: hidden;
+    background-color: var(--background_color);
+
+    background-size: cover;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      left: -50%;
+      top: -50%;
+      background-image: url(https://jsnyddesign-cdn.netlify.app/media/grain.png);
+      -webkit-animation: grain 1.5s steps(6) infinite;
+      animation: grain 1.5s steps(6) infinite;
+      opacity: 0.1;
+    }
+  }
+  .theme_dark & {
+    .background_fill {
+      background-image: url(https://jsnyddesign-cdn.netlify.app/media/bg-textue-black.jpg);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.theme_dark .main_navigation--full .background_area {
+  .background_fill {
+    background-image: url(https://jsnyddesign-cdn.netlify.app/media/bg-textue-grey-700.jpg);
+  }
+}
+
+.theme_light {
+  .root_background {
+    .background_fill {
+      background-image: none;
+      &::after {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  30% {
+    transform: translate(3%, -15%);
+  }
+  50% {
+    transform: translate(12%, 9%);
+  }
+  70% {
+    transform: translate(9%, 4%);
+  }
+  90% {
+    transform: translate(-1%, 7%);
+  }
+}
+
+//================================================
+//Background setup for individual section blocks
+//each section has a .background_area element to run colors and images through
+//they cover the section
+//================================================
+.background_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  .background_fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img,
+    video,
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    //add utility classes to control the center point of the image?
+  }
+}
+
+// .background_area .background_fill {
+//   // background-color: var(--background_color);
+// }
+
+// //Color Utility Classes
+// @each $type in $colors_all {
+//   .has-#{nth($type, 1)}-background {
+//     &.background_fill {
+//       background-color: #{nth($type, 2)};
+//     }
+//     .background_fill {
+//       background-color: #{nth($type, 2)};
+//     }
+//   }
+// }
+
+//Color Utility Classes
+@each $type in $colors_all {
+  .has-#{nth($type, 1)}-background {
+    --background_color: #{nth($type, 2)};
+    & ~ * {
+      --background_color: #{nth($type, 2)};
+    }
+
+    &.background_fill {
+      --background_color: #{nth($type, 2)};
+    }
+  }
+}
+
+.has-gradient-background {
+  &.background_fill {
+    background: var(--theme_gradient);
+  }
+}
