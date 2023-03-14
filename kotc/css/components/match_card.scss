@@ -12,7 +12,7 @@ span {
 }
 
 body {
-  padding: 15/16 * 1rem;
+  // padding: 15/16 * 1rem;
 }
 
 [timing="default"] {
@@ -48,10 +48,11 @@ body {
   --result-contrast_color: transparent;
   --result-primary_color: transparent;
 }
-.container {
+.container-matches {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin: 15/16 * 1rem;
 }
 
 .card {

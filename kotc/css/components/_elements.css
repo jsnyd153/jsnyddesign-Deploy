@@ -1,0 +1,246 @@
+/*css/components/elements.scss*/
+.wrapper {
+  padding: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+header {
+  --background_color: #2f7bd5;
+  --text_color-primary: #ffffff;
+  --text_color-secondary: #c8ccd2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 0;
+  margin-bottom: 0.0625rem;
+  font-size: 1.25rem;
+  background: var(--background_color);
+  color: var(--text_color-primary);
+}
+
+.navigation {
+  --background_color: #2f7bd5;
+  --text_color-primary: #ffffff;
+  --text_color-secondary: #c8ccd2;
+  font-size: 1.25rem;
+  display: flex;
+  padding: 2.5rem 0.9375rem;
+  background-color: var(--background_color);
+  position: relative;
+  margin-bottom: 8%;
+}
+.navigation .dropdown {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navigation.vertical {
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.75rem 0.9375rem 0 0.9375rem;
+  align-items: center;
+}
+.navigation.vertical .dropdown {
+  flex-grow: 0;
+  justify-content: center;
+}
+.navigation svg.arc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  width: 100%;
+}
+.navigation svg.arc * {
+  fill: var(--background_color);
+}
+
+.overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+}
+.overview .profile_image {
+  font-size: 1.375rem;
+}
+.navigation + .overview {
+  margin-top: -12%;
+}
+
+.standings_card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid #edf0f2;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #141b24;
+}
+.standings_card:last-child {
+  border-bottom: 0rem solid #edf0f2;
+}
+.standings_card .player_name {
+  flex-grow: 1;
+}
+
+.match_card {
+  display: flex;
+  gap: 0.625rem;
+  padding: 0 0.75rem 0.75rem 0.75rem;
+  border: 1px solid #edf0f2;
+  border-radius: 0.25rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5625rem;
+}
+.match_card .match_number {
+  margin-bottom: -1.5625rem;
+  transform: translate(0, -50%);
+}
+.match_card .team {
+  flex-grow: 1;
+}
+.match_card .team-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.match_card .team-row {
+  display: flex;
+  gap: 0.625rem;
+  flex-grow: 1;
+}
+.match_card .score-summary {
+  display: none;
+  height: 100%;
+  margin: 0 auto auto auto;
+  align-items: flex-start;
+}
+.match_card .score-summary .scorebox {
+  border: 0;
+}
+.match_card .score-summary .scorebox[data=record] {
+  --result: #959aa0;
+}
+.match_card[expanded=false] {
+  flex-direction: row;
+  margin-top: 0;
+  padding: 0.75rem;
+}
+.match_card[expanded=false] .match_number {
+  margin-bottom: 0;
+  transform: translate(0, 0%);
+}
+.match_card[expanded=false] .button {
+  display: none;
+}
+.match_card[expanded=false] .score_display {
+  display: none;
+}
+.match_card[expanded=false] .score-summary {
+  display: flex;
+}
+
+.pool {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  color: #484e56;
+  font-size: 1rem;
+}
+.pool-list {
+  display: flex;
+  flex-direction: column;
+  grid-area: 1rem;
+}
+.pool-label {
+  color: inherit;
+  line-height: 120%;
+  font-weight: 600;
+}
+.pool-players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pool.current {
+  background: #2f7bd5;
+  color: #ffffff;
+}
+
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: flex-start;
+  width: 100%;
+}
+.player-list .name_card {
+  padding: 0.5rem 1rem;
+}
+.player-list .name_card.current {
+  background-color: #2f7bd5;
+  color: #ffffff;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+}
+.modal * {
+  transition: 0.3s all;
+}
+.modal.open {
+  display: block;
+}
+.modal-background {
+  background-color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0;
+}
+.open .modal-background {
+  opacity: 0.4;
+}
+.modal-content {
+  background: #ffffff;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  border-radius: 1rem 1rem 0 0;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translate(0, 100%);
+}
+.open .modal-content {
+  transform: translate(0, 0%);
+}
+.modal-content::before {
+  content: "";
+  display: block;
+  width: 3.75rem;
+  height: 0.25rem;
+  background: #c8ccd2;
+  border-radius: 0.25rem;
+}

@@ -21,71 +21,134 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/components/match_card.css" />
+    <link rel="stylesheet" href="css/components/player_list.css" />
   </head>
 
   <body class="">
-    <div class="container">
-      <div class="card" expanded="false" timing="default">
-        <div class="match_label">
-          <span>1</span>
+    <header>
+      <div class="dropdown">
+        <div class="dropdown_label">
+          <span>Pool 1</span>
+          <svg viewBox="0 0 12 8">
+            <path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
+          </svg>
         </div>
-        <!--  -->
-        <div class="team_container">
-          <div class="team_row current">
-            <div class="player_names">
-              <span class="current_player">Matt Shipp</span>
-              <span class="seperator"></span>
-              <span class="partner_player">Johnny Walker</span>
-            </div>
-            <div class="team_score">
-              <span>0</span>
-            </div>
-          </div>
-          <!--  -->
-          <div class="team_row opponents">
-            <div class="player_names">
-              <span class="versus">vs</span>
-              <span class="opponent_player">Abin Cheriyan</span>
-              <span class="seperator"></span>
-              <span class="opponent_player">Yang Yang</span>
-            </div>
-            <div class="team_score">
-              <span>0</span>
-            </div>
+        <div class="dropdown_panel">
+          <div class="panel_back"></div>
+          <div class="dropdown_options">
+            <ul class="dropdown_options--list"></ul>
           </div>
         </div>
-        <!--  -->
-        <div class="button_container">
-          <button>Enter score</button>
+      </div>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <div class="dropdown_label">
+          <span>Matt Shipp</span>
+          <svg viewBox="0 0 12 8">
+            <path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
+          </svg>
         </div>
-        <div class="match_score--container">
-          <div class="match_score">
-            <span class="score_current">0</span>
-            <span>-</span>
-            <span class="score_opponent">0</span>
+        <div class="dropdown_panel">
+          <div class="panel_back"></div>
+          <div class="dropdown_options">
+            <ul class="dropdown_options--list"></ul>
           </div>
+        </div>
+      </div>
+
+      <div class="button_container">
+        <button class="icon_button"><i>assignment</i></button>
+        <button class="icon_button"><i>leaderboard</i></button>
+        <button class="icon_button"><i>settings</i></button>
+      </div>
+    </nav>
+
+    <div class="player_profile">
+      <svg
+        viewBox="0 0 375 29"
+        class="round_edge"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M166.726 29C108.823 27.1158 52.9051 17.384 0 0.833717L0 0H375V0.833706C322.095 17.384 266.177 27.1158 208.274 29H166.726Z"
+        />
+      </svg>
+
+      <div class="profile_picture">
+        <img
+          src="https://images.unsplash.com/photo-1678284258973-af8533fbace5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+          alt="currentName"
+        />
+      </div>
+
+      <div class="score_display">
+        <div class="total_score score_item">
+          <span class="win">0</span>-<span class="loss">0</span>
+        </div>
+        <div class="point_differential score_item">
+          <span class="diff">0</span>
         </div>
       </div>
     </div>
 
-    <form
-      method="POST"
-      action="https://script.google.com/macros/s/AKfycbwnaQrYzI1QPrmTsIeoghIWP2cvk-a7pM66Wc73xQ6OhBSqiGRDb73eOzlZcF6QkuKPNA/exec"
-    >
-      <input name="Email" type="email" placeholder="Email" required />
-      <input name="Name" type="text" placeholder="Name" required />
-      <button type="submit">Send</button>
-    </form>
+    <div class="container-matches"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/create_cards.js"></script>
     <script>
-      $(".card").each(function () {
-        $(this).clone().appendTo(".container").attr("expanded", "true");
+      $(".card").click(function () {
+        $(this).attr("expanded", function (index, attr) {
+          return attr == "false" ? null : "false";
+        });
       });
-      $(".card").each(function () {
-        $(this).clone().appendTo(".container").attr("timing", "complete");
-        $(this).clone().appendTo(".container").attr("timing", "current");
-      });
+
+      var dropdownList = $(".dropdown_options--list")[0],
+        playerList = {
+          items: [
+            {
+              seed: 1,
+              name: "Jeremy Snyder",
+            },
+            {
+              seed: 2,
+              name: "Dan Bohan",
+            },
+            {
+              seed: 3,
+              name: "Abin Cheriyan",
+            },
+            {
+              seed: 4,
+              name: "Yang Yang",
+            },
+            {
+              seed: 5,
+              name: "Duy Nguyen",
+            },
+            {
+              seed: 6,
+              name: "Tim Davis",
+            },
+            {
+              seed: 7,
+              name: "Johnny Walker",
+            },
+            {
+              seed: 8,
+              name: "Matt Shipp",
+            },
+          ],
+        };
+      html = playerList.items
+        .map(function (v, i) {
+          return '<li class="player_item primary">' + v.name + "</li>";
+        })
+        .join("");
+      dropdownList.innerHTML = html;
     </script>
   </body>
 </html>

@@ -1,0 +1,265 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+//================================================
+/*css/components/elements.scss*/
+//================================================
+
+//temporary style
+.wrapper {
+  padding: 15/16 * 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+//Header
+header {
+  --background_color: #{$blue-500};
+  --text_color-primary: #{$white};
+  --text_color-secondary: #{$grey-200};
+
+  @include f-center;
+  padding: 12/16 * 1rem 0;
+  margin-bottom: 1/16 * 1rem;
+  font-size: 20/16 * 1rem;
+  background: var(--background_color);
+  color: var(--text_color-primary);
+}
+
+//Navigation
+.navigation {
+  --background_color: #{$blue-500};
+  --text_color-primary: #{$white};
+  --text_color-secondary: #{$grey-200};
+
+  font-size: 20/16 * 1rem;
+  display: flex;
+  padding: 40/16 * 1rem 15/16 * 1rem;
+  background-color: var(--background_color);
+  position: relative;
+  margin-bottom: 30/375 * 100%;
+  .dropdown {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &.vertical {
+    flex-direction: column;
+    gap: 24/16 * 1rem;
+    padding: 12/16 * 1rem 15/16 * 1rem 0 15/16 * 1rem;
+    align-items: center;
+    // margin-bottom: 0;
+    .dropdown {
+      flex-grow: 0;
+      justify-content: center;
+    }
+  }
+  svg.arc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    width: 100%;
+    * {
+      fill: var(--background_color);
+    }
+  }
+}
+
+//Overview
+.overview {
+  @include f-center;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+  .profile_image {
+    font-size: 22/16 * 1rem;
+  }
+  .navigation + & {
+    margin-top: 45/375 * -100%;
+  }
+}
+
+//Standings Card
+.standings_card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1/16 * 1rem solid $grey-100;
+  font-size: 15/16 * 1rem;
+  font-weight: 600;
+  color: $grey-900;
+  &:last-child {
+    border-bottom: 0/16 * 1rem solid $grey-100;
+  }
+  .player_name {
+    flex-grow: 1;
+  }
+}
+
+//Match Card
+
+.match_card {
+  display: flex;
+  gap: 10/16 * 1rem;
+  padding: 0 12/16 * 1rem 12/16 * 1rem 12/16 * 1rem;
+  border: 1px solid $grey-100;
+  border-radius: 0.25rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25/16 * 1rem;
+
+  .match_number {
+    margin-bottom: -25/16 * 1rem;
+    transform: translate(0, -50%);
+  }
+
+  .team {
+    &-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10/16 * 1rem;
+    }
+    &-row {
+      display: flex;
+      gap: 10/16 * 1rem;
+      flex-grow: 1;
+    }
+    flex-grow: 1;
+  }
+
+  .score-summary {
+    display: none;
+    height: 100%;
+    margin: 0 auto auto auto;
+    align-items: flex-start;
+    .scorebox {
+      border: 0;
+      &[data="record"] {
+        --result: #{$grey-400};
+      }
+    }
+  }
+
+  &[expanded="false"] {
+    flex-direction: row;
+    margin-top: 0;
+    padding: 12/16 * 1rem;
+    .match_number {
+      margin-bottom: 0;
+      transform: translate(0, 0%);
+    }
+    .button {
+      display: none;
+    }
+    .score_display {
+      display: none;
+    }
+    .score-summary {
+      display: flex;
+    }
+  }
+}
+
+//
+.pool {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    grid-area: 1rem;
+  }
+  &-label {
+    color: inherit;
+    line-height: 120%;
+    font-weight: 600;
+  }
+  &-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10/16 * 1rem;
+  color: $grey-700;
+  font-size: 1rem;
+  &.current {
+    background: $blue-500;
+    color: $white;
+  }
+}
+//Player List
+
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10/16 * 1rem;
+  align-items: flex-start;
+  width: 100%;
+
+  .name_card {
+    padding: 8/16 * 1rem 16/16 * 1rem;
+    &.current {
+      background-color: $blue-500;
+      color: $white;
+    }
+  }
+}
+
+//Modal
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  * {
+    transition: 0.3s all;
+  }
+  &.open {
+    display: block;
+  }
+
+  &-background {
+    background-color: $black;
+    @include image_cover;
+    opacity: 0;
+    .open & {
+      opacity: 0.4;
+    }
+  }
+
+  &-content {
+    background: $white;
+    padding: 24/16 * 1rem;
+    display: flex;
+    gap: 24/16 * 1rem;
+    border-radius: 1rem 1rem 0 0;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0, 100%);
+    .open & {
+      transform: translate(0, 0%);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 60/16 * 1rem;
+      height: 0.25rem;
+      background: $grey-200;
+      border-radius: 0.25rem;
+    }
+  }
+}
