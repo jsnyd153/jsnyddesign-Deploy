@@ -5,367 +5,369 @@
 /*css/components/index.scss*/
 //================================================
 
-div,
-span,
-p {
-  font-family: $sans_font;
-  letter-spacing: -0.02em;
-}
+@use 'inputs' as *;
 
-:root {
-  --result: #{$grey-400};
-  --timing-primary: #{$grey-600};
-  --primary_color: #{$grey-900};
-  --secondary_color: #{$grey-700};
-  --contrast_color: #{$white};
-}
+// div,
+// span,
+// p {
+//   font-family: $sans_font;
+//   letter-spacing: -0.02em;
+// }
 
-//icon
-i {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: inherit;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -moz-font-feature-settings: "liga";
-  -moz-osx-font-smoothing: grayscale;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-}
+// :root {
+//   --result: #{$grey-400};
+//   --timing-primary: #{$grey-600};
+//   --primary_color: #{$grey-900};
+//   --secondary_color: #{$grey-700};
+//   --contrast_color: #{$white};
+// }
 
-.inline_icon {
-  display: inline-block;
-  font-size: 0.6em;
-  padding: 0.4em;
-  border-radius: 50%;
-  background-color: $grey-900;
-  color: $white;
-  margin-left: 0.25em;
-}
+// //icon
+// i {
+//   font-family: "Material Symbols Outlined";
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: inherit;
+//   line-height: 1;
+//   letter-spacing: normal;
+//   text-transform: none;
+//   display: inline-block;
+//   white-space: nowrap;
+//   word-wrap: normal;
+//   direction: ltr;
+//   -moz-font-feature-settings: "liga";
+//   -moz-osx-font-smoothing: grayscale;
+//   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+// }
 
-// Profile Image
+// .inline_icon {
+//   display: inline-block;
+//   font-size: 0.6em;
+//   padding: 0.4em;
+//   border-radius: 50%;
+//   background-color: $grey-900;
+//   color: $white;
+//   margin-left: 0.25em;
+// }
 
-.profile_image {
-  font-size: 12/16 * 1rem;
-  width: 48/12 * 1em;
-  height: 48/12 * 1em;
-  position: relative;
-  outline: 0.25rem solid $white;
-  background: $grey-200;
-  color: $grey-900;
-  border-radius: 50%;
-  overflow: hidden;
-  @include f-center;
-  &.large {
-    font-size: 22/16 * 1rem;
-  }
-  span {
-    text-align: center;
-    line-height: 100%;
-    text-transform: uppercase;
-  }
-  img {
-    @include image_cover;
-    &[src="undefined"],
-    &[src=""] {
-      display: none;
-    }
-  }
-}
+// // Profile Image
 
-// Match Number
+// .profile_image {
+//   font-size: 12/16 * 1rem;
+//   width: 48/12 * 1em;
+//   height: 48/12 * 1em;
+//   position: relative;
+//   outline: 0.25rem solid $white;
+//   background: $grey-200;
+//   color: $grey-900;
+//   border-radius: 50%;
+//   overflow: hidden;
+//   @include f-center;
+//   &.large {
+//     font-size: 22/16 * 1rem;
+//   }
+//   span {
+//     text-align: center;
+//     line-height: 100%;
+//     text-transform: uppercase;
+//   }
+//   img {
+//     @include image_cover;
+//     &[src="undefined"],
+//     &[src=""] {
+//       display: none;
+//     }
+//   }
+// }
 
-.match_number {
-  font-size: 1rem;
-  @include f-center;
-  width: 50/16 * 1rem;
-  height: 50/16 * 1rem;
-  border-radius: 50%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  background: var(--timing-primary);
-  color: $white;
-  outline: 0.25rem solid transparent;
+// // Match Number
 
-  [timing="upcoming"] & {
-    --timing-primary: #{$grey-600};
-  }
-  [timing="current"] & {
-    --timing-primary: #{$blue-500};
-  }
-  [timing="past"] & {
-    --timing-primary: #{$blue-300};
-  }
-}
+// .match_number {
+//   font-size: 1rem;
+//   @include f-center;
+//   width: 50/16 * 1rem;
+//   height: 50/16 * 1rem;
+//   border-radius: 50%;
+//   flex-grow: 0;
+//   flex-shrink: 0;
+//   background: var(--timing-primary);
+//   color: $white;
+//   outline: 0.25rem solid transparent;
 
-//Score Box
+//   [timing="upcoming"] & {
+//     --timing-primary: #{$grey-600};
+//   }
+//   [timing="current"] & {
+//     --timing-primary: #{$blue-500};
+//   }
+//   [timing="past"] & {
+//     --timing-primary: #{$blue-300};
+//   }
+// }
 
-.scorebox {
-  display: inline-block;
-  font-size: 14/16 * 1rem;
-  min-width: 24/16 * 1rem;
-  line-height: 100%;
-  padding: 5/16 * 1rem 6/16 * 1rem;
+// //Score Box
 
-  color: var(--result);
-  border: 1.5/16 * 1rem solid var(--result);
+// .scorebox {
+//   display: inline-block;
+//   font-size: 14/16 * 1rem;
+//   min-width: 24/16 * 1rem;
+//   line-height: 100%;
+//   padding: 5/16 * 1rem 6/16 * 1rem;
 
-  border-radius: 3/16 * 1rem;
-  text-align: center;
-  font-weight: 700;
+//   color: var(--result);
+//   border: 1.5/16 * 1rem solid var(--result);
 
-  &[data="record"] {
-    --result: #{$blue-500};
-  }
-  &[data="diff"].positive {
-    --result: #{$green-500};
-  }
-  &[data="diff"].negative {
-    --result: #{$red-500};
-  }
-  &[data="diff"].even {
-    --result: #{$grey-400};
-  }
+//   border-radius: 3/16 * 1rem;
+//   text-align: center;
+//   font-weight: 700;
 
-  &-container {
-    display: flex;
-    gap: 0.75rem;
-  }
-}
+//   &[data="record"] {
+//     --result: #{$blue-500};
+//   }
+//   &[data="diff"].positive {
+//     --result: #{$green-500};
+//   }
+//   &[data="diff"].negative {
+//     --result: #{$red-500};
+//   }
+//   &[data="diff"].even {
+//     --result: #{$grey-400};
+//   }
 
-//Score display
+//   &-container {
+//     display: flex;
+//     gap: 0.75rem;
+//   }
+// }
 
-.score_display {
-  --result: #{$grey-100};
+// //Score display
 
-  font-size: 10/16 * 1rem;
-  @include f-center;
-  width: 32/10 * 1em;
-  height: 32/10 * 1em;
-  border-radius: 0.25rem;
-  background-color: var(--result);
-  color: $grey-900;
-  font-weight: 600;
+// .score_display {
+//   --result: #{$grey-100};
 
-  //posibly abstract this/pull it out to be dictatet by parent property
-  [result="win"] & {
-    --result: #{$green-500};
-    color: $white;
-  }
-  [result="loss"] & {
-    --result: #{$red-500};
-    color: $white;
-  }
-  [result="draw"] & {
-    --result: #{$grey-200};
-  }
-}
+//   font-size: 10/16 * 1rem;
+//   @include f-center;
+//   width: 32/10 * 1em;
+//   height: 32/10 * 1em;
+//   border-radius: 0.25rem;
+//   background-color: var(--result);
+//   color: $grey-900;
+//   font-weight: 600;
 
-//Scoreboard
+//   //posibly abstract this/pull it out to be dictatet by parent property
+//   [result="win"] & {
+//     --result: #{$green-500};
+//     color: $white;
+//   }
+//   [result="loss"] & {
+//     --result: #{$red-500};
+//     color: $white;
+//   }
+//   [result="draw"] & {
+//     --result: #{$grey-200};
+//   }
+// }
 
-.scoreboard {
-  --team_color: #{$blue-500};
-  @include f-center;
-  flex-direction: column;
-  color: $white;
-  padding: 2rem 0;
-  background: radial-gradient(
-      50% 50% at 50% 50%,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    var(--team_color);
+// //Scoreboard
 
-  &.away {
-    --team_color: #d5572f;
-  }
+// .scoreboard {
+//   --team_color: #{$blue-500};
+//   @include f-center;
+//   flex-direction: column;
+//   color: $white;
+//   padding: 2rem 0;
+//   background: radial-gradient(
+//       50% 50% at 50% 50%,
+//       rgba(0, 0, 0, 0.5) 0%,
+//       rgba(0, 0, 0, 0) 100%
+//     ),
+//     var(--team_color);
 
-  .player_names {
-    font-size: 18/16 * 1rem;
-    display: flex;
-    gap: 0.2em;
+//   &.away {
+//     --team_color: #d5572f;
+//   }
 
-    font-weight: 600;
-  }
-  .score {
-    font-size: 200/16 * 1rem;
-    font-weight: 900;
-    line-height: 120%;
-  }
-}
+//   .player_names {
+//     font-size: 18/16 * 1rem;
+//     display: flex;
+//     gap: 0.2em;
 
-//Button
-.button {
-  font-family: $sans_font;
-  color: $white;
-  font-size: 13/16 * 1rem;
-  padding: 8/12 * 1em 14/12 * 1em;
-  background: $blue-500;
-  border-radius: 0.25rem;
-  border: 0;
-  outline: 0;
-  width: 100%;
-  text-align: center;
-  [timing="upcoming"] & {
-    background: $grey-300;
-  }
-  [timing="current"] & {
-    background: $blue-500;
-  }
-  [timing="complete"] & {
-    background: $blue-300;
-  }
-}
+//     font-weight: 600;
+//   }
+//   .score {
+//     font-size: 200/16 * 1rem;
+//     font-weight: 900;
+//     line-height: 120%;
+//   }
+// }
 
-//Icon Button
-.icon_button {
-  font-size: 20/16 * 1rem;
-  width: 32/20 * 1em;
-  height: 32/20 * 1em;
-  padding: 0;
-  border-radius: 50%;
-  border: 0;
-  outline: 0;
-  @include f-center;
+// //Button
+// .button {
+//   font-family: $sans_font;
+//   color: $white;
+//   font-size: 13/16 * 1rem;
+//   padding: 8/12 * 1em 14/12 * 1em;
+//   background: $blue-500;
+//   border-radius: 0.25rem;
+//   border: 0;
+//   outline: 0;
+//   width: 100%;
+//   text-align: center;
+//   [timing="upcoming"] & {
+//     background: $grey-300;
+//   }
+//   [timing="current"] & {
+//     background: $blue-500;
+//   }
+//   [timing="complete"] & {
+//     background: $blue-300;
+//   }
+// }
 
-  background: $white;
-  color: $blue-500;
-  &.current {
-    background: $blue-300;
-    color: $white;
-  }
-  &.inactive {
-    background: $blue-500;
-    color: $blue-300;
-  }
-}
+// //Icon Button
+// .icon_button {
+//   font-size: 20/16 * 1rem;
+//   width: 32/20 * 1em;
+//   height: 32/20 * 1em;
+//   padding: 0;
+//   border-radius: 50%;
+//   border: 0;
+//   outline: 0;
+//   @include f-center;
 
-//Button Container
-.button_container {
-  display: flex;
-  gap: 1rem;
-}
+//   background: $white;
+//   color: $blue-500;
+//   &.current {
+//     background: $blue-300;
+//     color: $white;
+//   }
+//   &.inactive {
+//     background: $blue-500;
+//     color: $blue-300;
+//   }
+// }
 
-//Name Card
-.name_card {
-  display: inline-block;
-  font-size: 14/16 * 1rem;
-  border-radius: 0.25rem;
-  padding: 4/16 * 1rem 8/16 * 1rem;
-  background-color: $grey-100;
-  color: $grey-700;
+// //Button Container
+// .button_container {
+//   display: flex;
+//   gap: 1rem;
+// }
 
-  .current & {
-    background-color: $white;
-    color: $blue-500;
-  }
+// //Name Card
+// .name_card {
+//   display: inline-block;
+//   font-size: 14/16 * 1rem;
+//   border-radius: 0.25rem;
+//   padding: 4/16 * 1rem 8/16 * 1rem;
+//   background-color: $grey-100;
+//   color: $grey-700;
 
-  // &.primary {
-  //   padding: 8/16 * 1rem 16/16 * 1rem;
-  //   &.current {
-  //     background-color: $blue-500;
-  //     color: $white;
-  //   }
-  // }
-}
+//   .current & {
+//     background-color: $white;
+//     color: $blue-500;
+//   }
 
-//Dropdown
+//   // &.primary {
+//   //   padding: 8/16 * 1rem 16/16 * 1rem;
+//   //   &.current {
+//   //     background-color: $blue-500;
+//   //     color: $white;
+//   //   }
+//   // }
+// }
 
-.dropdown {
-  // --text_color-primary: #{$white};
-  // --text_color-secondary: #{$grey-200};
-  // --background: #{$blue-500};
+// //Dropdown
 
-  &-label {
-    color: var(--text_color-primary);
-    @include f-center;
-    gap: 8/20 * 1em;
-    span {
-      color: inherit;
-      font-size: inherit;
-      font-weight: 600;
-    }
-    svg {
-      width: 12/20 * 1em;
-      color: inherit;
-      * {
-        fill: currentColor;
-      }
-    }
-  }
-}
+// .dropdown {
+//   // --text_color-primary: #{$white};
+//   // --text_color-secondary: #{$grey-200};
+//   // --background: #{$blue-500};
 
-//Seed
-.seed {
-  font-size: 10/16 * 1rem;
-  color: $grey-900;
-  width: 2em;
-  height: 2em;
-  border: 1/16 * 1rem solid currentColor;
-  background: transparent;
-  border-radius: 50%;
-  @include f-center;
-}
+//   &-label {
+//     color: var(--text_color-primary);
+//     @include f-center;
+//     gap: 8/20 * 1em;
+//     span {
+//       color: inherit;
+//       font-size: inherit;
+//       font-weight: 600;
+//     }
+//     svg {
+//       width: 12/20 * 1em;
+//       color: inherit;
+//       * {
+//         fill: currentColor;
+//       }
+//     }
+//   }
+// }
 
-//Team
-.team {
-  font-size: 15/16 * 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.2em;
-  font-weight: 600;
-  color: $grey-900;
+// //Seed
+// .seed {
+//   font-size: 10/16 * 1rem;
+//   color: $grey-900;
+//   width: 2em;
+//   height: 2em;
+//   border: 1/16 * 1rem solid currentColor;
+//   background: transparent;
+//   border-radius: 50%;
+//   @include f-center;
+// }
 
-  .player- {
-    &current {
-      [expanded="false"] & {
-        display: none;
-      }
-    }
-    &partner {
-    }
-    &opponent_1 {
-    }
-    &opponent_2 {
-    }
-  }
-  .versus {
-    display: none;
-    [expanded="false"] & {
-      display: inline-block;
-    }
-  }
-  .seperator {
-    &::after {
-      content: "/";
-      [expanded="false"] & {
-        content: "with";
-      }
-    }
-  }
+// //Team
+// .team {
+//   font-size: 15/16 * 1rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   gap: 0.2em;
+//   font-weight: 600;
+//   color: $grey-900;
 
-  &.opponents {
-    [expanded="false"] & {
-      font-size: 13/16 * 1rem;
-      font-weight: 500;
-      color: $grey-400;
-    }
-  }
+//   .player- {
+//     &current {
+//       [expanded="false"] & {
+//         display: none;
+//       }
+//     }
+//     &partner {
+//     }
+//     &opponent_1 {
+//     }
+//     &opponent_2 {
+//     }
+//   }
+//   .versus {
+//     display: none;
+//     [expanded="false"] & {
+//       display: inline-block;
+//     }
+//   }
+//   .seperator {
+//     &::after {
+//       content: "/";
+//       [expanded="false"] & {
+//         content: "with";
+//       }
+//     }
+//   }
 
-  &[home="true"] i {
-    @extend .inline_icon;
-    &::after {
-      content: "home";
-      display: inline;
-    }
-    [expanded="false"] & {
-      display: none;
-    }
-  }
-}
+//   &.opponents {
+//     [expanded="false"] & {
+//       font-size: 13/16 * 1rem;
+//       font-weight: 500;
+//       color: $grey-400;
+//     }
+//   }
+
+//   &[home="true"] i {
+//     @extend .inline_icon;
+//     &::after {
+//       content: "home";
+//       display: inline;
+//     }
+//     [expanded="false"] & {
+//       display: none;
+//     }
+//   }
+// }

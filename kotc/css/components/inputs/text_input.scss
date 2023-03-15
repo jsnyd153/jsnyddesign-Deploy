@@ -1,0 +1,66 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+//text_input
+
+.text_input-- {
+	&container {
+		position: relative;
+		margin-top: 3/16 * 1rem;
+		display: flex;
+	}
+	&label {
+		position: absolute;
+		left: var(--input_space-h);
+		font-family: $sans_font;
+		font-weight: 300;
+		background-color: var(--background_color);
+		letter-spacing: -0.01em;
+		padding: 0 0.25rem;
+		margin: 0 -0.25rem;
+		transition: 0.3s all;
+		//transition properties
+		//Default state is label functioning as the placeholder text
+		transform: translate(0, 0);
+		top: var(--input_space-v);
+		font-size: var(--input_size);
+		color: $grey-200;
+
+		//When focused, has content filled (no placeholder)
+		input:focus + &,
+		input:not(:placeholder-shown) + & {
+			transform: translate(0, -50%);
+			top: 0;
+			font-size: 0.5rem;
+			color: $grey-700;
+		}
+		input:focus + & {
+			color: $blue-500;
+		}
+	}
+
+	&input {
+		font-family: $sans_font;
+		padding: 1rem 1rem;
+		border-radius: 0.25rem;
+		border: 1px solid currentColor;
+		background-color: transparent;
+		background-color: var(--background_color);
+		font-size: var(--input_size);
+		height: var(--input_size);
+		line-height: 100%;
+		letter-spacing: -0.01em;
+		color: $grey-500;
+		flex-grow: 1;
+		font-weight: 300;
+
+		&:focus {
+			outline: 0;
+			color: $blue-500;
+		}
+	}
+
+	&supporting_text {
+		display: none;
+	}
+}
