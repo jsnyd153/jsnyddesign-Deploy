@@ -1,94 +1,88 @@
-var div = $(".container-matches")[0],
-  data = {
-    items: [
-      {
-        match: 1,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Johny Walker",
-        currentScore: 0,
-        opponentPlayer1: "Abin Cheriyan",
-        opponentPlayer2: "Yang Yang",
-        opponentScore: 0,
-      },
-      {
-        match: 2,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Tim Davis",
-        currentScore: 0,
-        opponentPlayer1: "Dan Bohan",
-        opponentPlayer2: "Yang Yang",
-        opponentScore: 0,
-      },
-      {
-        match: 3,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Jeremy Snyder",
-        currentScore: 0,
-        opponentPlayer1: "Dan Bohan",
-        opponentPlayer2: "Johnny Walker",
-        opponentScore: 0,
-      },
-      {
-        match: 4,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Dan Bohan",
-        currentScore: 0,
-        opponentPlayer1: "Yang Yang",
-        opponentPlayer2: "Tim Davis",
-        opponentScore: 0,
-      },
-      {
-        match: 5,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Yang Yang",
-        currentScore: 0,
-        opponentPlayer1: "Jeremy Snyder",
-        opponentPlayer2: "Duy Nguyen",
-        opponentScore: 0,
-      },
-      {
-        match: 6,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Duy Nguyen",
-        currentScore: 0,
-        opponentPlayer1: "Dan Bohan",
-        opponentPlayer2: "Abin Cheriyan",
-        opponentScore: 0,
-      },
-      {
-        match: 6,
-        currentPlayer: "Matt Shipp",
-        partnerPlayer: "Abin Cheriyan",
-        currentScore: 0,
-        opponentPlayer1: "Jeremy Snyder",
-        opponentPlayer2: "Tim Davis",
-        opponentScore: 0,
-      },
-    ],
-  },
-  html = data.items
-    .map(function (v, i) {
-      return (
-        '<div class="card" expanded="false" timing="default"><div class="match_label"> <span>' +
-        v.match +
-        '</span></div><div class="team_container"> <div class="team_row current"><div class="player_names"><span class="current_player">' +
-        v.currentPlayer +
-        '</span><span class="seperator"></span><span class="partner_player">' +
-        v.partnerPlayer +
-        '</span></div><div class="team_score"><span>' +
-        v.currentScore +
-        '</span></div></div><div class="team_row opponents"><div class="player_names"><span class="versus">vs</span><span class="opponent_player">' +
-        v.opponentPlayer1 +
-        '</span><span class="seperator"></span> <span class="opponent_player">' +
-        v.opponentPlayer2 +
-        '</span></div><div class="team_score"><span>' +
-        v.opponentScore +
-        '</span>   </div> </div></div><div class="button_container"><button>Enter score</button></div><div class="match_score--container"> <div class="match_score"><span class="score_current">' +
-        v.currentScore +
-        '</span>   <span>-</span>   <span class="score_opponent">' +
-        v.opponentScore +
-        "</span> </div></div></div></div>"
-      );
-    })
-    .join("");
+var div = $(".match_list")[0],
+	data = {
+		items: [
+			{
+				timing: "complete",
+				match: 1,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Johny Walker",
+				currentScore: 0,
+				opponentPlayer1: "Abin Cheriyan",
+				opponentPlayer2: "Yang Yang",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "complete",
+				match: 2,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Tim Davis",
+				currentScore: 0,
+				opponentPlayer1: "Dan Bohan",
+				opponentPlayer2: "Yang Yang",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "current",
+				match: 3,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Matt Shipp",
+				currentScore: 0,
+				opponentPlayer1: "Dan Bohan",
+				opponentPlayer2: "Johnny Walker",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "upcoming",
+				match: 4,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Dan Bohan",
+				currentScore: 0,
+				opponentPlayer1: "Yang Yang",
+				opponentPlayer2: "Tim Davis",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "upcoming",
+				match: 5,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Yang Yang",
+				currentScore: 0,
+				opponentPlayer1: "Matt Shipp",
+				opponentPlayer2: "Duy Nguyen",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "upcoming",
+				match: 6,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Duy Nguyen",
+				currentScore: 0,
+				opponentPlayer1: "Dan Bohan",
+				opponentPlayer2: "Abin Cheriyan",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+			{
+				timing: "upcoming",
+				match: 7,
+				currentPlayer: "Jeremy Snyder",
+				partnerPlayer: "Abin Cheriyan",
+				currentScore: 0,
+				opponentPlayer1: "Matt Shipp",
+				opponentPlayer2: "Tim Davis",
+				opponentScore: 0,
+				matchCode: "K0000",
+			},
+		],
+	},
+	html = data.items
+		.map(function (v, i) {
+			return `<article class="match_card" timing="${v.timing}" expanded="false" matchCode="${v.matchCode}"> <div class = "match_number"> <span> ${v.match} </span> </div> <div class = "match_card--teams"> <div class = "team_row"> <div class = "team_row--team team-c"> <span class = "player-c">${v.currentPlayer} </span> <span class = "seperator"> </span> <span class = "player-p"> ${v.partnerPlayer} </span> <i> </i> </div> <div class = "score_match"> <span> ${v.currentScore} </span> </div> </div> <div class = "team_row"> <div class = "team_row--team team-o"> <span class = "player-o"> ${v.opponentPlayer1} </span> <span class = "seperator"> </span> <span class = "player-o"> ${v.opponentPlayer2} </span> <i> </i> </div> <div class = "score_match"> <span> ${v.opponentScore} </span> </div> </div> </div> <button type = "button" class = "button small"> Edit score </button> </article>`;
+		})
+		.join("");
 div.innerHTML = html;

@@ -2,15 +2,19 @@
  display: flex;
  gap: 0.625rem;
  padding: 1rem 1rem 1rem 1rem;
- border: 1px solid #edf0f2;
  border-radius: 0.25rem;
  flex-direction: column;
  align-items: center;
  margin-top: 1.5625rem;
+ border: 1px solid var(--timing_color-light);
+ --match_size: 3.125rem;
+ --timing_color: #62676f;
+ --timing_color-light: #edf0f2;
 }
 .match_card .match_number {
- margin-bottom: -1.5625rem;
- transform: translate(0, -50%);
+ margin-bottom: calc(var(--match_size) / 4 * -3);
+ transform: translate(0, -75%);
+ background-color: var(--timing_color);
 }
 .match_card--teams {
  width: 100%;
@@ -18,22 +22,17 @@
  flex-direction: column;
  gap: 0.25rem;
 }
-.match_card .score-summary {
- display: none;
- height: 100%;
- margin: 0 auto auto auto;
- align-items: flex-start;
+[expanded=false] .match_card--teams {
+ gap: 0.5rem;
 }
-.match_card .score-summary .scorebox {
- border: 0;
-}
-.match_card .score-summary .scorebox[data=record] {
- --result: #959aa0;
+.match_card .button {
+ --button-primary: var(--timing_color);
 }
 .match_card[expanded=false] {
  flex-direction: row;
  margin-top: 0;
  padding: 0.75rem;
+ --match_size: 2.5rem;
 }
 .match_card[expanded=false] .match_number {
  margin-bottom: 0;
@@ -42,9 +41,21 @@
 .match_card[expanded=false] .button {
  display: none;
 }
-.match_card[expanded=false] .score_display {
+.match_card[expanded=false] .score_match {
  display: none;
 }
-.match_card[expanded=false] .score-summary {
+.match_card[expanded=false] .score_summary {
  display: flex;
+}
+.match_card[timing=upcoming] {
+ --timing_color: #7c8188;
+ --timing_color-light: #edf0f2;
+}
+.match_card[timing=current] {
+ --timing_color: #2f7bd5;
+ --timing_color-light: #dae7fb;
+}
+.match_card[timing=complete] {
+ --timing_color: #256dc1;
+ --timing_color-light: #dae7fb;
 }

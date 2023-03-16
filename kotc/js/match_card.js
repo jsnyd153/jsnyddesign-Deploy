@@ -1,7 +1,11 @@
 $(".match_card").click(function () {
-	$(this).attr("expanded", function (index, attr) {
-		return attr == "false" ? null : "false";
-	});
+	if ($(this).hasClass("off")) {
+		return;
+	} else {
+		$(this).attr("expanded", function (index, attr) {
+			return attr == "false" ? null : "false";
+		});
+	}
 });
 
 $("button[matchCode]").click(function (e) {

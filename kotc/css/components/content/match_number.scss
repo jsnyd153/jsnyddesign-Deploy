@@ -6,8 +6,6 @@
 // Dependancy: none
 
 .match_number {
-	--match_size: #{50/16 * 1rem};
-
 	@include f-center;
 	@include text_base;
 

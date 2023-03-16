@@ -1,0 +1,28 @@
+.main_nav {
+ display: flex;
+ flex-direction: column;
+ --background_color: #2f7bd5;
+ --text_color-primary: #ffffff;
+}
+.main_nav--controls {
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+ padding: 0.75rem var(--margin-narrow);
+ background: var(--background_color);
+}
+.main_nav--controls .button_container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 1rem;
+ flex-direction: row;
+}
+.main_nav--controls.horizontal {
+ flex-direction: row;
+ padding: 2rem var(--margin-narrow);
+ justify-content: space-between;
+}
+.main_nav .arc path {
+ fill: var(--background_color);
+}

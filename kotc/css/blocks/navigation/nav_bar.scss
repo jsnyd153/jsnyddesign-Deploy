@@ -1,0 +1,38 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Card List
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=135%3A6399&t=tLnBO6G3490375JL-11
+// Dependancy: none
+
+.main_nav {
+	display: flex;
+	flex-direction: column;
+	--background_color: #{$blue-500};
+	--text_color-primary: #{$white};
+
+	&-- {
+		&controls {
+			display: flex;
+			flex-direction: column;
+			gap: 24/16 * 1rem;
+			padding: 12/16 * 1rem var(--margin-narrow);
+			background: var(--background_color);
+			.button_container {
+				@include f-center;
+				gap: 1rem;
+				flex-direction: row;
+			}
+			&.horizontal {
+				flex-direction: row;
+				padding: 2rem var(--margin-narrow);
+				justify-content: space-between;
+			}
+		}
+	}
+	.arc {
+		path {
+			fill: var(--background_color);
+		}
+	}
+}

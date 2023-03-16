@@ -1,0 +1,28 @@
+.card_list {
+ display: flex;
+ flex-direction: column;
+ gap: 0.75rem;
+}
+.card_list.match_list, .card_list:has(.match_card) {
+ gap: 0.75rem;
+}
+.card_list.schedule_list, .card_list:has(.schedule_card) {
+ gap: 0.75rem;
+}
+
+.player_overview {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 1rem;
+ flex-direction: column;
+}
+.player_overview--scores {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 1rem;
+}
+nav + .player_overview {
+ margin-top: -8%;
+}

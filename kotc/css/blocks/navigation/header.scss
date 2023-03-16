@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Card List
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=71%3A1240&t=tLnBO6G3490375JL-1
+// Dependancy: none
+
+header {
+	padding: 0.75rem var(--margin-narrow);
+	background-color: $blue-500;
+	border-bottom: 1/16 * 1rem solid $white;
+	h1 {
+		font-family: $sans_font;
+		font-weight: 600;
+		font-size: 20/16 * 1rem;
+		line-height: 1;
+		color: $white;
+	}
+}

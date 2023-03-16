@@ -1,6 +1,6 @@
 .dropdown_input {
  color: var(--text_color-primary);
- font-size: 1.25rem;
+ font-size: 1.125rem;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -14,7 +14,7 @@
  letter-spacing: -0.01em;
  color: inherit;
  font-size: inherit;
- font-weight: 600;
+ font-weight: 500;
 }
 .dropdown_input--carrot {
  width: 0.6em;

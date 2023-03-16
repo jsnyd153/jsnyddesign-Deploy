@@ -1,0 +1,21 @@
+:root {
+ --margin-none: 0rem;
+ --margin-narrow: 1rem;
+ --margin-wide: 2rem;
+}
+
+*,
+*::after,
+*::before {
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+}
+
+.container {
+ padding: 2.5rem var(--margin-narrow);
+}
+.container.inset {
+ padding: 2.5rem var(--margin-wide);
+}
+.container.bleed {
+ padding: 2.5rem 0;
+}

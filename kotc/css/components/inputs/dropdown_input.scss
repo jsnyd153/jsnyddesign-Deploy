@@ -7,7 +7,7 @@
 
 .dropdown_input {
 	color: var(--text_color-primary);
-	font-size: 20/16 * 1rem;
+	font-size: 18/16 * 1rem;
 	@include f-center;
 	gap: 8/20 * 1em;
 	&-- {
@@ -15,7 +15,7 @@
 			@include text_base;
 			color: inherit;
 			font-size: inherit;
-			font-weight: 600;
+			font-weight: 500;
 		}
 		&carrot {
 			width: 12/20 * 1em;

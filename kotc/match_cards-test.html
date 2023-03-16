@@ -27,10 +27,84 @@
 	</head>
 
 	<body class="" style="background: #ffffff">
+		<div class="container-matches"></div>
+
 		<div
 			class="wrapper"
 			style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem"
 		>
+			<article class="match_card" timing="complete" expanded="true">
+				<div class="match_number">
+					<span>1</span>
+				</div>
+				<!-- teams -->
+
+				<div class="match_card--teams">
+					<div class="team_row">
+						<div class="team_row--team team-c">
+							<span class="player-c">Jeremy Snyder</span>
+							<span class="seperator"></span>
+							<span class="player-p">Dan Bohan</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="team_row">
+						<div class="team_row--team team-o">
+							<span class="player-o">Abin Cheriyan</span>
+							<span class="seperator"></span>
+							<span class="player-o">Yang Yang</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+				</div>
+				<!-- teams -->
+				<button type="button" class="button small" matchCode="1A">
+					Edit score
+				</button>
+			</article>
+			<article class="match_card" timing="current" expanded="true">
+				<div class="match_number">
+					<span>1</span>
+				</div>
+				<!-- teams -->
+
+				<div class="match_card--teams">
+					<div class="team_row">
+						<div class="team_row--team team-c">
+							<span class="player-c">Jeremy Snyder</span>
+							<span class="seperator"></span>
+							<span class="player-p">Dan Bohan</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="team_row">
+						<div class="team_row--team team-o">
+							<span class="player-o">Abin Cheriyan</span>
+							<span class="seperator"></span>
+							<span class="player-o">Yang Yang</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+				</div>
+				<!-- teams -->
+				<button type="button" class="button small" matchCode="1A">
+					Edit score
+				</button>
+			</article>
 			<article class="match_card" timing="upcoming" expanded="true">
 				<div class="match_number">
 					<span>1</span>
@@ -39,10 +113,10 @@
 
 				<div class="match_card--teams">
 					<div class="team_row">
-						<div class="team_row--team">
-							<span class="player-current">Jeremy Snyder</span>
+						<div class="team_row--team team-c">
+							<span class="player-c">Jeremy Snyder</span>
 							<span class="seperator"></span>
-							<span class="player-partner">Dan Bohan</span>
+							<span class="player-p">Dan Bohan</span>
 							<i></i>
 						</div>
 						<div class="score_match">
@@ -51,10 +125,10 @@
 					</div>
 
 					<div class="team_row">
-						<div class="team_row--team">
-							<span class="player-current">Abin Cheriyan</span>
+						<div class="team_row--team team-o">
+							<span class="player-o">Abin Cheriyan</span>
 							<span class="seperator"></span>
-							<span class="player-partner">Yang Yang</span>
+							<span class="player-o">Yang Yang</span>
 							<i></i>
 						</div>
 						<div class="score_match">
@@ -63,18 +137,26 @@
 					</div>
 				</div>
 				<!-- teams -->
-				<div class="score-summary">
-					<div class="scorebox" data="record">
-						<span>0</span>-<span>0</span>
-					</div>
-				</div>
 				<button type="button" class="button small" matchCode="1A">
 					Edit score
 				</button>
 			</article>
+			<article class="match_card off" timing="upcoming" expanded="false">
+				<div class="match_number">
+					<span>1</span>
+				</div>
+				<!-- teams -->
+
+				<div class="match_card--teams">
+					<div class="team_row">
+						<div class="team_row--team">Off</div>
+					</div>
+				</div>
+			</article>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/create_cards.js"></script>
 		<script src="js/match_card.js"></script>
 	</body>
 </html>

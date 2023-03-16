@@ -6,13 +6,15 @@
 // Dependancy: none
 
 .score_total {
+	@include text_base;
 	color: $grey-400;
-	border: 1.5/16 * 1rem solid currentColor;
+	border: 0.125rem solid currentColor;
 	@include f-center;
-	gap: 0.04em;
+	gap: 0.1em;
 	padding: 5/16 * 1rem 6/16 * 1rem;
-	min-width: 40/16 * 1rem;
+	min-width: 30/16 * 1rem;
 	border-radius: 3/16 * 1rem;
+	font-weight: 600;
 
 	&[diff="positive"] {
 		color: $green-500;

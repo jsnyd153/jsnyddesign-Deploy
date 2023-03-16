@@ -86,15 +86,21 @@
 }
 
 .score_total {
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
  color: #959aa0;
- border: 0.09375rem solid currentColor;
+ border: 0.125rem solid currentColor;
  display: flex;
  justify-content: center;
  align-items: center;
- gap: 0.04em;
+ gap: 0.1em;
  padding: 0.3125rem 0.375rem;
- min-width: 2.5rem;
+ min-width: 1.875rem;
  border-radius: 0.1875rem;
+ font-weight: 600;
 }
 .score_total[diff=positive] {
  color: #11955e;
@@ -137,7 +143,6 @@
 }
 
 .match_number {
- --match_size: 3.125rem;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -215,12 +220,32 @@
  font-weight: 300;
  letter-spacing: -0.01em;
  font-size: 0.9375rem;
- color: #141b24;
+ color: #484e56;
  font-weight: 600;
 }
 .team_row--team .seperator::after {
  display: inline-block;
  content: "/";
+}
+[expanded=false] .team_row--team .seperator::after {
+ content: "with";
+}
+[expanded=false] .team_row--team.team-c .player-c {
+ display: none;
+}
+[expanded=false] .team_row--team.team-c .seperator::after {
+ content: "with";
+}
+[expanded=false] .team_row--team.team-o {
+ font-size: 0.8125rem;
+ font-weight: 500;
+ color: #959aa0;
+}
+[expanded=false] .team_row--team.team-o .seperator::after {
+ content: "and";
+}
+[expanded=false] .team_row--team.team-o .versus {
+ display: none;
 }
 .team_row.referee .team_row--team {
  --ref_color: #959aa0;
@@ -243,4 +268,21 @@
  background-color: var(--ref_color);
  border-radius: 0.25rem;
  margin-right: 0.25rem;
+}
+
+header {
+ padding: 0.75rem var(--margin-narrow);
+ background-color: #2f7bd5;
+ border-bottom: 0.0625rem solid #ffffff;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+}
+header h1 {
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 500;
+ font-size: 1.25rem;
+ line-height: 1;
+ color: #ffffff;
 }

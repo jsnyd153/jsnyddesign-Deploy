@@ -1,0 +1,24 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+:root {
+	--margin-none: 0rem;
+	--margin-narrow: 1rem;
+	--margin-wide: 2rem;
+}
+
+*,
+*::after,
+*::before {
+	font-family: $sans_font;
+}
+
+.container {
+	padding: 40/16 * 1rem var(--margin-narrow);
+	&.inset {
+		padding: 40/16 * 1rem var(--margin-wide);
+	}
+	&.bleed {
+		padding: 40/16 * 1rem 0;
+	}
+}

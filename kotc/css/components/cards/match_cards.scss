@@ -9,15 +9,21 @@
 	display: flex;
 	gap: 10/16 * 1rem;
 	padding: 1rem 1rem 1rem 1rem;
-	border: 1px solid $grey-100;
 	border-radius: 0.25rem;
 	flex-direction: column;
 	align-items: center;
 	margin-top: 25/16 * 1rem;
+	border: 1px solid var(--timing_color-light);
 
+	--match_size: #{50/16 * 1rem};
+	--timing_color: #{$grey-600};
+	--timing_color-light: #{$grey-100};
+
+	//match number
 	.match_number {
-		margin-bottom: -25/16 * 1rem;
-		transform: translate(0, -50%);
+		margin-bottom: calc(var(--match_size) / 4 * -3);
+		transform: translate(0, -75%);
+		background-color: var(--timing_color);
 	}
 
 	&--teams {
@@ -25,25 +31,21 @@
 		display: flex;
 		flex-direction: column;
 		gap: 4/16 * 1rem;
+		[expanded="false"] & {
+			gap: 8/16 * 1rem;
+		}
 	}
 
-	.score-summary {
-		display: none;
-		height: 100%;
-		margin: 0 auto auto auto;
-		align-items: flex-start;
-		.scorebox {
-			border: 0;
-			&[data="record"] {
-				--result: #{$grey-400};
-			}
-		}
+	.button {
+		--button-primary: var(--timing_color);
 	}
 
 	&[expanded="false"] {
 		flex-direction: row;
 		margin-top: 0;
 		padding: 12/16 * 1rem;
+		--match_size: #{40/16 * 1rem};
+
 		.match_number {
 			margin-bottom: 0;
 			transform: translate(0, 0%);
@@ -51,11 +53,24 @@
 		.button {
 			display: none;
 		}
-		.score_display {
+		.score_match {
 			display: none;
 		}
-		.score-summary {
+		.score_summary {
 			display: flex;
 		}
+	}
+
+	&[timing="upcoming"] {
+		--timing_color: #{$grey-500};
+		--timing_color-light: #{$grey-100};
+	}
+	&[timing="current"] {
+		--timing_color: #{$blue-500};
+		--timing_color-light: #{$blue-200};
+	}
+	&[timing="complete"] {
+		--timing_color: #{$blue-600};
+		--timing_color-light: #{$blue-200};
 	}
 }

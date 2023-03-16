@@ -15,12 +15,38 @@
 			flex-grow: 1;
 			@include text_base;
 			font-size: 15/16 * 1rem;
-			color: $grey-900;
+			color: $grey-700;
 			font-weight: 600;
 			.seperator {
 				&::after {
 					display: inline-block;
 					content: "/";
+					[expanded="false"] & {
+						content: "with";
+					}
+				}
+			}
+			&.team-c {
+				[expanded="false"] & {
+					.player-c {
+						display: none;
+					}
+					.seperator::after {
+						content: "with";
+					}
+				}
+			}
+			&.team-o {
+				[expanded="false"] & {
+					font-size: 13/16 * 1rem;
+					font-weight: 500;
+					color: $grey-400;
+					.seperator::after {
+						content: "and";
+					}
+					.versus {
+						display: none;
+					}
 				}
 			}
 		}
