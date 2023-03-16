@@ -1,0 +1,46 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Buttons
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=73%3A1300&t=ABLNr4VmXRynJqTI-1
+// Dependancy: icon.js
+
+button.icon_button {
+	background: $white;
+	color: $blue-500;
+	border: 1px solid $white;
+
+	border-radius: 50%;
+	@include f-center;
+	width: 2rem;
+	height: 2rem;
+	outline: 0;
+
+	i {
+		font-family: "Material Symbols Outlined";
+		font-weight: normal;
+		font-style: normal;
+		font-size: 20/16 * 1rem;
+		line-height: 1;
+		letter-spacing: normal;
+		text-transform: none;
+		display: inline-block;
+		white-space: nowrap;
+		word-wrap: normal;
+		direction: ltr;
+		-moz-font-feature-settings: "liga";
+		-moz-osx-font-smoothing: grayscale;
+		font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+	}
+
+	&.state_1 {
+		background: $blue-100;
+		color: $blue-500;
+		border: 1px solid $white;
+	}
+	&.state_2 {
+		background: $blue-500;
+		color: $white;
+		border: 1px solid $blue-400;
+	}
+}

@@ -1,0 +1,19 @@
+button.drag_and_drop {
+ padding: 0.25rem;
+ width: 1.875rem;
+ border: 0;
+ outline: 0;
+ background: transparent;
+ color: #c8ccd2;
+}
+button.drag_and_drop svg {
+ color: inherit;
+}
+button.drag_and_drop svg path {
+ fill: none;
+ stroke: currentColor;
+ stroke-width: 1.5;
+}
+.highlighted button.drag_and_drop {
+ color: #9ec0f5;
+}

@@ -1,0 +1,28 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Dropdown Input
+// https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=49%3A416&t=WOZdHWgOjktRD2qI-1
+// Dependancy: none
+
+.dropdown_input {
+	color: var(--text_color-primary);
+	font-size: 20/16 * 1rem;
+	@include f-center;
+	gap: 8/20 * 1em;
+	&-- {
+		&label {
+			@include text_base;
+			color: inherit;
+			font-size: inherit;
+			font-weight: 600;
+		}
+		&carrot {
+			width: 12/20 * 1em;
+			color: inherit;
+			path {
+				fill: currentColor;
+			}
+		}
+	}
+}

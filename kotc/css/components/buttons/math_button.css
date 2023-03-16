@@ -1,0 +1,21 @@
+svg.math_icon path {
+ display: none;
+ fill: none;
+ stroke: currentColor;
+ stroke-width: 2;
+}
+svg.math_icon.has-check .check {
+ display: initial;
+}
+svg.math_icon.has-plus .plus {
+ display: initial;
+}
+svg.math_icon.has-minus .minus {
+ display: initial;
+}
+svg.math_icon.has-ex .ex {
+ display: initial;
+}
+:checked svg.math_icon .check {
+ display: initial;
+}

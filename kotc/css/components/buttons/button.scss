@@ -1,0 +1,39 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Buttons
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A493&t=ABLNr4VmXRynJqTI-1
+// Dependancy: none
+
+button.button {
+	--button-primary: #{$blue-500};
+	--button-secondary: #{$white};
+	color: var(--button-secondary);
+	background: var(--button-primary);
+	border: 1px solid var(--button-primary);
+
+	font-family: $sans_font;
+	font-size: 12/16 * 1rem;
+	padding: 11/12 * 1em 14/12 * 1em;
+	border-radius: 0.25rem;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	text-align: center;
+
+	@each $type in $colors_full {
+		&.button-#{nth($type, 1)} {
+			--button-primary: #{nth($type, 2)};
+			--button-secondary: #{nth($type, 3)};
+		}
+	}
+
+	&.ghost {
+		color: var(--button-primary);
+		background: transparent;
+		border: 1px solid var(--button-primary);
+	}
+	&.small {
+		padding: 6/12 * 1em 14/12 * 1em;
+	}
+}

@@ -1,0 +1,20 @@
+.score_total {
+ color: #959aa0;
+ border: 0.09375rem solid currentColor;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 0.04em;
+ padding: 0.3125rem 0.375rem;
+ min-width: 2.5rem;
+ border-radius: 0.1875rem;
+}
+.score_total[diff=positive] {
+ color: #11955e;
+}
+.score_total[diff=negative] {
+ color: #ce1234;
+}
+.score_total[data=total] {
+ color: #2f7bd5;
+}

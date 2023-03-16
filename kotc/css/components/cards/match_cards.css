@@ -1,0 +1,50 @@
+.match_card {
+ display: flex;
+ gap: 0.625rem;
+ padding: 1rem 1rem 1rem 1rem;
+ border: 1px solid #edf0f2;
+ border-radius: 0.25rem;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 1.5625rem;
+}
+.match_card .match_number {
+ margin-bottom: -1.5625rem;
+ transform: translate(0, -50%);
+}
+.match_card--teams {
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 0.25rem;
+}
+.match_card .score-summary {
+ display: none;
+ height: 100%;
+ margin: 0 auto auto auto;
+ align-items: flex-start;
+}
+.match_card .score-summary .scorebox {
+ border: 0;
+}
+.match_card .score-summary .scorebox[data=record] {
+ --result: #959aa0;
+}
+.match_card[expanded=false] {
+ flex-direction: row;
+ margin-top: 0;
+ padding: 0.75rem;
+}
+.match_card[expanded=false] .match_number {
+ margin-bottom: 0;
+ transform: translate(0, 0%);
+}
+.match_card[expanded=false] .button {
+ display: none;
+}
+.match_card[expanded=false] .score_display {
+ display: none;
+}
+.match_card[expanded=false] .score-summary {
+ display: flex;
+}

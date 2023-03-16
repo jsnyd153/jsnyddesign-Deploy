@@ -1,0 +1,38 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Buttons
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=115%3A6202&t=ABLNr4VmXRynJqTI-1
+// Dependancy: none
+
+.reminder_text {
+	--background_color: #{$grey-50};
+	--accent_color: #{$blue-500};
+
+	@include text_base;
+	color: $grey-700;
+	line-height: 1.45;
+	padding: 0.75rem;
+	background-color: var(--background_color);
+	&-- {
+		&text {
+			b {
+				font-weight: 700;
+			}
+			.dyn-text {
+				font-weight: 700;
+				color: var(--accent_color);
+			}
+		}
+	}
+	&.warning {
+		--background_color: #{$warning-200};
+		--accent_color: #{$warning-500};
+		font-style: italic;
+	}
+	&.error {
+		--background_color: #{$red-200};
+		--accent_color: #{$red-500};
+		font-style: italic;
+	}
+}

@@ -1,0 +1,41 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Buttons
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=73%3A1300&t=ABLNr4VmXRynJqTI-1
+// Dependancy: icon.js
+
+svg.math_icon {
+	path {
+		display: none;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+	}
+	&.has-check {
+		.check {
+			display: initial;
+		}
+	}
+	&.has-plus {
+		.plus {
+			display: initial;
+		}
+	}
+	&.has-minus {
+		.minus {
+			display: initial;
+		}
+	}
+	&.has-ex {
+		.ex {
+			display: initial;
+		}
+	}
+
+	:checked & {
+		.check {
+			display: initial;
+		}
+	}
+}

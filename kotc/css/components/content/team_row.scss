@@ -1,0 +1,48 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Team Row
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A572&t=WOZdHWgOjktRD2qI-1
+// Dependancy: match_card.js
+
+.team_row {
+	display: flex;
+	gap: 10/16 * 1rem;
+	flex-grow: 1;
+	align-items: center;
+	&-- {
+		&team {
+			flex-grow: 1;
+			@include text_base;
+			font-size: 15/16 * 1rem;
+			color: $grey-900;
+			font-weight: 600;
+			.seperator {
+				&::after {
+					display: inline-block;
+					content: "/";
+				}
+			}
+		}
+	}
+
+	&.referee &--team {
+		--ref_color: #{$grey-400};
+		display: flex;
+		align-items: center;
+		gap: 2/16 * 1em;
+		padding-bottom: 8/16 * 1rem;
+		@include text_base;
+		font-size: 10/16 * 1rem;
+		color: var(--ref_color);
+
+		.ref-tag {
+			display: inline-block;
+			padding: 4/16 * 1rem 6/16 * 1rem;
+			color: $white;
+			background-color: var(--ref_color);
+			border-radius: 0.25rem;
+			margin-right: 0.25rem;
+		}
+	}
+}

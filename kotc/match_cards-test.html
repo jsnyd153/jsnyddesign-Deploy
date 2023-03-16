@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link rel="stylesheet" href="css/styles.css" />
+		<!-- <link rel="stylesheet" href="css/components/_index.css" /> -->
+		<!-- <link rel="stylesheet" href="css/components/_elements.css" /> -->
+		<link rel="stylesheet" href="css/components/inputs/_index.css" />
+		<link rel="stylesheet" href="css/components/buttons/_index.css" />
+		<link rel="stylesheet" href="css/components/content/_index.css" />
+		<link rel="stylesheet" href="css/components/cards/_index.css" />
+	</head>
+
+	<body class="" style="background: #ffffff">
+		<div
+			class="wrapper"
+			style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem"
+		>
+			<article class="match_card" timing="upcoming" expanded="true">
+				<div class="match_number">
+					<span>1</span>
+				</div>
+				<!-- teams -->
+
+				<div class="match_card--teams">
+					<div class="team_row">
+						<div class="team_row--team">
+							<span class="player-current">Jeremy Snyder</span>
+							<span class="seperator"></span>
+							<span class="player-partner">Dan Bohan</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="team_row">
+						<div class="team_row--team">
+							<span class="player-current">Abin Cheriyan</span>
+							<span class="seperator"></span>
+							<span class="player-partner">Yang Yang</span>
+							<i></i>
+						</div>
+						<div class="score_match">
+							<span>0</span>
+						</div>
+					</div>
+				</div>
+				<!-- teams -->
+				<div class="score-summary">
+					<div class="scorebox" data="record">
+						<span>0</span>-<span>0</span>
+					</div>
+				</div>
+				<button type="button" class="button small" matchCode="1A">
+					Edit score
+				</button>
+			</article>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/match_card.js"></script>
+	</body>
+</html>

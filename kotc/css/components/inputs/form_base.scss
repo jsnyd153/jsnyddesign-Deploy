@@ -7,8 +7,4 @@ form {
 	--background_color: #{$white};
 	background-color: var(--background_color);
 	gap: 1rem;
-
-	--input_size: #{14/16 * 1rem};
-	--input_space-v: 1rem;
-	--input_space-h: 1rem;
 }

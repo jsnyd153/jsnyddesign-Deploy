@@ -1,0 +1,29 @@
+.circle_number {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ font-size: 0.625rem;
+ font-weight: 600;
+ height: 2em;
+ width: 2em;
+ border-radius: 50%;
+ color: #141b24;
+ border: 0.0625rem solid currentColor;
+ background: #ffffff;
+}
+.circle_number.emphasis {
+ color: #ffffff;
+ background: #2f7bd5;
+}
+.circle_number.dark {
+ color: #ffffff;
+ background: #141b24;
+}
+.circle_number.small {
+ font-size: 0.5rem;
+}

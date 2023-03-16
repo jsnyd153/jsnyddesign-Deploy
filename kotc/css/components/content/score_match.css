@@ -1,0 +1,32 @@
+.score_match {
+ color: #141b24;
+ background: #edf0f2;
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ font-size: 0.625rem;
+ border-radius: 0.25rem;
+ width: 2rem;
+ height: 2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-weight: 600;
+}
+.victory .score_match[data=currentScore] {
+ color: #ffffff;
+ background: #11955e;
+}
+.loss .score_match[data=currentScore] {
+ color: #ffffff;
+ background: #ce1234;
+}
+.no-score .score_match[data=currentScore] {
+ color: #141b24;
+ background: transparent;
+}
+.no-score .score_match[data=opponentScore] {
+ opacity: 0;
+}

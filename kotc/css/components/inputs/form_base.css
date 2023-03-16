@@ -5,7 +5,4 @@ form {
  --background_color: #ffffff;
  background-color: var(--background_color);
  gap: 1rem;
- --input_size: 0.875rem;
- --input_space-v: 1rem;
- --input_space-h: 1rem;
 }

@@ -1,0 +1,33 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Circle Number
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A2029&t=WOZdHWgOjktRD2qI-1
+// Dependancy: none
+
+.circle_number {
+	@include f-center;
+	@include text_base;
+
+	font-size: 10/16 * 1rem;
+	font-weight: 600;
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+
+	color: $grey-900;
+	border: 1/16 * 1rem solid currentColor;
+	background: $white;
+
+	&.emphasis {
+		color: $white;
+		background: $blue-500;
+	}
+	&.dark {
+		color: $white;
+		background: $grey-900;
+	}
+	&.small {
+		font-size: 8/16 * 1rem;
+	}
+}

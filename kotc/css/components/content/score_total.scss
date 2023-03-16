@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Score Total
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=49%3A335&t=WOZdHWgOjktRD2qI-1
+// Dependancy: none
+
+.score_total {
+	color: $grey-400;
+	border: 1.5/16 * 1rem solid currentColor;
+	@include f-center;
+	gap: 0.04em;
+	padding: 5/16 * 1rem 6/16 * 1rem;
+	min-width: 40/16 * 1rem;
+	border-radius: 3/16 * 1rem;
+
+	&[diff="positive"] {
+		color: $green-500;
+	}
+	&[diff="negative"] {
+		color: $red-500;
+	}
+	&[data="total"] {
+		color: $blue-500;
+	}
+}

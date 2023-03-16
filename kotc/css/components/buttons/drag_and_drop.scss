@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Buttons
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=73%3A1300&t=ABLNr4VmXRynJqTI-1
+// Dependancy: icon.js
+
+button.drag_and_drop {
+	padding: 0.25rem;
+	width: 30/16 * 1rem;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: $grey-200;
+	svg {
+		color: inherit;
+		path {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.5;
+		}
+	}
+	.highlighted & {
+		color: $blue-300;
+	}
+}

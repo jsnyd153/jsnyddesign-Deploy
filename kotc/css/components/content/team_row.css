@@ -1,0 +1,43 @@
+.team_row {
+ display: flex;
+ gap: 0.625rem;
+ flex-grow: 1;
+ align-items: center;
+}
+.team_row--team {
+ flex-grow: 1;
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ font-size: 0.9375rem;
+ color: #141b24;
+ font-weight: 600;
+}
+.team_row--team .seperator::after {
+ display: inline-block;
+ content: "/";
+}
+.team_row.referee .team_row--team {
+ --ref_color: #959aa0;
+ display: flex;
+ align-items: center;
+ gap: 0.125em;
+ padding-bottom: 0.5rem;
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ font-size: 0.625rem;
+ color: var(--ref_color);
+}
+.team_row.referee .team_row--team .ref-tag {
+ display: inline-block;
+ padding: 0.25rem 0.375rem;
+ color: #ffffff;
+ background-color: var(--ref_color);
+ border-radius: 0.25rem;
+ margin-right: 0.25rem;
+}

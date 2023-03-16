@@ -1,0 +1,27 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Name Card
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=115%3A6202&t=ABLNr4VmXRynJqTI-1
+// Dependancy: none
+
+.name_card {
+	@include text_base;
+	padding: 5/16 * 1rem 0.5rem;
+	background-color: $grey-100;
+	color: $grey-700;
+	border-radius: 0.25rem;
+
+	&.current {
+		background-color: $blue-500;
+		color: $white;
+	}
+	.current & {
+		background-color: $white;
+		color: $blue-500;
+	}
+
+	&.NAME {
+		padding: 0.5rem 1rem;
+	}
+}

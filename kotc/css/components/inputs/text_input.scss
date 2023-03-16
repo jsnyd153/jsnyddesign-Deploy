@@ -1,66 +1,63 @@
 @use "sass:color";
 @use "../../abstracts" as *;
 
-//text_input
+// Text Input
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=99%3A3038&t=27fcPh1EOu6TvhVo-1
+// Dependancy: none
 
-.text_input-- {
-	&container {
-		position: relative;
-		margin-top: 3/16 * 1rem;
-		display: flex;
-	}
-	&label {
-		position: absolute;
-		left: var(--input_space-h);
-		font-family: $sans_font;
-		font-weight: 300;
-		background-color: var(--background_color);
-		letter-spacing: -0.01em;
-		padding: 0 0.25rem;
-		margin: 0 -0.25rem;
-		transition: 0.3s all;
-		//transition properties
-		//Default state is label functioning as the placeholder text
-		transform: translate(0, 0);
-		top: var(--input_space-v);
-		font-size: var(--input_size);
-		color: $grey-200;
-
-		//When focused, has content filled (no placeholder)
-		input:focus + &,
-		input:not(:placeholder-shown) + & {
-			transform: translate(0, -50%);
-			top: 0;
-			font-size: 0.5rem;
-			color: $grey-700;
+.text_input {
+	font-size: 14/16 * 1rem;
+	--input_space-v: 1rem;
+	--input_space-h: 1rem;
+	&-- {
+		&container {
+			position: relative;
+			margin-top: 3/14 * 1em;
+			display: flex;
 		}
-		input:focus + & {
-			color: $blue-500;
+		&label {
+			position: absolute;
+			left: var(--input_space-h);
+			top: var(--input_space-v);
+
+			@include text_base;
+			background-color: var(--background_color);
+			padding: 0 0.25rem;
+			margin: 0 -0.25rem;
+			transition: 0.3s all;
+			//transition properties
+			//Default state is label functioning as the placeholder text
+			transform: translate(0, 0);
+			font-size: 1em;
+			color: $grey-200;
+
+			//When focused, has content filled (no placeholder)
+			input:focus + &,
+			input:not(:placeholder-shown) + & {
+				transform: translate(0, -50%);
+				top: 0;
+				font-size: 0.5rem;
+				color: $grey-700;
+			}
+			input:focus + & {
+				color: $blue-500;
+			}
 		}
-	}
 
-	&input {
-		font-family: $sans_font;
-		padding: 1rem 1rem;
-		border-radius: 0.25rem;
-		border: 1px solid currentColor;
-		background-color: transparent;
-		background-color: var(--background_color);
-		font-size: var(--input_size);
-		height: var(--input_size);
-		line-height: 100%;
-		letter-spacing: -0.01em;
-		color: $grey-500;
-		flex-grow: 1;
-		font-weight: 300;
+		&input {
+			@include text_base;
+			padding: var(--input_space-v) var(--input_space-h);
+			border-radius: 0.25rem;
+			border: 1px solid currentColor;
+			font-size: 1em;
+			height: 1em;
+			color: $grey-500;
+			flex-grow: 1;
 
-		&:focus {
-			outline: 0;
-			color: $blue-500;
+			&:focus {
+				outline: 0;
+				color: $blue-500;
+			}
 		}
-	}
-
-	&supporting_text {
-		display: none;
 	}
 }

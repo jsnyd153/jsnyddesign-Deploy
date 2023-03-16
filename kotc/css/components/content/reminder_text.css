@@ -1,0 +1,30 @@
+.reminder_text {
+ --background_color: #f6f8f9;
+ --accent_color: #2f7bd5;
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ color: #484e56;
+ line-height: 1.45;
+ padding: 0.75rem;
+ background-color: var(--background_color);
+}
+.reminder_text--text b {
+ font-weight: 700;
+}
+.reminder_text--text .dyn-text {
+ font-weight: 700;
+ color: var(--accent_color);
+}
+.reminder_text.warning {
+ --background_color: #fcf2cd;
+ --accent_color: #edba08;
+ font-style: italic;
+}
+.reminder_text.error {
+ --background_color: #feecef;
+ --accent_color: #ce1234;
+ font-style: italic;
+}

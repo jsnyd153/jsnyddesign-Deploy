@@ -1,11 +1,22 @@
 @use "sass:color";
 
-//colors
+//blues
+$blue-700: #2161ad;
+$blue-600: #256dc1;
 $blue-500: #2f7bd5;
 $blue-400: #6299ef;
 $blue-300: #9ec0f5;
+$blue-200: #dae7fb;
+$blue-100: #f1f6fe;
+//gold
+$warning-500: #edba08;
+$warning-200: #fcf2cd;
+//red
 $red-500: #ce1234;
+$red-200: #feecef;
+//green
 $green-500: #11955e;
+//neutrals
 $black: #000000;
 $grey-900: #141b24;
 $grey-800: #2e343c;
@@ -18,3 +29,33 @@ $grey-200: #c8ccd2;
 $grey-100: #edf0f2;
 $grey-50: #f6f8f9;
 $white: #ffffff;
+
+$colors_full: (
+	//light
+	"blue-100" $blue-100 $black,
+	"blue-200" $blue-200 $black,
+	"blue-300" $blue-300 $black,
+	"blue-400" $blue-400 $black,
+	"grey-50" $grey-50 $black,
+	"grey-100" $grey-100 $black,
+	"grey-200" $grey-200 $black,
+	"grey-300" $grey-300 $black,
+	"white" $white $black,
+	"red-200" $red-200 $black,
+	"warning-200" $warning-200 $black,
+
+	//dark
+	"blue-700" $blue-700 $white,
+	"blue-600" $blue-600 $white,
+	"blue-500" $blue-500 $white,
+	"grey-900" $grey-900 $white,
+	"grey-800" $grey-800 $white,
+	"grey-700" $grey-700 $white,
+	"grey-600" $grey-600 $white,
+	"grey-500" $grey-500 $white,
+	"grey-400" $grey-400 $white,
+	"black" $black $white,
+	"red-500" $red-500 $white,
+	"warning-500" $warning-500 $white,
+	"green-500" $green-500 $white
+);

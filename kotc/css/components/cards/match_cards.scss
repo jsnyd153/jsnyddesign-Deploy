@@ -1,0 +1,61 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Match Card
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A2029&t=WOZdHWgOjktRD2qI-1
+// Dependancy: none
+
+.match_card {
+	display: flex;
+	gap: 10/16 * 1rem;
+	padding: 1rem 1rem 1rem 1rem;
+	border: 1px solid $grey-100;
+	border-radius: 0.25rem;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 25/16 * 1rem;
+
+	.match_number {
+		margin-bottom: -25/16 * 1rem;
+		transform: translate(0, -50%);
+	}
+
+	&--teams {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 4/16 * 1rem;
+	}
+
+	.score-summary {
+		display: none;
+		height: 100%;
+		margin: 0 auto auto auto;
+		align-items: flex-start;
+		.scorebox {
+			border: 0;
+			&[data="record"] {
+				--result: #{$grey-400};
+			}
+		}
+	}
+
+	&[expanded="false"] {
+		flex-direction: row;
+		margin-top: 0;
+		padding: 12/16 * 1rem;
+		.match_number {
+			margin-bottom: 0;
+			transform: translate(0, 0%);
+		}
+		.button {
+			display: none;
+		}
+		.score_display {
+			display: none;
+		}
+		.score-summary {
+			display: flex;
+		}
+	}
+}
