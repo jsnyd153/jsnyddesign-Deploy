@@ -1,10 +1,12 @@
 form {
  display: flex;
  flex-direction: column;
- padding: 1rem;
  --background_color: #ffffff;
  background-color: var(--background_color);
  gap: 1rem;
+}
+form.inset {
+ padding: 1rem;
 }
 
 .toggle_input {
@@ -175,10 +177,20 @@ input:focus + .text_input--label {
  z-index: 1;
 }
 
+form.radio-horizontal .input_group {
+ display: flex;
+ gap: 0.625rem;
+ flex-direction: row;
+ --input_size: 0.875rem;
+}
+
 .check_input {
  display: flex;
  flex-direction: column;
  gap: 1rem;
+}
+.check_input--container {
+ width: 100%;
 }
 .check_input--label {
  display: flex;

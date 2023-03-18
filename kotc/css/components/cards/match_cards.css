@@ -53,9 +53,9 @@
 }
 .match_card[timing=current] {
  --timing_color: #2f7bd5;
- --timing_color-light: #dae7fb;
+ --timing_color-light: #9ec0f5;
 }
 .match_card[timing=complete] {
- --timing_color: #256dc1;
+ --timing_color: #7193bb;
  --timing_color-light: #dae7fb;
 }

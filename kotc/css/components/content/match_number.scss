@@ -10,14 +10,15 @@
 	@include text_base;
 
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: 500;
 	height: var(--match_size);
 	width: var(--match_size);
 	border-radius: 50%;
 	flex-shrink: 0;
 
 	color: $white;
-	outline: 0.25rem solid $white;
+	// outline: 0.25rem solid $white;
+	box-shadow: 0 0 0 0.25rem $white;
 	background: $grey-600;
 
 	[timing="upcoming"] & {

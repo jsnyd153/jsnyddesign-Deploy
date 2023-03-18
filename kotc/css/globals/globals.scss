@@ -13,7 +13,7 @@
 	font-family: $sans_font;
 }
 
-.container {
+main {
 	padding: 40/16 * 1rem var(--margin-narrow);
 	&.inset {
 		padding: 40/16 * 1rem var(--margin-wide);
@@ -21,4 +21,7 @@
 	&.bleed {
 		padding: 40/16 * 1rem 0;
 	}
+	display: flex;
+	flex-direction: column;
+	gap: 24/16 * 1rem;
 }

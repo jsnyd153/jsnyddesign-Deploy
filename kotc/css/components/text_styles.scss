@@ -1,0 +1,37 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// text styles
+
+h1 {
+	@include text_base($p: 20, $h: 1, $w: 500);
+}
+h2 {
+	@include text_base($p: 20, $h: 1, $w: 500);
+}
+
+h3 {
+	@include text_base($p: 18, $h: 1, $w: 500);
+}
+h4 {
+	@include text_base($p: 16, $h: 1, $w: 500);
+}
+
+p {
+	@include text_base($p: 14, $h: 1, $w: 300);
+}
+
+.container {
+	> {
+		@include text_nodes {
+			text-align: center;
+		}
+	}
+}
+
+@include text_nodes {
+	.emphasis {
+		color: $blue-500;
+		font-weight: 600;
+	}
+}

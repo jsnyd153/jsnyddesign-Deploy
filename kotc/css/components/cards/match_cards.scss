@@ -67,10 +67,10 @@
 	}
 	&[timing="current"] {
 		--timing_color: #{$blue-500};
-		--timing_color-light: #{$blue-200};
+		--timing_color-light: #{$blue-300};
 	}
 	&[timing="complete"] {
-		--timing_color: #{$blue-600};
+		--timing_color: #{$blue-past};
 		--timing_color-light: #{$blue-200};
 	}
 }

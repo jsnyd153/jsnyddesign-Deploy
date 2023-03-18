@@ -3,7 +3,7 @@
  width: 4em;
  height: 4em;
  position: relative;
- outline: 0.25rem solid #ffffff;
+ box-shadow: 0 0 0 0.25rem #ffffff;
  background: #c8ccd2;
  color: #141b24;
  border-radius: 50%;

@@ -6,10 +6,19 @@
 // Dependancy: none
 
 .card_list {
-	&.match_list,
-	&:has(.match_card) {
+	&.standings_list {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 0.75rem;
+	}
+
+	article {
+		grid-row: auto;
+	}
+
+	&[list_order="player_number"] article {
+		grid-row: var(--player_number);
+	}
+	&[list_order="rank"] article {
+		grid-row: var(--rank);
 	}
 }

@@ -1,0 +1,29 @@
+.standings_card {
+ display: flex;
+ gap: 1rem;
+ padding: 1rem 0;
+ flex-direction: row;
+ align-items: center;
+}
+.standings_card:not(:last-child) {
+ border-bottom: 0.0625rem solid #edf0f2;
+}
+.standings_card .circle_number {
+ flex-shrink: 0;
+}
+.standings_card .profile_image {
+ flex-shrink: 0;
+}
+.standings_card--name {
+ font-size: 0.9375rem;
+ line-height: 1.2;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 600;
+ letter-spacing: -0.01em;
+ color: #141b24;
+ width: 100%;
+}
+.standings_card--scores {
+ display: flex;
+ gap: 0.5rem;
+}

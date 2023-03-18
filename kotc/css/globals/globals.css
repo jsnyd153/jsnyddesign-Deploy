@@ -10,12 +10,15 @@
  font-family: "Public Sans", Helvetica, Arial, sans-serif;
 }
 
-.container {
+main {
  padding: 2.5rem var(--margin-narrow);
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
 }
-.container.inset {
+main.inset {
  padding: 2.5rem var(--margin-wide);
 }
-.container.bleed {
+main.bleed {
  padding: 2.5rem 0;
 }

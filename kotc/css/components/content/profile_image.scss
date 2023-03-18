@@ -10,7 +10,7 @@
 	width: 48/12 * 1em;
 	height: 48/12 * 1em;
 	position: relative;
-	outline: 0.25rem solid $white;
+	box-shadow: 0 0 0 0.25rem $white;
 	background: $grey-200;
 	color: $grey-900;
 	border-radius: 50%;

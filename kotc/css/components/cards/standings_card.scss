@@ -1,0 +1,39 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Match Card
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A2029&t=WOZdHWgOjktRD2qI-1
+// Dependancy: none
+
+.standings_card {
+	display: flex;
+	gap: 1rem;
+	padding: 1rem 0;
+	flex-direction: row;
+	align-items: center;
+	&:not(:last-child) {
+		border-bottom: 1/16 * 1rem solid $grey-100;
+	}
+
+	// --match_size: #{50/16 * 1rem};
+	// --timing_color: #{$grey-600};
+	// --timing_color-light: #{$grey-100};
+
+	//match number
+	.circle_number {
+		flex-shrink: 0;
+	}
+	.profile_image {
+		flex-shrink: 0;
+	}
+
+	&--name {
+		@include text_base($p: 15, $h: 1.2, $w: 600);
+		color: $grey-900;
+		width: 100%;
+	}
+	&--scores {
+		display: flex;
+		gap: 0.5rem;
+	}
+}

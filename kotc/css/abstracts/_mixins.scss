@@ -66,15 +66,14 @@
 }
 
 //nasic text styles
-@mixin text_base($p: 14, $h: 1) {
+@mixin text_base($p: 14, $h: 1, $w: 300) {
 	font-size: $p/16 * 1rem;
 	line-height: $h;
 	font-family: $sans_font;
-	font-weight: 300;
+	font-weight: $w;
 	$color: $grey-700;
 	letter-spacing: -0.01em;
 }
-
 //basic setting for pseudo element
 @mixin psuedo_el() {
 	display: block;

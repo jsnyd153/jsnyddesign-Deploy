@@ -8,13 +8,13 @@
  font-weight: 300;
  letter-spacing: -0.01em;
  font-size: 1rem;
- font-weight: 600;
+ font-weight: 500;
  height: var(--match_size);
  width: var(--match_size);
  border-radius: 50%;
  flex-shrink: 0;
  color: #ffffff;
- outline: 0.25rem solid #ffffff;
+ box-shadow: 0 0 0 0.25rem #ffffff;
  background: #62676f;
 }
 [timing=upcoming] .match_number {
