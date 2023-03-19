@@ -53,42 +53,8 @@ input:focus + .text_input--label {
  height: 1em;
  color: #7c8188;
  flex-grow: 1;
- width: 100%;
 }
 .text_input--input:focus {
  outline: 0;
- color: #2f7bd5;
-}
-
-textarea.text_input--input {
- height: auto;
- min-height: 9.25rem;
- border-color: #c8ccd2;
-}
-textarea.text_input--input:focus {
- border-color: #2f7bd5;
- color: #2f7bd5;
-}
-textarea.text_input--input:not(:-moz-placeholder-shown) {
- color: #484e56;
-}
-textarea.text_input--input:not(:placeholder-shown) {
- color: #484e56;
-}
-textarea.text_input--input + label {
- transform: translate(0, -50%);
- top: 0;
- font-size: 0.5rem;
-}
-textarea.text_input--input:not(:-moz-placeholder-shown) + label {
- color: #484e56;
-}
-textarea.text_input--input:not(:placeholder-shown) + label {
- color: #484e56;
-}
-textarea.text_input--input:not(:-moz-placeholder-shown):focus + label {
- color: #2f7bd5;
-}
-textarea.text_input--input:focus + label, textarea.text_input--input:not(:placeholder-shown):focus + label {
  color: #2f7bd5;
 }

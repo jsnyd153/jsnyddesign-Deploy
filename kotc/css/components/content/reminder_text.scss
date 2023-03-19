@@ -9,15 +9,24 @@
 	--background_color: #{$grey-50};
 	--accent_color: #{$blue-500};
 
-	@include text_base;
+	@include text_base($p: 12, $h: 1.45);
 	color: $grey-700;
-	line-height: 1.45;
 	padding: 0.75rem;
 	background-color: var(--background_color);
+	border-radius: 0.25rem;
+	margin: 2rem var(--margin-wide);
+	text-align: center;
 	&-- {
 		&text {
+			line-height: inherit;
+			color: inherit;
+			font-size: inherit;
 			b {
 				font-weight: 700;
+			}
+			em {
+				font-weight: 700;
+				color: var(--accent_color);
 			}
 			.dyn-text {
 				font-weight: 700;

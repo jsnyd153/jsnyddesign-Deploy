@@ -1,4 +1,4 @@
-.card_list.match_list, .card_list:has(.match_card) {
+.card_list.match_list {
  display: grid;
  grid-template-columns: 1fr;
  gap: 0.75rem;

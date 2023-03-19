@@ -11,6 +11,9 @@
  padding: 1.25rem var(--margin-narrow);
  background: var(--background_color);
 }
+.main_nav--controls.reverse {
+ flex-direction: column-reverse;
+}
 .main_nav--controls .button_container {
  display: flex;
  justify-content: center;

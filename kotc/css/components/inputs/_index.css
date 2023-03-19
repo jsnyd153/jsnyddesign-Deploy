@@ -48,6 +48,22 @@ input:checked + .toggle_input--label {
 input:checked + .toggle_input--label::after {
  transform: translateX(100%);
 }
+.toggle_input--row {
+ display: flex;
+ gap: 1rem;
+}
+.toggle_input--description {
+ flex-grow: 1;
+ width: 100%;
+}
+
+[has-prizes=true] #noPrizes {
+ display: none;
+}
+
+[has-prizes=false] #hasPrizes {
+ display: none;
+}
 
 .text_input {
  font-size: 0.875rem;
@@ -104,9 +120,43 @@ input:focus + .text_input--label {
  height: 1em;
  color: #7c8188;
  flex-grow: 1;
+ width: 100%;
 }
 .text_input--input:focus {
  outline: 0;
+ color: #2f7bd5;
+}
+
+textarea.text_input--input {
+ height: auto;
+ min-height: 9.25rem;
+ border-color: #c8ccd2;
+}
+textarea.text_input--input:focus {
+ border-color: #2f7bd5;
+ color: #2f7bd5;
+}
+textarea.text_input--input:not(:-moz-placeholder-shown) {
+ color: #484e56;
+}
+textarea.text_input--input:not(:placeholder-shown) {
+ color: #484e56;
+}
+textarea.text_input--input + label {
+ transform: translate(0, -50%);
+ top: 0;
+ font-size: 0.5rem;
+}
+textarea.text_input--input:not(:-moz-placeholder-shown) + label {
+ color: #484e56;
+}
+textarea.text_input--input:not(:placeholder-shown) + label {
+ color: #484e56;
+}
+textarea.text_input--input:not(:-moz-placeholder-shown):focus + label {
+ color: #2f7bd5;
+}
+textarea.text_input--input:focus + label, textarea.text_input--input:not(:placeholder-shown):focus + label {
  color: #2f7bd5;
 }
 
@@ -233,7 +283,7 @@ input:checked ~ .check_input--icon .check {
  background-color: #2f7bd5;
  border-color: #2f7bd5;
 }
-.emphasis .icon-inner input:checked ~ .check_input--icon {
+.emphasis.icon-inner input:checked ~ .check_input--icon {
  color: #2f7bd5;
  background-color: #ffffff;
  border-color: #ffffff;
@@ -244,6 +294,9 @@ input:checked ~ .check_input--icon .check {
 .add_new .check_input--icon .plus {
  display: initial;
 }
+.add_new .check_input--icon .check {
+ display: none;
+}
 .icon-inner .check_input--icon {
  position: absolute;
  left: 1rem;
@@ -253,6 +306,10 @@ input:checked ~ .check_input--icon .check {
 }
 .icon-inner .check_input--icon svg path {
  stroke-width: 2;
+}
+.icon-inner .check_input--icon svg .check {
+ display: initial;
+ stroke: #2f7bd5;
 }
 .check_input--name {
  text-align: center;
@@ -269,6 +326,20 @@ input:checked ~ .check_input--icon .check {
  color: #7c8188;
  flex-grow: 1;
  font-weight: 300;
+}
+.has-dropdown .check_input--name {
+ padding: 0rem 1rem;
+ display: flex;
+ flex-direction: column;
+ min-height: calc(var(--input_size) + 1rem + 1rem);
+ justify-content: center;
+ gap: 0.25rem;
+}
+.check_input--name .selected_item {
+ font-size: 0.5rem;
+}
+.check_input--name .selected_item:empty {
+ display: none;
 }
 input:checked ~ .check_input--name {
  border-color: #2f7bd5;
@@ -289,6 +360,12 @@ input:checked ~ .check_input--name {
 }
 .check_input--icon + .check_input--name {
  text-align: left;
+}
+.check_input--row .input_group {
+ display: flex;
+ gap: 0.625rem;
+ flex-direction: row;
+ --input_size: 0.875rem;
 }
 
 .radio_input {

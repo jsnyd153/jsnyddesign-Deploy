@@ -45,5 +45,23 @@
 				}
 			}
 		}
-	}
+		&row {
+			display: flex;
+			gap: 1rem;
+		}
+		&description {
+			flex-grow: 1;
+			width: 100%;
+		}
+	} //--
+}
+
+// Individual Toggles
+
+[has-prizes="true"] #noPrizes {
+	display: none;
+}
+
+[has-prizes="false"] #hasPrizes {
+	display: none;
 }

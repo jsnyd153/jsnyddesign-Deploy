@@ -1,0 +1,16 @@
+.prize_input-first {
+ display: flex;
+ gap: 1.5rem;
+ padding-bottom: 1.5rem;
+ border-bottom: 0.0625rem solid #edf0f2;
+}
+.prize_input-first .text_input--container:first-child {
+ width: 60%;
+}
+.prize_input-first .text_input--container:last-child {
+ width: 40%;
+}
+.prize_input-units {
+ display: flex;
+ color: #484e56;
+}

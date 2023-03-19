@@ -1,0 +1,98 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Card List
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=89%3A3685&t=H0oT4xyQjl0u8gMr-1
+//https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=103%3A2828&t=H0oT4xyQjl0u8gMr-1
+
+// Dependancy: none
+
+.table_display {
+	display: flex;
+	flex-direction: column;
+	&-- {
+		&header {
+			background: $grey-50;
+			padding: 10/16 * 1rem 2rem;
+		}
+		&item,
+		&header {
+			padding: 14/16 * 1rem 32/16 * 1rem;
+			display: flex;
+			border-bottom: 1/16 * 1rem solid $grey-100;
+			align-items: center;
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				width: 100%;
+			}
+
+			.title {
+				@include text_base($w: 500);
+				color: $grey-900;
+			}
+			.summary {
+				@include text_base($p: 13, $w: 300);
+				color: $grey-400;
+			}
+			&-edit {
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+				@include text_base;
+				color: $blue-500;
+				background: transparent;
+				border: 0;
+			}
+			.edit_icon {
+				width: 1rem;
+				padding-bottom: 0.25rem;
+
+				path {
+					fill: currentColor;
+				}
+			}
+
+			&[addnew="true"] {
+				.title {
+					color: $grey-200;
+				}
+			}
+			&-add {
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+				@include text_base;
+				color: $grey-200;
+				background-color: transparent;
+				border: 0;
+			}
+		}
+	}
+}
+
+.add_item--icon {
+	color: $grey-200;
+	width: 16/16 * 1rem;
+	height: 16/16 * 1rem;
+	border-radius: 50%;
+	border: 3/32 * 1em solid currentColor;
+	font-size: 20/16 * 1rem;
+	@include f-center;
+	svg {
+		fill: none;
+		// width: 1rem;
+		width: 75%;
+		* {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 3/32 * 1em;
+			display: none;
+		}
+		.plus {
+			display: initial;
+		}
+	}
+}

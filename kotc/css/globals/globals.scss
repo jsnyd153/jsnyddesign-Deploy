@@ -14,14 +14,25 @@
 }
 
 main {
-	padding: 40/16 * 1rem var(--margin-narrow);
-	&.inset {
-		padding: 40/16 * 1rem var(--margin-wide);
-	}
-	&.bleed {
-		padding: 40/16 * 1rem 0;
-	}
+	margin: 40/16 * 1rem var(--margin-narrow);
+	--background_color: #{$white};
+
 	display: flex;
 	flex-direction: column;
 	gap: 24/16 * 1rem;
+}
+
+.margin- {
+	&narrow {
+		margin-left: var(--margin-narrow);
+		margin-right: var(--margin-narrow);
+	}
+	&inset {
+		margin-left: var(--margin-wide);
+		margin-right: var(--margin-wide);
+	}
+	&bleed {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }

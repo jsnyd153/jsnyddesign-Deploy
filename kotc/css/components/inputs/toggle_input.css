@@ -37,3 +37,19 @@ input:checked + .toggle_input--label {
 input:checked + .toggle_input--label::after {
  transform: translateX(100%);
 }
+.toggle_input--row {
+ display: flex;
+ gap: 1rem;
+}
+.toggle_input--description {
+ flex-grow: 1;
+ width: 100%;
+}
+
+[has-prizes=true] #noPrizes {
+ display: none;
+}
+
+[has-prizes=false] #hasPrizes {
+ display: none;
+}

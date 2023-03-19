@@ -15,6 +15,8 @@
 		grid-row: auto;
 	}
 
+	//for sort method
+	//sort properties are assigned as var(--) with JS
 	&[list_order="player_number"] article {
 		grid-row: var(--player_number);
 	}

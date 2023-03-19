@@ -53,38 +53,11 @@
 			height: 1em;
 			color: $grey-500;
 			flex-grow: 1;
-			width: 100%;
+
 			&:focus {
 				outline: 0;
 				color: $blue-500;
 			}
 		}
-	}
-}
-
-textarea.text_input--input {
-	height: auto;
-	min-height: 148/16 * 1rem;
-	border-color: $grey-200;
-	&:focus {
-		border-color: $blue-500;
-		color: $blue-500;
-	}
-	&:not(:placeholder-shown) {
-		color: $grey-700;
-	}
-
-	& + label {
-		transform: translate(0, -50%);
-		top: 0;
-		font-size: 0.5rem;
-	}
-
-	&:not(:placeholder-shown) + label {
-		color: $grey-700;
-	}
-	&:focus + label,
-	&:not(:placeholder-shown):focus + label {
-		color: $blue-500;
 	}
 }

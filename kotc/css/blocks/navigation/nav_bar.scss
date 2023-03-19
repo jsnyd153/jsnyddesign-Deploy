@@ -18,6 +18,9 @@
 			gap: 24/16 * 1rem;
 			padding: 20/16 * 1rem var(--margin-narrow);
 			background: var(--background_color);
+			&.reverse {
+				flex-direction: column-reverse;
+			}
 			.button_container {
 				@include f-center;
 				gap: 0.75rem;

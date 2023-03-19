@@ -6,8 +6,7 @@
 // Dependancy: none
 
 .card_list {
-	&.match_list,
-	&:has(.match_card) {
+	&.match_list {
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 0.75rem;

@@ -1,0 +1,13 @@
+.card_list.standings_list {
+ display: grid;
+ grid-template-columns: 1fr;
+}
+.card_list article {
+ grid-row: auto;
+}
+.card_list[list_order=player_number] article {
+ grid-row: var(--player_number);
+}
+.card_list[list_order=rank] article {
+ grid-row: var(--rank);
+}

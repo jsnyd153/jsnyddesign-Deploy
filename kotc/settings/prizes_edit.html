@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+
+		<link rel="stylesheet" href="../css/components/inputs/_index.css" />
+		<link rel="stylesheet" href="../css/components/buttons/_index.css" />
+		<link rel="stylesheet" href="../css/components/content/_index.css" />
+		<link rel="stylesheet" href="../css/components/cards/_index.css" />
+		<link rel="stylesheet" href="../css/components/modals/modal.css" />
+		<link rel="stylesheet" href="../css/components/text_styles.css" />
+
+		<link rel="stylesheet" href="../css/blocks/navigation/nav_bar.css" />
+		<link rel="stylesheet" href="../css/blocks/schedule/_index.css" />
+		<link rel="stylesheet" href="../css/blocks/settings/table_display.css" />
+		<link rel="stylesheet" href="../css/blocks/settings/prizes_input.css" />
+
+		<link rel="stylesheet" href="../css/globals/globals.css" />
+	</head>
+
+	<body class="">
+		<header>
+			<h1>Prizes</h1>
+		</header>
+
+		<main class="margin-inset">
+			<div class="input_group text_input prize_input-first">
+				<div class="text_input--container">
+					<input
+						class="text_input--input"
+						type="text"
+						id="name"
+						name="name"
+						placeholder=" "
+					/>
+					<label class="text_input--label" for="name">Name</label>
+				</div>
+				<div class="text_input--container">
+					<input
+						class="text_input--input"
+						type="number"
+						id="rank"
+						name="rank"
+						placeholder=" "
+					/>
+					<label class="text_input--label" for="rank">Rank</label>
+				</div>
+			</div>
+			<h4>Prize amount</h4>
+			<div class="dropdown_input--row prize_input-units">
+				<div class="dropdown_input modal_trigger" modal_ID="prize_units">
+					<div class="dropdown_input--label">
+						<span>Percent of prize pool</span>
+					</div>
+					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
+						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
+					</svg>
+				</div>
+			</div>
+			<div class="input_group text_input">
+				<div class="text_input--container">
+					<input
+						class="text_input--input"
+						type="number"
+						id="amount"
+						name="amount"
+						placeholder=" "
+					/>
+					<label class="text_input--label" for="amount">Amount</label>
+				</div>
+			</div>
+		</main>
+		<main class="margin-bleed">
+			<div class="reminder_text">
+				<p class="reminder_text--text">
+					<span class="dyn-text" id="name-value">First place</span> will receive
+					<span class="dyn-text" id="amount-value">50</span
+					><span class="dyn-text" id="unit-value"
+						>% of the total prize pool</span
+					>.
+				</p>
+			</div>
+		</main>
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="prize_units">
+				<div class="modal_bottom--handle"></div>
+				<div class="modal_bottom--content">
+					<ul class="modal_bottom--player_list">
+						<li>
+							<div class="name_card" value="% of the total prize pool">
+								Percent of prize pool (%)
+							</div>
+						</li>
+						<li>
+							<div class="name_card current" value="x the entry fee">
+								Multiple of entry fee (x)
+							</div>
+						</li>
+						<li><div class="name_card" value="$">USD ($)</div></li>
+						<li>
+							<div class="name_card" value="their entry fee back">
+								Entry fee back
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- <script src="../js/create_cards.js"></script> -->
+		<!-- <script src="js/match_card.js"></script> -->
+		<script src="../js/modal.js"></script>
+		<script src="../js/icons.js"></script>
+		<!-- <script src="js/data.js"></script> -->
+
+		<script>
+			$(document).ready(function () {
+				let prizesName;
+				let prizesUnit;
+				let prizesAmount;
+				let dropdownLabel = $("#prize_units .name_card.current").html();
+
+				function setPrizeValues() {
+					let prizesName = $("#name").val();
+					let prizesAmount = $("#amount").val();
+
+					$("#name-value").html(prizesName);
+					$("#amount-value").html(prizesAmount);
+					$("#unit-value").html(prizesUnit);
+					$('[modal_ID="prize_units"] .dropdown_input--label span').html(
+						dropdownLabel
+					);
+				}
+
+				$("#prize_units .name_card").click(function () {
+					let prizesAmount = $(this).attr("value");
+					let dropdownLabel = $(this).html();
+					$("#prize_units").find(".name_card").removeClass("current");
+					$(this).addClass("current");
+					$("[modal_active]").attr("modal_active", false);
+					$('[modal_ID="prize_units"] .dropdown_input--label span').html(
+						dropdownLabel
+					);
+					setPrizeValues();
+				});
+
+				$("input").change(function () {
+					setPrizeValues();
+				});
+
+				setPrizeValues();
+			});
+		</script>
+	</body>
+</html>

@@ -63,7 +63,7 @@ form {
 					background-color: $blue-500;
 					border-color: $blue-500;
 				}
-				.emphasis .icon-inner & {
+				.emphasis.icon-inner & {
 					color: $blue-500;
 					background-color: $white;
 					border-color: $white;
@@ -73,6 +73,9 @@ form {
 				color: $grey-200;
 				.plus {
 					display: initial;
+				}
+				.check {
+					display: none;
 				}
 			}
 			.icon-inner & {
@@ -85,6 +88,10 @@ form {
 					// padding: 0 0.125rem;
 					path {
 						stroke-width: 2;
+					}
+					.check {
+						display: initial;
+						stroke: $blue-500;
 					}
 				}
 			}
@@ -105,6 +112,22 @@ form {
 			color: $grey-500;
 			flex-grow: 1;
 			font-weight: 300;
+
+			.has-dropdown & {
+				padding: 0rem 1rem;
+				display: flex;
+				flex-direction: column;
+				min-height: calc(var(--input_size) + 1rem + 1rem);
+				justify-content: center;
+				gap: 0.25rem;
+			}
+
+			.selected_item {
+				font-size: 0.5rem;
+				&:empty {
+					display: none;
+				}
+			}
 
 			input:checked ~ & {
 				border-color: $blue-500;
@@ -131,5 +154,13 @@ form {
 		&icon + &name {
 			text-align: left;
 		}
-	}
+		&row {
+			.input_group {
+				display: flex;
+				gap: 10/16 * 1rem;
+				flex-direction: row;
+				--input_size: #{14/16 * 1rem};
+			}
+		}
+	} //--
 }

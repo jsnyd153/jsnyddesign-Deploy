@@ -11,14 +11,22 @@
 }
 
 main {
- padding: 2.5rem var(--margin-narrow);
+ margin: 2.5rem var(--margin-narrow);
+ --background_color: #ffffff;
  display: flex;
  flex-direction: column;
  gap: 1.5rem;
 }
-main.inset {
- padding: 2.5rem var(--margin-wide);
+
+.margin-narrow {
+ margin-left: var(--margin-narrow);
+ margin-right: var(--margin-narrow);
 }
-main.bleed {
- padding: 2.5rem 0;
+.margin-inset {
+ margin-left: var(--margin-wide);
+ margin-right: var(--margin-wide);
+}
+.margin-bleed {
+ margin-left: 0;
+ margin-right: 0;
 }
