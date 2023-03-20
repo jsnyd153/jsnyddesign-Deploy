@@ -110,7 +110,7 @@ const matches = [
 	},
 ];
 
-matchResults = [
+const matchResults = [
 	{
 		team: [1, 2],
 		score: 15,
@@ -272,3 +272,39 @@ matchResults = [
 //opponentScore:15,
 //diff:-3,
 //},
+
+const result = players.reduce((acc, { playerName, playerNumber }) => {
+	const match = matches.filter(({ map }) =>
+		map.some((arr) => arr.includes(playerNumber))
+	);
+	const diff = match.map(({ map }) =>
+		map.map(([a, b]) => {
+			const [currentScore, opponentScore] = matchResults
+				.filter(({ team }) => team.includes(a) && team.includes(b))
+				.map(({ score }) => score);
+			return {
+				matchNumber: matches.indexOf(match) + 1,
+				currentPlayer: playerName,
+				partnerPlayer: players.find(
+					({ playerNumber: num }) =>
+						num !== playerNumber &&
+						(map[0].includes(num) || map[1].includes(num))
+				).playerName,
+				opponentPlayer1: players.find(
+					({ playerNumber: num }) =>
+						num === (map[0][0] > map[0][1] ? map[0][0] : map[0][1])
+				).playerName,
+				opponentPlayer2: players.find(
+					({ playerNumber: num }) =>
+						num === (map[0][0] > map[0][1] ? map[0][1] : map[0][0])
+				).playerName,
+				currentScore,
+				opponentScore,
+				diff: currentScore - opponentScore,
+			};
+		})
+	);
+	return acc.concat(diff);
+}, []);
+
+console.log(result);
