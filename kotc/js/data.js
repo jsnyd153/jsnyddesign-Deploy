@@ -265,13 +265,17 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 	const match = matches.filter(({ map }) =>
 		map.some((arr) => arr.includes(playerNumber))
 	);
-	const diff = match.map(({ map }) =>
+	const matchData = match.map(({ map }) =>
 		map.map(([a, b]) => {
-			const [currentScore, opponentScore] = matchResults
+			//map.map(([[a, b],[c, d]]) => { //need to figure out how to access the ther half of the map array
+			const [currentScore] = matchResults
 				.filter(({ team }) => team.includes(a) && team.includes(b))
 				.map(({ score }) => score);
+			const [opponentScore] = matchResults //returning same as current. need to find a way to access c and d values
+				.filter(({ team }) => team.includes(b) && team.includes(a))
+				.map(({ score }) => score);
 			return {
-				matchNumber: matches.indexOf(match) + 1,
+				round: matches.round, //returning undefined
 				currentPlayer: playerName,
 				partnerPlayer: players.find(
 					({ playerNumber: num }) =>
@@ -292,7 +296,8 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 			};
 		})
 	);
-	return acc.concat(diff);
+
+	return acc.concat(matchData);
 }, []);
 
 console.log(result);
