@@ -17,18 +17,11 @@
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 		/>
-
-		<link rel="stylesheet" href="css/components/inputs/_index.css" />
-
-		<link rel="stylesheet" href="css/components/text_styles.css" />
-		<link rel="stylesheet" href="css/components/buttons/_index.css" />
-		<link rel="stylesheet" href="css/components/content/_index.css" />
-		<link rel="stylesheet" href="css/components/cards/_index.css" />
+		<link rel="stylesheet" href="css/components/_index.css" />
 		<link rel="stylesheet" href="css/blocks/navigation/nav_bar.css" />
 		<link rel="stylesheet" href="css/blocks/schedule/_index.css" />
 		<link rel="stylesheet" href="css/blocks/standings/_index.css" />
 		<link rel="stylesheet" href="css/globals/globals.css" />
-		<link rel="stylesheet" href="css/components/modals/modal.css" />
 	</head>
 
 	<body class="" id="pool-1">
@@ -98,8 +91,8 @@
 				</div>
 			</form>
 
-			<div class="card_list standings_list" list_order="">
-				<article class="standings_card">
+			<div class="card_list standings_list" list_order="" id="player_cards">
+				<!-- <article class="standings_card">
 					<div class="circle_number">1</div>
 					<div class="profile_image">
 						<span>AB</span>
@@ -117,7 +110,7 @@
 							<span>+1</span>
 						</div>
 					</div>
-				</article>
+				</article> -->
 			</div>
 		</main>
 
@@ -142,9 +135,10 @@
 
 		<!-- <div class="match_list"></div> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="js/create_cards.js"></script>
+		<!-- <script src="js/create_cards.js"></script> -->
 		<script src="js/match_card.js"></script>
 		<script src="js/modal.js"></script>
+		<script src="google_sheet_test/gsheet.js"></script>
 
 		<script>
 			$(document).ready(function () {

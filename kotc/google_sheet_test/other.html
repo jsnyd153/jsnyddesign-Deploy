@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Save Web Form Data to Spreadsheets</title>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			crossorigin="anonymous"
+		></script>
+		<script>
+			function SubForm() {
+				$.ajax({
+					url: "https://api.apispreadsheets.com/data/R6XuVdjk5jIRxw0a/",
+					type: "post",
+					data: $("#myForm").serializeArray(),
+					success: function () {
+						alert("Form Data Submitted :)");
+					},
+					error: function () {
+						alert("There was an error :(");
+					},
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<form id="myForm">
+			<label>Full Name</label>
+			<input name="Full Name" />
+			<br />
+			<label>W</label>
+			<input name="W" />
+			<br />
+			<label>L</label>
+			<input name="L" />
+			<br />
+			<label>D</label>
+			<input name="D" />
+			<br />
+			<label>GP</label>
+			<input name="GP" />
+			<br />
+			<label>Points</label>
+			<input name="Points" />
+			<br />
+			<label>A</label>
+			<input name="A" />
+			<br />
+			<label>1</label>
+			<input name="1" />
+			<br />
+			<label>2</label>
+			<input name="2" />
+			<br />
+			<label>3</label>
+			<input name="3" />
+			<br />
+			<label>4</label>
+			<input name="4" />
+			<br />
+			<label>5</label>
+			<input name="5" />
+			<br />
+			<label>6</label>
+			<input name="6" />
+			<br />
+			<label>7</label>
+			<input name="7" />
+			<br />
+			<label>8</label>
+			<input name="8" />
+			<br />
+		</form>
+		<button onclick="SubForm()">Submit</button>
+	</body>
+</html>

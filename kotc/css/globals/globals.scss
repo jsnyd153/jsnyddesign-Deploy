@@ -5,6 +5,9 @@
 	--margin-none: 0rem;
 	--margin-narrow: 1rem;
 	--margin-wide: 2rem;
+	--background_color: #{$white};
+	--text_color-primary: #{$grey-900};
+	--text_color-secondary: #{$grey-700};
 }
 
 *,
@@ -20,6 +23,19 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: 24/16 * 1rem;
+}
+
+hr {
+	width: 100%;
+	height: 0;
+	border: 0;
+	border-bottom: 1/16 * 1rem solid $grey-100;
+}
+
+.intro {
+	--background_color: #{$blue-500};
+	--text_color-primary: #{$white};
+	--text_color-secondary: #{$grey-100};
 }
 
 .margin- {

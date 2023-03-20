@@ -39,68 +39,147 @@
 
 	<body class="">
 		<header>
-			<h1>Prizes</h1>
+			<h1>Scoring Type</h1>
 		</header>
 
 		<main class="margin-inset">
-			<div class="input_group text_input prize_input-first">
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="text"
-						id="name"
-						name="name"
-						placeholder=" "
-					/>
-					<label class="text_input--label" for="name">Name</label>
-				</div>
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="number"
-						id="rank"
-						name="rank"
-						placeholder=" "
-						inputmode="numeric"
-						pattern="[0-9]*"
-					/>
-					<label class="text_input--label" for="rank">Rank</label>
-				</div>
-			</div>
-			<h4>Prize amount</h4>
-			<div class="dropdown_input--row prize_input-units">
-				<div class="dropdown_input modal_trigger" modal_ID="prize_units">
-					<div class="dropdown_input--label">
-						<span>Percent of prize pool</span>
+			<h4>Games until</h4>
+			<div class="range_input--row">
+				<div class="range_input">
+					<div class="range_input--container">
+						<div class="range_input--thumb" id="range_input--thumb">
+							<span></span>
+						</div>
+						<div class="range_input--track">
+							<div class="range_input--line" id="range_input--line"></div>
+						</div>
+						<input
+							id="range_input--input"
+							class="range_input--input"
+							type="range"
+							value="11"
+							min="0"
+							max="35"
+						/>
 					</div>
-					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
-						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
-					</svg>
 				</div>
 			</div>
-			<div class="input_group text_input">
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="number"
-						id="amount"
-						name="amount"
-						placeholder=" "
-						inputmode="numeric"
-						pattern="[0-9]*"
-					/>
-					<label class="text_input--label" for="amount">Amount</label>
+			<hr />
+			<div class="toggle_input--row">
+				<div class="toggle_input--description">
+					<h4>Win by 2?</h4>
+				</div>
+				<div class="toggle_input">
+					<div class="toggle_input--container">
+						<input
+							id="prize-toggle"
+							class="toggle_input--input"
+							type="checkbox"
+						/>
+						<label class="toggle_input--label" for="prize-toggle"></label>
+					</div>
+				</div>
+			</div>
+			<h4>Cap at:</h4>
+			<div class="range_input--row">
+				<div class="range_input">
+					<div class="range_input--container">
+						<div class="range_input--thumb" id="range_input--thumb">
+							<span></span>
+						</div>
+						<div class="range_input--track">
+							<div class="range_input--line" id="range_input--line"></div>
+						</div>
+						<input
+							id="range_input--input"
+							class="range_input--input"
+							type="range"
+							value="13"
+							min="0"
+							max="35"
+						/>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<h4>Games per round</h4>
+			<div class="range_input--row">
+				<div class="radio_input">
+					<div class="radio_input--container">
+						<label class="radio_input--label" for="number1">
+							<input
+								class="radio_input--input"
+								type="radio"
+								name="group1"
+								id="number1"
+								value="1"
+							/>
+							<div class="radio_input--number">1</div>
+						</label>
+					</div>
+					<div class="radio_input--container">
+						<label class="radio_input--label" for="number2">
+							<input
+								class="radio_input--input"
+								type="radio"
+								name="group1"
+								id="number2"
+								value="2"
+							/>
+							<div class="radio_input--number">2</div>
+						</label>
+					</div>
+					<div class="radio_input--container">
+						<label class="radio_input--label" for="number3">
+							<input
+								class="radio_input--input"
+								type="radio"
+								name="group1"
+								id="number3"
+								value="3"
+							/>
+							<div class="radio_input--number">3</div>
+						</label>
+					</div>
+					<div class="radio_input--container">
+						<label class="radio_input--label" for="number3">
+							<input
+								class="radio_input--input"
+								type="radio"
+								name="group1"
+								id="number3"
+								value="3"
+							/>
+							<div class="radio_input--number">4</div>
+						</label>
+					</div>
+					<div class="radio_input--container">
+						<label class="radio_input--label" for="number3">
+							<input
+								class="radio_input--input"
+								type="radio"
+								name="group1"
+								id="number3"
+								value="3"
+							/>
+							<div class="radio_input--number">5</div>
+						</label>
+					</div>
 				</div>
 			</div>
 		</main>
 		<main class="margin-bleed">
 			<div class="reminder_text">
 				<p class="reminder_text--text">
-					<span class="dyn-text" id="name-value">First place</span> will receive
-					<span class="dyn-text" id="amount-value">50</span
-					><span class="dyn-text" id="unit-value"
-						>% of the total prize pool</span
-					>.
+					Teams only score points on rallies <br />they served.
+				</p>
+			</div>
+		</main>
+		<main class="margin-bleed">
+			<div class="reminder_text">
+				<p class="reminder_text--text">
+					Teams can score points on every rally, regardless of which team
+					served.
 				</p>
 			</div>
 		</main>
@@ -141,6 +220,7 @@
 		<!-- <script src="js/match_card.js"></script> -->
 		<script src="../js/modal.js"></script>
 		<script src="../js/icons.js"></script>
+		<script src="../js/range_slider.js"></script>
 		<!-- <script src="js/data.js"></script> -->
 
 		<script>

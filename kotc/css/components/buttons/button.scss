@@ -37,3 +37,15 @@ button.button {
 		padding: 6/12 * 1em 14/12 * 1em;
 	}
 }
+
+.bottom-button {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 10/16 * 1rem;
+	background: linear-gradient(0deg, #ffffff 60%, rgba(255, 255, 255, 0) 100%);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
