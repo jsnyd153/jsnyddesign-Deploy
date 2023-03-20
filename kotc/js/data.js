@@ -301,3 +301,13 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 }, []);
 
 console.log(result);
+
+// current return
+// currentPlayer: "Dan Bohan"
+// currentScore: 15
+// diff: 0
+// opponentPlayer1: "Tim David"
+// opponentPlayer2: "Duy Nguyen"
+// opponentScore: 15
+// partnerPlayer: "Jeremy Snyder,"
+// round: undefined
