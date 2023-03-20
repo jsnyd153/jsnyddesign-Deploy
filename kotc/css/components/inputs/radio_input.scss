@@ -24,13 +24,13 @@
 			border-radius: 50%;
 			@include f-center;
 
-			&::after {
-				@include text_base;
-				content: "1";
-				display: block;
-				font-weight: 600;
-				font-size: 0.75rem;
-			}
+			// &::after {
+			// 	@include text_base;
+			// 	content: "1";
+			// 	display: block;
+			// 	font-weight: 600;
+			// 	font-size: 0.75rem;
+			// }
 
 			input:checked ~ & {
 				border: 1/16 * 1rem solid $blue-500;

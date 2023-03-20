@@ -22,13 +22,7 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 		/>
 
-		<link rel="stylesheet" href="../css/components/inputs/_index.css" />
-		<link rel="stylesheet" href="../css/components/buttons/_index.css" />
-		<link rel="stylesheet" href="../css/components/content/_index.css" />
-		<link rel="stylesheet" href="../css/components/cards/_index.css" />
-		<link rel="stylesheet" href="../css/components/modals/modal.css" />
-		<link rel="stylesheet" href="../css/components/text_styles.css" />
-
+		<link rel="stylesheet" href="../css/components/_index.css" />
 		<link rel="stylesheet" href="../css/blocks/navigation/nav_bar.css" />
 		<link rel="stylesheet" href="../css/blocks/schedule/_index.css" />
 		<link rel="stylesheet" href="../css/blocks/settings/table_display.css" />
@@ -39,68 +33,59 @@
 
 	<body class="">
 		<header>
-			<h1>Prizes</h1>
+			<h1>Scoring Type</h1>
 		</header>
 
 		<main class="margin-inset">
-			<div class="input_group text_input prize_input-first">
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="text"
-						id="name"
-						name="name"
-						placeholder=" "
-					/>
-					<label class="text_input--label" for="name">Name</label>
+			<div class="input_group check_input emphasis">
+				<div class="check_input--container">
+					<label class="check_input--label" for="radio3_1">
+						<input
+							checked
+							class="check_input--input"
+							type="radio"
+							name="group1"
+							id="radio3_1"
+						/>
+						<div class="check_input--icon">
+							<svg viewBox="0 0 16 16" class="math_icon"></svg>
+						</div>
+						<div class="check_input--name">
+							<p>Sideout scoring</p>
+						</div>
+					</label>
 				</div>
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="number"
-						id="rank"
-						name="rank"
-						placeholder=" "
-						inputmode="numeric"
-						pattern="[0-9]*"
-					/>
-					<label class="text_input--label" for="rank">Rank</label>
-				</div>
-			</div>
-			<h4>Prize amount</h4>
-			<div class="dropdown_input--row prize_input-units">
-				<div class="dropdown_input modal_trigger" modal_ID="prize_units">
-					<div class="dropdown_input--label">
-						<span>Percent of prize pool</span>
-					</div>
-					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
-						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
-					</svg>
-				</div>
-			</div>
-			<div class="input_group text_input">
-				<div class="text_input--container">
-					<input
-						class="text_input--input"
-						type="number"
-						id="amount"
-						name="amount"
-						placeholder=" "
-						inputmode="numeric"
-						pattern="[0-9]*"
-					/>
-					<label class="text_input--label" for="amount">Amount</label>
+				<div class="check_input--container">
+					<label class="check_input--label" for="radio3_2">
+						<input
+							checked
+							class="check_input--input"
+							type="radio"
+							name="group1"
+							id="radio3_2"
+						/>
+						<div class="check_input--icon">
+							<svg viewBox="0 0 16 16" class="math_icon"></svg>
+						</div>
+						<div class="check_input--name">
+							<p>Rally scoring</p>
+						</div>
+					</label>
 				</div>
 			</div>
 		</main>
 		<main class="margin-bleed">
 			<div class="reminder_text">
 				<p class="reminder_text--text">
-					<span class="dyn-text" id="name-value">First place</span> will receive
-					<span class="dyn-text" id="amount-value">50</span
-					><span class="dyn-text" id="unit-value"
-						>% of the total prize pool</span
-					>.
+					Teams only score points on rallies <br />they served.
+				</p>
+			</div>
+		</main>
+		<main class="margin-bleed">
+			<div class="reminder_text">
+				<p class="reminder_text--text">
+					Teams can score points on every rally, regardless of which team
+					served.
 				</p>
 			</div>
 		</main>

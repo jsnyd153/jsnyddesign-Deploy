@@ -16,17 +16,6 @@
  justify-content: center;
  align-items: center;
 }
-.radio_input--number::after {
- font-size: 0.875rem;
- line-height: 1;
- font-family: "Public Sans", Helvetica, Arial, sans-serif;
- font-weight: 300;
- letter-spacing: -0.01em;
- content: "1";
- display: block;
- font-weight: 600;
- font-size: 0.75rem;
-}
 input:checked ~ .radio_input--number {
  border: 0.0625rem solid #2f7bd5;
  background: #2f7bd5;

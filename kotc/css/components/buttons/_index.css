@@ -57,6 +57,10 @@ button.button.button-warning-200 {
  --button-primary: #fcf2cd;
  --button-secondary: #000000;
 }
+button.button.button-blue-past {
+ --button-primary: #7193bb;
+ --button-secondary: #ffffff;
+}
 button.button.button-blue-700 {
  --button-primary: #2161ad;
  --button-secondary: #ffffff;
@@ -116,6 +120,18 @@ button.button.ghost {
 }
 button.button.small {
  padding: 0.5em 1.1666666667em;
+}
+
+.bottom-button {
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ gap: 0.625rem;
+ background: linear-gradient(0deg, #ffffff 60%, rgba(255, 255, 255, 0) 100%);
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
 }
 
 svg.math_icon path {
