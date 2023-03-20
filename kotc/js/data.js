@@ -280,11 +280,11 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 				).playerName,
 				opponentPlayer1: players.find(
 					({ playerNumber: num }) =>
-						num === (map[0][0] > map[0][1] ? map[0][0] : map[0][1])
+						num === (map[0][0] > map[0][1] ? map[1][0] : map[1][1])
 				).playerName,
 				opponentPlayer2: players.find(
 					({ playerNumber: num }) =>
-						num === (map[0][0] > map[0][1] ? map[0][1] : map[0][0])
+						num === (map[0][0] > map[0][1] ? map[1][1] : map[1][0])
 				).playerName,
 				currentScore,
 				opponentScore,
