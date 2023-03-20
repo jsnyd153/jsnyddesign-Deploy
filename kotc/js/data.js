@@ -243,18 +243,6 @@ const matchResults = [
 //currentPlayer:"Dan Bohan",
 //partnerPlayer:"Jeremy Snyder",
 //opponentPlayer1:"Duy Nguyen",
-//opponentPlayer1:"Tim David",
-//currentScore:15,
-//opponentScore:10,
-//diff:5,
-//},
-
-//#first item in the loop for players[1] should return:
-//{
-//round:1,
-//currentPlayer:"Dan Bohan",
-//partnerPlayer:"Jeremy Snyder",
-//opponentPlayer1:"Duy Nguyen",
 //opponentPlayer2:"Tim David",
 //currentScore:15,
 //opponentScore:10,
