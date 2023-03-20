@@ -1,147 +1,274 @@
-//data set
+//Sample Data set for 8 Person King of the Court
 const players = [
-	{
-		playerNumber: 1,
-		player: "Jeremy Snyder,",
-	},
-	{
-		playerNumber: 2,
-		player: "Dan Bohan",
-	},
-	{
-		playerNumber: 3,
-		player: "Abin Cheriyan",
-	},
-	{
-		playerNumber: 4,
-		player: "Yang Yang",
-	},
-	{
-		playerNumber: 5,
-		player: "Duy Nguyen",
-	},
-	{
-		playerNumber: 6,
-		player: "Tim David",
-	},
-	{
-		playerNumber: 7,
-		player: "Johnny Walker",
-	},
-	{
-		playerNumber: 8,
-		player: "Matt Shipp",
-	},
+	{ playerNumber: 1, playerName: "Jeremy Snyder," },
+	{ playerNumber: 2, playerName: "Dan Bohan" },
+	{ playerNumber: 3, playerName: "Abin Cheriyan" },
+	{ playerNumber: 4, playerName: "Yang Yang" },
+	{ playerNumber: 5, playerName: "Duy Nguyen" },
+	{ playerNumber: 6, playerName: "Tim David" },
+	{ playerNumber: 7, playerName: "Johnny Walker" },
+	{ playerNumber: 8, playerName: "Matt Shipp" },
 ];
-
 const matches = [
 	{
 		round: 1,
-		map: [[1, 2][(5, 6)]],
+		map: [
+			[1, 2],
+			[5, 6],
+		],
+	},
+	{
+		round: 1,
+		map: [
+			[3, 4],
+			[7, 8],
+		],
+	},
+	{
+		round: 2,
+		map: [
+			[1, 3],
+			[6, 8],
+		],
+	},
+	{
+		round: 2,
+		map: [
+			[2, 4],
+			[5, 7],
+		],
+	},
+	{
+		round: 3,
+		map: [
+			[1, 8],
+			[2, 7],
+		],
+	},
+	{
+		round: 3,
+		map: [
+			[3, 6],
+			[4, 5],
+		],
+	},
+	{
+		round: 4,
+		map: [
+			[1, 7],
+			[3, 5],
+		],
+	},
+	{
+		round: 4,
+		map: [
+			[2, 8],
+			[4, 6],
+		],
+	},
+	{
+		round: 5,
+		map: [
+			[1, 5],
+			[4, 8],
+		],
+	},
+	{
+		round: 5,
+		map: [
+			[2, 6],
+			[3, 7],
+		],
+	},
+	{
+		round: 6,
+		map: [
+			[1, 2],
+			[5, 6],
+		],
+	},
+	{
+		round: 6,
+		map: [
+			[1, 2],
+			[5, 6],
+		],
+	},
+	{
+		round: 7,
+		map: [
+			[4, 7],
+			[2, 5],
+		],
+	},
+	{
+		round: 7,
+		map: [
+			[1, 6],
+			[3, 8],
+		],
 	},
 ];
 
-// Compiled Data
+matchResults = [
+	{
+		team: [1, 2],
+		score: 15,
+	},
+	{
+		team: [1, 3],
+		score: 15,
+	},
+	{
+		team: [1, 4],
+		score: 15,
+	},
+	{
+		team: [1, 5],
+		score: 15,
+	},
+	{
+		team: [1, 6],
+		score: 15,
+	},
+	{
+		team: [1, 7],
+		score: 15,
+	},
+	{
+		team: [1, 8],
+		score: 15,
+	},
+	{
+		team: [2, 3],
+		score: 15,
+	},
+	{
+		team: [2, 4],
+		score: 15,
+	},
+	{
+		team: [2, 5],
+		score: 7,
+	},
+	{
+		team: [2, 6],
+		score: 15,
+	},
+	{
+		team: [2, 7],
+		score: 14,
+	},
+	{
+		team: [2, 8],
+		score: 15,
+	},
+	{
+		team: [3, 4],
+		score: 15,
+	},
+	{
+		team: [3, 5],
+		score: 13,
+	},
+	{
+		team: [3, 6],
+		score: 15,
+	},
+	{
+		team: [3, 7],
+		score: 11,
+	},
+	{
+		team: [3, 8],
+		score: 11,
+	},
+	{
+		team: [4, 5],
+		score: 11,
+	},
+	{
+		team: [4, 6],
+		score: 12,
+	},
+	{
+		team: [4, 7],
+		score: 15,
+	},
+	{
+		team: [4, 8],
+		score: 14,
+	},
+	{
+		team: [5, 6],
+		score: 10,
+	},
+	{
+		team: [5, 7],
+		score: 12,
+	},
+	{
+		team: [5, 8],
+		score: 12,
+	},
+	{
+		team: [6, 7],
+		score: 14,
+	},
+	{
+		team: [6, 8],
+		score: 13,
+	},
+	{
+		team: [6, 8],
+		score: 11,
+	},
+];
 
-const result = matches.map((match) =>
-	match.map((playerNumber) =>
-		players
-			.filter((player) => playerNumber.includes(player.playerNumber))
-			.map((player) => player.player)
-	)
-);
-console.log(result);
+//Loop through items in $players
+//for each one, find all items in $matches where the playerNumber appears in the map
+//compare the the map in $matches to $players and $matchResults to generate new array/json
 
-$(".match_list").each(function () {
-	let match_list = $(this)[0];
-	let currentPlayer = $("body").attr("id");
+//the match number
+//the initial playerName that corresponds to the initial value as "currentPlayer"
+//the playerName that corresponds to the sibling in the pair as "partnerPlayer"
+//the playerNames that corresponds to the other pair in the map as "opponentPlayer1" and "opponentPlayer2" (ordered numerically descending)
+//Get both pairs in map, and find the corrsponding team values in $matchResults. for the item that has a match the initial value, get the score as "currentScore"
+//for the item that does not have a match to the initial value, get the score as "opponentScore"
+//subtract the currentScore from the opponentScore as "Diff"
 
-	var matchDataA1 = {
-		items: [
-			{
-				timing: "complete",
-				match: 1,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Johny Walker",
-				currentScore: 0,
-				opponentPlayer1: "Abin Cheriyan",
-				opponentPlayer2: "Yang Yang",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "complete",
-				match: 2,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Tim Davis",
-				currentScore: 0,
-				opponentPlayer1: "Dan Bohan",
-				opponentPlayer2: "Yang Yang",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "current",
-				match: 3,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Matt Shipp",
-				currentScore: 0,
-				opponentPlayer1: "Dan Bohan",
-				opponentPlayer2: "Johnny Walker",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "upcoming",
-				match: 4,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Dan Bohan",
-				currentScore: 0,
-				opponentPlayer1: "Yang Yang",
-				opponentPlayer2: "Tim Davis",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "upcoming",
-				match: 5,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Yang Yang",
-				currentScore: 0,
-				opponentPlayer1: "Matt Shipp",
-				opponentPlayer2: "Duy Nguyen",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "upcoming",
-				match: 6,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Duy Nguyen",
-				currentScore: 0,
-				opponentPlayer1: "Dan Bohan",
-				opponentPlayer2: "Abin Cheriyan",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-			{
-				timing: "upcoming",
-				match: 7,
-				currentPlayer: "Jeremy Snyder",
-				partnerPlayer: "Abin Cheriyan",
-				currentScore: 0,
-				opponentPlayer1: "Matt Shipp",
-				opponentPlayer2: "Tim Davis",
-				opponentScore: 0,
-				matchCode: "K0000",
-			},
-		],
-	};
-	let match_html = matchDataA1.items
-		.map(function (v, i) {
-			return `<article class="match_card" timing="${v.timing}" expanded="false" matchCode="${v.matchCode}"> <div class = "match_number"> <span> ${v.match} </span> </div> <div class = "match_card--teams"> <div class = "team_row"> <div class = "team_row--team team-c"> <span class = "player-c">${v.currentPlayer} </span> <span class = "seperator"> </span> <span class = "player-p"> ${v.partnerPlayer} </span> <i> </i> </div> <div class = "score_match"> <span> ${v.currentScore} </span> </div> </div> <div class = "team_row"> <div class = "team_row--team team-o"> <span class = "player-o"> ${v.opponentPlayer1} </span> <span class = "seperator"> </span> <span class = "player-o"> ${v.opponentPlayer2} </span> <i> </i> </div> <div class = "score_match"> <span> ${v.opponentScore} </span> </div> </div> </div> <button type = "button" class = "button small"> Edit score </button> </article>`;
-		})
-		.join("");
+//#first item in the loop for players[1] should return:
+//{
+//round:1,
+//currentPlayer:"Dan Bohan",
+//partnerPlayer:"Jeremy Snyder",
+//opponentPlayer1:"Duy Nguyen",
+//opponentPlayer1:"Tim David",
+//currentScore:15,
+//opponentScore:10,
+//diff:5,
+//},
 
-	match_list.innerHTML = match_html;
-});
+//#first item in the loop for players[1] should return:
+//{
+//round:1,
+//currentPlayer:"Dan Bohan",
+//partnerPlayer:"Jeremy Snyder",
+//opponentPlayer1:"Duy Nguyen",
+//opponentPlayer2:"Tim David",
+//currentScore:15,
+//opponentScore:10,
+//diff:5,
+//},
+
+//#fourth item in the loop for players[5] should return:
+//{
+//round:4,
+//currentPlayer:"Tim David",
+//partnerPlayer:"Yang Yang",
+//opponentPlayer1:"Dan Bohan",
+//opponentPlayer2:"Matt Shipp",
+//currentScore:12,
+//opponentScore:15,
+//diff:-3,
+//},
