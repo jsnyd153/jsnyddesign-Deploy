@@ -1,155 +1,56 @@
 //data set
 const players = [
 	{
-		number: 1,
+		playerNumber: 1,
 		player: "Jeremy Snyder,",
 	},
 	{
-		number: 2,
-		player: "Jan Bohan",
+		playerNumber: 2,
+		player: "Dan Bohan",
 	},
 	{
-		number: 3,
+		playerNumber: 3,
 		player: "Abin Cheriyan",
 	},
 	{
-		number: 4,
+		playerNumber: 4,
 		player: "Yang Yang",
 	},
 	{
-		number: 5,
+		playerNumber: 5,
 		player: "Duy Nguyen",
 	},
 	{
-		number: 6,
+		playerNumber: 6,
 		player: "Tim David",
 	},
 	{
-		number: 7,
+		playerNumber: 7,
 		player: "Johnny Walker",
 	},
 	{
-		number: 8,
+		playerNumber: 8,
 		player: "Matt Shipp",
 	},
 ];
 
-const matches_8 = [
-	[
-		[1, 2],
-		[5, 6],
-	],
-	[
-		[1, 3],
-		[6, 8],
-	],
-	[
-		[1, 4],
-		[6, 7],
-	],
-	[
-		[1, 5],
-		[4, 8],
-	],
-	[
-		[1, 6],
-		[3, 8],
-	],
-	[
-		[1, 7],
-		[3, 5],
-	],
-	[
-		[1, 8],
-		[2, 7],
-	],
-	[
-		[2, 3],
-		[5, 8],
-	],
-	[
-		[2, 4],
-		[5, 7],
-	],
-	[
-		[2, 5],
-		[4, 7],
-	],
-	[
-		[2, 6],
-		[3, 7],
-	],
-	[
-		[2, 7],
-		[1, 8],
-	],
-	[
-		[2, 8],
-		[4, 6],
-	],
-	[
-		[3, 4],
-		[7, 8],
-	],
-	[
-		[3, 5],
-		[1, 7],
-	],
-	[
-		[3, 6],
-		[4, 5],
-	],
-	[
-		[3, 7],
-		[2, 6],
-	],
-	[
-		[3, 8],
-		[1, 6],
-	],
-	[
-		[4, 5],
-		[3, 6],
-	],
-	[
-		[4, 6],
-		[2, 8],
-	],
-	[
-		[4, 7],
-		[2, 5],
-	],
-	[
-		[4, 8],
-		[1, 5],
-	],
-	[
-		[5, 6],
-		[1, 2],
-	],
-	[
-		[5, 7],
-		[2, 4],
-	],
-	[
-		[5, 8],
-		[2, 3],
-	],
-	[
-		[6, 7],
-		[1, 4],
-	],
-	[
-		[6, 8],
-		[1, 3],
-	],
-	[
-		[7, 8],
-		[3, 4],
-	],
+const matches = [
+	{
+		round: 1,
+		map: [[1, 2][(5, 6)]],
+	},
 ];
 
 // Compiled Data
+
+const result = matches.map((match) =>
+	match.map((playerNumber) =>
+		players
+			.filter((player) => playerNumber.includes(player.playerNumber))
+			.map((player) => player.player)
+	)
+);
+console.log(result);
 
 $(".match_list").each(function () {
 	let match_list = $(this)[0];
