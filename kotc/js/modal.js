@@ -1,4 +1,7 @@
+//Basic Modal Open and Close
+
 $(".modal_trigger").each(function () {
+	//dropdown will open the modal with the ID that match the modalID attribute
 	let modalID = $(this).attr("modal_ID");
 	let target = $(`#${modalID}`);
 
@@ -8,27 +11,31 @@ $(".modal_trigger").each(function () {
 	});
 });
 
+//When the handle or backgground is clicked, close
+
 $(".modal--back, .modal_bottom--handle").click(function () {
 	$("[modal_active]").attr("modal_active", false);
 });
 
-let pageID = $("body").attr("id");
+// Modal for Individual Player page
+// Shows just the players in the current pool
 
-$(`[playerid=${pageID}`).addClass("current");
-$(`[poolid=${pageID}`).addClass("current");
+$('[navigateTo="individual-schedule"]').each(function () {
+	if (
+		$("body").attr("pool") === $(this).attr("pool") &&
+		$("body").attr("playerNumber") === $(this).attr("playerNumber")
+	) {
+		$(this).addClass("current");
+	}
+});
 
-// $(".match_card").click(function () {
-// 	if ($(this).hasClass("off")) {
-// 		return;
-// 	} else {
-// 		$(this).attr("expanded", function (index, attr) {
-// 			return attr == "false" ? null : "false";
-// 		});
-// 	}
-// });
+$('[navigateTo="individual-schedule"]').click(function () {
+	// let PlayerID = $(this).attr("playerID");
+	$("body").attr("pool", $(this).attr("pool"));
+	$("body").attr("playerNumber", $(this).attr("playerNumber"));
+	$('[navigateTo = "individual-schedule"]').removeClass("current");
+	$(this).addClass("current");
+	$("[modal_active]").attr("modal_active", false);
 
-// $("button[matchCode]").click(function (e) {
-// 	e.stopPropagation();
-// 	let matchID = $(this).attr("matchCode");
-// 	console.log(matchID);
-// });
+	generatePlayerProfile();
+});

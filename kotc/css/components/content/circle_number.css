@@ -12,6 +12,9 @@
  height: 2em;
  width: 2em;
  border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
  color: #141b24;
  border: 0.0625rem solid currentColor;
  background: #ffffff;
@@ -26,4 +29,9 @@
 }
 .circle_number.small {
  font-size: 0.5rem;
+}
+.circle_number::after {
+ display: inline-block;
+ counter-reset: rank var(--rank);
+ content: counter(rank);
 }

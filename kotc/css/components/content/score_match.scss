@@ -38,4 +38,13 @@
 			opacity: 0;
 		}
 	}
+
+	&[diff="positive"] {
+		background: $green-500;
+		color: $white;
+	}
+	&[diff="negative"] {
+		background: $red-500;
+		color: $white;
+	}
 }

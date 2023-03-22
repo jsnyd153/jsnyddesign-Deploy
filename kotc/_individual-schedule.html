@@ -28,9 +28,9 @@
 		<link rel="stylesheet" href="css/components/modals/modal.css" />
 	</head>
 
-	<body class="" id="A1">
+	<body class="player_page" id="A6" playerNumber="1" pool="A">
 		<header>
-			<h1>Pool 1</h1>
+			<h1>Pool A</h1>
 		</header>
 		<nav class="main_nav">
 			<div class="main_nav--controls horizontal">
@@ -59,10 +59,7 @@
 		<div class="player_overview">
 			<div class="profile_image large">
 				<span>AB</span>
-				<img
-					src="https://images.unsplash.com/photo-1678284258973-af8533fbace5?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1287&amp;q=80"
-					alt="currentName"
-				/>
+				<img src="" alt="currentName" />
 			</div>
 			<div class="player_overview--scores">
 				<div class="score_total" data="total">
@@ -74,9 +71,7 @@
 			</div>
 		</div>
 
-		<main class="container">
-			<div class="card_list match_list"></div>
-		</main>
+		<main id="player_schedule"></main>
 
 		<div class="modal" modal_active="false">
 			<div class="modal--back"></div>
@@ -89,9 +84,17 @@
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<!-- <script src="js/create_cards.js"></script> -->
-		<script src="js/match_card.js"></script>
+
+		<script src="js/playerData.js"></script>
+		<!-- Creates content inside the modal based on array of players-->
+		<script src="js/generatePlayerModal.js"></script>
+		<!-- changes/generates the plater data-->
+		<script src="js/generatePlayerProfile.js"></script>
+		<!-- need to generate the schedule -->
+		<script src="js/generateSchedule.js"></script>
+		<!-- need to generate the schedule -->
 		<script src="js/modal.js"></script>
-		<script src="js/data.js"></script>
+		<!-- 
+		<script src="js/data.js"></script> -->
 	</body>
 </html>

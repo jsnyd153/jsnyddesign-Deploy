@@ -83,15 +83,15 @@ const matches = [
 	{
 		round: 6,
 		map: [
-			[1, 2],
-			[5, 6],
+			[1, 4],
+			[6, 7],
 		],
 	},
 	{
 		round: 6,
 		map: [
-			[1, 2],
-			[5, 6],
+			[2, 3],
+			[5, 8],
 		],
 	},
 	{
@@ -271,7 +271,7 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 			const [currentScore] = matchResults
 				.filter(({ team }) => team.includes(a) && team.includes(b))
 				.map(({ score }) => score);
-			const [opponentScore] = matchResults //returning same as current. need to find a way to access c and d values
+			const [opponentScore] = matchResults //need to find a way to access c and d values of the map
 				.filter(({ team }) => team.includes(b) && team.includes(a))
 				.map(({ score }) => score);
 			return {
@@ -291,7 +291,7 @@ const result = players.reduce((acc, { playerName, playerNumber }) => {
 						num === (map[0][0] > map[0][1] ? map[1][1] : map[1][0])
 				).playerName,
 				currentScore,
-				opponentScore,
+				opponentScore, //same as current
 				diff: currentScore - opponentScore,
 			};
 		})

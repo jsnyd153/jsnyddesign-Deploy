@@ -55,7 +55,7 @@
 		<main class="container">
 			<h4><span class="emphasis">Plays on Nets 2 and 3</span></h4>
 
-			<form class="radio-horizontal inset" id="sort_function">
+			<form class="radio-horizontal margin-inset" id="sort_function">
 				<div class="input_group check_input">
 					<div class="check_input--container">
 						<label class="check_input--label" for="initial">
@@ -65,11 +65,9 @@
 								name="sort"
 								id="initial"
 								value="player_number"
-								checked
 							/>
-
 							<div class="check_input--name">
-								<p>Player Number</p>
+								<p>Initial</p>
 							</div>
 						</label>
 					</div>
@@ -142,25 +140,18 @@
 
 		<script>
 			$(document).ready(function () {
-				let sortSetting;
-				if ($('#sort_function input[type="radio"]:check').val() === "rank") {
-					let sortSetting = "rank";
-				} else {
-					let sortSetting = "player_number";
+				function setOrder() {
+					let sortSetting = $(
+						'#sort_function input[type="radio"]:checked'
+					).val();
+					$("#player_cards").attr("list_order", sortSetting);
+					console.log(sortSetting);
 				}
-				$(".card_list").attr("list_order", sortSetting);
-			});
 
-			$(".card_list article").each(function () {
-				let initialNumber = $(this).index() + 1;
-				console.log(initialNumber);
-				$(this).css("--player_number", `${initialNumber}`);
-			});
-
-			$('#sort_function input[type="radio"]').click(function () {
-				let sortSetting = $(this).val();
-				console.log(sortSetting);
-				$(".card_list").attr("list_order", sortSetting);
+				$('input[type="radio"]').click(function () {
+					setOrder();
+				});
+				setOrder();
 			});
 		</script>
 	</body>

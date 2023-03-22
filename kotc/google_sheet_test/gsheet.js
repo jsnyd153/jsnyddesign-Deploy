@@ -21,11 +21,12 @@ fetch("https://api.apispreadsheets.com/data/R6XuVdjk5jIRxw0a/").then((res) => {
 					let rowInfoDiv = document.createElement("article");
 					// let hyphen = "-";
 					rowInfoDiv.classList.add("standings_card");
+					rowInfoDiv.style.setProperty("--rank", rowInfo["Rank"]);
 
 					//create .circle_number
 					let circleNumber = document.createElement("div");
-					let circleNumberNode = document.createTextNode(rowInfo["A"]);
-					circleNumber.appendChild(circleNumberNode);
+					// let circleNumberNode = document.createTextNode(rowInfo["A"]);
+					// circleNumber.appendChild(circleNumberNode);
 					circleNumber.classList.add("circle_number");
 
 					//create .profile_image

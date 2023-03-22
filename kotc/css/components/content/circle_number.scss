@@ -14,6 +14,7 @@
 	height: 2em;
 	width: 2em;
 	border-radius: 50%;
+	@include f-center;
 
 	color: $grey-900;
 	border: 1/16 * 1rem solid currentColor;
@@ -29,5 +30,11 @@
 	}
 	&.small {
 		font-size: 8/16 * 1rem;
+	}
+	&::after {
+		display: inline-block;
+		//rank - uses counter hack to access the --rank variable
+		counter-reset: rank var(--rank);
+		content: counter(rank);
 	}
 }

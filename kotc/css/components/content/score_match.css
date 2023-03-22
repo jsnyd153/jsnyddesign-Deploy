@@ -30,3 +30,11 @@
 .no-score .score_match[data=opponentScore] {
  opacity: 0;
 }
+.score_match[diff=positive] {
+ background: #11955e;
+ color: #ffffff;
+}
+.score_match[diff=negative] {
+ background: #ce1234;
+ color: #ffffff;
+}

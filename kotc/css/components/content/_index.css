@@ -95,6 +95,14 @@
 .no-score .score_match[data=opponentScore] {
  opacity: 0;
 }
+.score_match[diff=positive] {
+ background: #11955e;
+ color: #ffffff;
+}
+.score_match[diff=negative] {
+ background: #ce1234;
+ color: #ffffff;
+}
 
 .score_total {
  font-size: 0.75rem;
@@ -136,6 +144,9 @@
  height: 2em;
  width: 2em;
  border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
  color: #141b24;
  border: 0.0625rem solid currentColor;
  background: #ffffff;
@@ -150,6 +161,11 @@
 }
 .circle_number.small {
  font-size: 0.5rem;
+}
+.circle_number::after {
+ display: inline-block;
+ counter-reset: rank var(--rank);
+ content: counter(rank);
 }
 
 .match_number {
