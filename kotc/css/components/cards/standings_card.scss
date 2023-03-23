@@ -11,6 +11,8 @@
 	padding: 1rem 0;
 	flex-direction: row;
 	align-items: center;
+	text-decoration: none;
+
 	&:not(:last-child) {
 		border-bottom: 1/16 * 1rem solid $grey-100;
 	}

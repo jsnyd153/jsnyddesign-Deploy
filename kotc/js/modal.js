@@ -11,10 +11,14 @@ $(".modal_trigger").each(function () {
 	});
 });
 
+function closeModal() {
+	$("[modal_active]").attr("modal_active", false);
+}
+
 //When the handle or backgground is clicked, close
 
 $(".modal--back, .modal_bottom--handle").click(function () {
-	$("[modal_active]").attr("modal_active", false);
+	closeModal();
 });
 
 // Modal for Individual Player page
@@ -30,12 +34,16 @@ $('[navigateTo="individual-schedule"]').each(function () {
 });
 
 $('[navigateTo="individual-schedule"]').click(function () {
-	// let PlayerID = $(this).attr("playerID");
+	//get the pool and playerNumber from selected option and add to the boddy
 	$("body").attr("pool", $(this).attr("pool"));
 	$("body").attr("playerNumber", $(this).attr("playerNumber"));
+
+	//set new current state on modal list
 	$('[navigateTo = "individual-schedule"]').removeClass("current");
 	$(this).addClass("current");
-	$("[modal_active]").attr("modal_active", false);
 
+	//generat new player profile and match cards based on the new info
 	generatePlayerProfile();
+	mapAndFilterMatches();
+	closeModal();
 });

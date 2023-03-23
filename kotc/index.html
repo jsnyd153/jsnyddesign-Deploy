@@ -36,16 +36,18 @@
 			<div class="main_nav--controls horizontal">
 				<div class="dropdown_input modal_trigger" modal_ID="POOL_1A">
 					<div class="dropdown_input--label">
-						<span>Jeremy Snyder</span>
+						<span>Name</span>
 					</div>
 					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
 						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
 					</svg>
 				</div>
 				<div class="button_container">
-					<button class="icon_button"><i>home</i></button>
-					<button class="icon_button"><i>leaderboard</i></button>
-					<button class="icon_button"><i>social_leaderboard</i></button>
+					<a class="icon_button" href="home"><i>home</i></a>
+					<a class="icon_button" href="poll_standings.html#A"
+						><i>leaderboard</i></a
+					>
+					<a class="icon_button" href="prizes"><i>social_leaderboard</i></a>
 				</div>
 			</div>
 
@@ -58,91 +60,39 @@
 
 		<div class="player_overview">
 			<div class="profile_image large">
-				<span></span>
+				<span>AA</span>
 				<img src="" alt="currentName" />
 			</div>
 			<div class="player_overview--scores">
-				<div class="score_total" data="total"><span></span>-<span></span></div>
+				<div class="score_total" data="total">
+					<span>0</span>-<span>0</span>
+				</div>
 				<div class="score_total" data="diff">
-					<span></span>
+					<span>0</span>
 				</div>
 			</div>
 		</div>
 
-		<main id="player_schedule"></main>
+		<main id="">
+			<h1>Home page</h1>
+		</main>
 
 		<div class="modal" modal_active="false">
 			<div class="modal--back"></div>
 			<div class="modal_bottom" modal_active="false" id="POOL_1A">
 				<div class="modal_bottom--handle"></div>
 				<div class="modal_bottom--content">
-					<ul class="modal_bottom--player_list" data="pool_1000A"></ul>
+					<ul class="modal_bottom--player_list"></ul>
 				</div>
 			</div>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<script>
-			function setPlayerIDFromURL() {
-				const url = window.location.href;
-				const pageID = url.split("#").pop();
-
-				if (pageID) {
-					const pageLabelAlpha = pageID.match(/[a-zA-Z]+/);
-					const pageLabelNum = pageID.match(/\d+/);
-
-					if (pageLabelAlpha && pageLabelNum) {
-						$("body").attr("id", pageLabelNum[0]);
-						$("body").attr("playerNumber", pageLabelNum[0]);
-						$("body").attr("pool", pageLabelAlpha[0]);
-					} else {
-						$("body").attr("id", "A1");
-						$("body").attr("playerNumber", "1");
-						$("body").attr("pool", "A");
-					}
-				}
-			}
-		</script>
-		<script src="js/playerData.js"></script>
-		<!-- <script src="js/sheetToPlayerData.js"></script> -->
-		<!-- Creates content inside the modal based on array of players-->
-		<script src="js/generatePlayerModal.js"></script>
-		<!-- changes/generates the plater data-->
-		<script src="js/generatePlayerProfile.js"></script>
 		<!-- need to generate the schedule -->
-		<script src="js/generateSchedule.js"></script>
+		<!-- <script src="js/sheetGenerateSchedule.js"></script> -->
+
 		<!-- need to generate the schedule -->
 		<script src="js/modal.js"></script>
-		<!-- 
-		<script src="js/data.js"></script> -->
-
-		<script>
-			setCurrentItem();
-			refreshPageContent();
-
-			function refreshPageContent() {
-				setPlayerIDFromURL();
-				generatePlayerProfile();
-				mapAndFilterMatches();
-				closeModal();
-			}
-
-			function setCurrentItem() {
-				$(".name_card").each(function () {
-					if ($(this).attr("playernumber") == $("body").attr("playernumber")) {
-						$(this).addClass("current");
-					} else {
-						$(this).removeClass("current");
-					}
-				});
-			}
-
-			$(".name_card").click(function () {
-				//add delay so the new url is already there when it executes
-				setTimeout(refreshPageContent, 100);
-				setTimeout(setCurrentItem, 100);
-			});
-		</script>
 	</body>
 </html>

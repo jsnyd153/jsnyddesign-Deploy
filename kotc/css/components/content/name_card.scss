@@ -11,6 +11,8 @@
 	background-color: $grey-100;
 	color: $grey-700;
 	border-radius: 0.25rem;
+	display: inline-block;
+	text-decoration: none;
 
 	&.current {
 		background-color: $blue-500;

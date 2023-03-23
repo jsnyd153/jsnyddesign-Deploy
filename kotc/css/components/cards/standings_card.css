@@ -4,6 +4,7 @@
  padding: 1rem 0;
  flex-direction: row;
  align-items: center;
+ text-decoration: none;
 }
 .standings_card:not(:last-child) {
  border-bottom: 0.0625rem solid #edf0f2;

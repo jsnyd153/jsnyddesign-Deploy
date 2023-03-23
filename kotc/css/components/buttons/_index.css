@@ -176,7 +176,7 @@ button.drag_and_drop svg path {
  color: #9ec0f5;
 }
 
-button.icon_button {
+.icon_button {
  background: #ffffff;
  color: #2f7bd5;
  border: 1px solid #ffffff;
@@ -188,7 +188,7 @@ button.icon_button {
  height: 2rem;
  outline: 0;
 }
-button.icon_button i {
+.icon_button i {
  font-family: "Material Symbols Outlined";
  font-weight: normal;
  font-style: normal;
@@ -204,12 +204,12 @@ button.icon_button i {
  -moz-osx-font-smoothing: grayscale;
  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-button.icon_button.state_1 {
+.icon_button.state_1 {
  background: #f1f6fe;
  color: #2f7bd5;
  border: 1px solid #ffffff;
 }
-button.icon_button.state_2 {
+.icon_button.state_2 {
  background: #2f7bd5;
  color: #ffffff;
  border: 1px solid #6299ef;

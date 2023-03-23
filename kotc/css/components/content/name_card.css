@@ -8,6 +8,8 @@
  background-color: #edf0f2;
  color: #484e56;
  border-radius: 0.25rem;
+ display: inline-block;
+ text-decoration: none;
 }
 .name_card.current {
  background-color: #2f7bd5;
