@@ -34,7 +34,7 @@
 		</header>
 		<nav class="main_nav">
 			<div class="main_nav--controls horizontal">
-				<div class="dropdown_input modal_trigger" modal_ID="POOL_1A">
+				<div class="dropdown_input modal_trigger" modal_ID="poolList">
 					<div class="dropdown_input--label">
 						<span>Name</span>
 					</div>
@@ -73,11 +73,13 @@
 			</div>
 		</div>
 
-		<main id="player_schedule"></main>
+		<main>
+			<div id="player_schedule" class="card_list match_list"></div>
+		</main>
 
 		<div class="modal" modal_active="false">
 			<div class="modal--back"></div>
-			<div class="modal_bottom" modal_active="false" id="POOL_1A">
+			<div class="modal_bottom" modal_active="false" id="poolList">
 				<div class="modal_bottom--handle"></div>
 				<div class="modal_bottom--content">
 					<ul class="modal_bottom--player_list"></ul>
@@ -88,9 +90,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		<!-- need to generate the schedule -->
-		<script src="js/sheetGenerateSchedule.js"></script>
+		<script src="scripts/globals.js"></script>
+		<script src="scripts/individualSchedule/createScheduleContent.js"></script>
+		<!-- <script src="js/sheetGenerateSchedule-globalarray.js"></script> -->
+		<!-- <script src="js/playerScheduleContent.js"></script> -->
 
 		<!-- need to generate the schedule -->
 		<script src="js/modal.js"></script>
+
+		<script></script>
 	</body>
 </html>

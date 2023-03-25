@@ -1,11 +1,20 @@
 let currentUrl = window.location.href;
 
 //break the ID off the URL and get the letter and number seperatly
+
 let currentPageNumber = currentUrl.split("#").pop().match(/\d+/);
+//set to 1 as default value if ther's no value from the url
+if (currentPageNumber == null) {
+	currentPageNumber = 1;
+}
 let currentPageLetter = currentUrl
 	.split("#")
 	.pop()
 	.match(/[a-zA-Z]+/);
+//set to A as default value if ther's no value from the url
+if (currentPageLetter == "file") {
+	currentPageLetter = "A";
+}
 
 //define Base url URL
 let urlParts = currentUrl.split("/");
@@ -268,6 +277,8 @@ const matchResults = [
 //create array to store match info
 
 const allMatches = [];
+const playerDataGlobal = [];
+const playerDataGlobal2 = [];
 
 const modalListContainer = $(".modal_bottom--player_list")[0];
 
@@ -283,12 +294,50 @@ function generatePlayerPageContent() {
 					.json()
 					.then((data) => {
 						const playerData = data["data"];
+
+						playerDataGlobal2.push({
+							playerData,
+						});
+
+						console.log("playerDataGlobal2", playerDataGlobal2);
+
+						function createGlobalPlayerData() {
+							for (let i = 0; i < playerData.length; i++) {
+								let Pool = playerData[i]["Pool"];
+								let PlayerNumber = playerData[i]["PlayerNumber"];
+								let playerID = playerData[i]["playerID"];
+								let FullName = playerData[i]["FullName"];
+								let W = playerData[i]["W"];
+								let L = playerData[i]["L"];
+								let D = playerData[i]["D"];
+								let GP = playerData[i]["GP"];
+								let Rank = playerData[i]["Rank"];
+								let A = playerData[i]["A"];
+								let src = playerData[i]["src"];
+
+								playerDataGlobal.push({
+									Pool,
+									PlayerNumber,
+									playerID,
+									FullName,
+									W,
+									L,
+									D,
+									GP,
+									Rank,
+									A,
+									src,
+								});
+							}
+						}
+						createGlobalPlayerData();
+						console.log("playerDataGlobal", playerDataGlobal);
+
 						//=============================================
 						//CREATE NEW ARRAY FOR ALL MATCHES (allMatches)
 						//=============================================
 
 						function createAllMatches() {
-							console.log("playerData", playerData);
 							for (let i = 0; i < playerData.length; i++) {
 								const currentPlayer = playerData[i]["Full Name"];
 								const playerNumber = playerData[i]["Player Number"];
@@ -378,7 +427,7 @@ function generatePlayerPageContent() {
 
 							const filteredMatches = allMatches.filter(
 								(allMatches) =>
-									allMatches.playerNumber === currentPageNumber &&
+									allMatches.playerNumber === currentPageNumberInt &&
 									allMatches.poolLetter === currentPageLetter
 							);
 

@@ -5,7 +5,7 @@
 // Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=50%3A493&t=ABLNr4VmXRynJqTI-1
 // Dependancy: none
 
-button.button {
+.button {
 	--button-primary: #{$blue-500};
 	--button-secondary: #{$white};
 	color: var(--button-secondary);
@@ -20,6 +20,8 @@ button.button {
 	outline: 0;
 	width: 100%;
 	text-align: center;
+	box-sizing: border-box;
+	text-decoration: none;
 
 	@each $type in $colors_full {
 		&.button-#{nth($type, 1)} {

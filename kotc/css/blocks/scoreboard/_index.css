@@ -1,0 +1,40 @@
+body,
+html,
+.scoreboard_input--container,
+.scoreboard_input--form {
+ height: 100%;
+}
+@media (orientation: landscape) {
+ body,
+html,
+.scoreboard_input--container,
+.scoreboard_input--form {
+  width: 100%;
+ }
+}
+
+#teamHome::after {
+ content: "home";
+ display: block;
+ font-family: "Material Symbols Outlined";
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1.25rem;
+ line-height: 1;
+ letter-spacing: normal;
+ text-transform: none;
+ display: inline-block;
+ white-space: nowrap;
+ word-wrap: normal;
+ direction: ltr;
+ -moz-font-feature-settings: "liga";
+ -moz-osx-font-smoothing: grayscale;
+ font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+ background: #ffffff;
+ padding: 0.25rem;
+ border-radius: 50%;
+ color: var(--solid_background);
+ top: 1rem;
+ position: absolute;
+ right: 1rem;
+}

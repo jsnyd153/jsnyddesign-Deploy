@@ -12,6 +12,10 @@
 	gap: 2/16 * 1rem;
 	justify-content: stretch;
 	align-items: stretch;
+	@media (orientation: landscape) {
+		flex-direction: row;
+		width: 100%;
+	}
 
 	button.button {
 		--button-primary: #{$white};
@@ -20,19 +24,19 @@
 
 	&-- {
 		&container {
-			--solid_backgorund: #{$blue-500};
+			--solid_background: #{$blue-500};
 			background: radial-gradient(
 					50% 50% at 50% 50%,
 					rgba(0, 0, 0, 0.5) 0%,
 					rgba(0, 0, 0, 0) 100%
 				),
-				var(--solid_backgorund);
+				var(--solid_background);
 
 			@include f-center;
 			flex-direction: column;
 			text-align: center;
 			&#teamAway {
-				--solid_backgorund: #d5572f;
+				--solid_background: #d5572f;
 			}
 			position: relative;
 		}
@@ -64,6 +68,10 @@
 			color: $white;
 			font-size: 18/16 * 1rem;
 			font-weight: 500;
+			p {
+				font-weight: inherit;
+				font-size: inherit;
+			}
 		}
 		&display {
 			h1 {
@@ -79,6 +87,13 @@
 		&submit {
 			background-color: $grey-700;
 			padding: 2rem;
+			@media (orientation: landscape) {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: transparent;
+			}
 		}
 	} //--
 } //scoreboard_input

@@ -1,0 +1,11 @@
+const inputString = "A3478"; // Find the players const poolLetter =
+inputString[0]; const playerNumbers =
+inputString.slice(1).split("").map(Number); const matchingPlayers =
+playerDataGlobal.filter(player => player.Pool === poolLetter &&
+playerNumbers.includes(player.PlayerNumber) ); const fullNames =
+matchingPlayers.map(player => player.FullName); // Find the map const
+matchingMap = matches.find(map => map.map.flat().every(playerNumber =>
+playerNumbers.includes(playerNumber) ) ); // Swap digits with full names const
+swappedMap = matchingMap.map.map(pair => pair.map(playerNumber =>
+matchingPlayers.find(player => player.PlayerNumber === playerNumber).FullName )
+); console.log(swappedMap);

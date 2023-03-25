@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+
+		<link rel="stylesheet" href="css/components/_index.css" />
+		<link rel="stylesheet" href="css/blocks/scoreboard/_index.css" />
+	</head>
+	<body>
+		<!-- Radio default (icon-outer) -->
+		<!-- ================================== -->
+		<!-- ================================== -->
+
+		<form class="scoreboard_input--form">
+			<div class="scoreboard_input">
+				<div class="scoreboard_input--container" id="teamHome" team="home">
+					<label class="scoreboard_input--label" for="scoreHome">
+						<div class="scoreboard_input--name">
+							<p>
+								<span id="player00">map[0].playerName[0]</span>
+								/
+								<span id="player01">map[0].playerName[1]</span>
+							</p>
+						</div>
+						<div class="scoreboard_input--display">
+							<h1>0</h1>
+							<button type="button" class="up"></button>
+							<button type="button" class="down"></button>
+						</div>
+					</label>
+
+					<input
+						checked
+						class="scoreboard_input--input"
+						type="number"
+						name="scoreboard"
+						id="scoreHome"
+						value="0"
+					/>
+				</div>
+
+				<div class="scoreboard_input--container" id="teamAway" team="away">
+					<label class="scoreboard_input--label" for="scoreAway">
+						<div class="scoreboard_input--name">
+							<p>
+								<span id="player10">map[1].playerName[0]</span>
+								/
+								<span id="player11">map[0].playerName[1]</span>
+							</p>
+						</div>
+						<div class="scoreboard_input--display">
+							<h1>0</h1>
+							<button type="button" class="up"></button>
+							<button type="button" class="down"></button>
+						</div>
+					</label>
+
+					<input
+						checked
+						class="scoreboard_input--input"
+						type="number"
+						name="scoreboard"
+						id="scoreAway"
+						value="0"
+					/>
+				</div>
+				<div class="scoreboard_input--submit">
+					<button type="button" class="button" onclick="submitScore()">
+						Close
+					</button>
+				</div>
+			</div>
+		</form>
+		<!-- ================================== -->
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="POOL_1A">
+				<div class="modal_bottom--handle"></div>
+				<div class="modal_bottom--content">
+					<ul class="modal_bottom--player_list"></ul>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/sheetGenerateSchedule-globalarray.js"></script>
+		<script src="js/setScoreboard.js"></script>
+		<script src="js/scoreboard.js"></script>
+
+		<script>
+			function submitScore() {
+				console.log("push scores");
+				history.back();
+			}
+		</script>
+	</body>
+</html>

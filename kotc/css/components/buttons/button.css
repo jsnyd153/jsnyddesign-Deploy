@@ -1,4 +1,4 @@
-button.button {
+.button {
  --button-primary: #2f7bd5;
  --button-secondary: #ffffff;
  color: var(--button-secondary);
@@ -12,113 +12,115 @@ button.button {
  outline: 0;
  width: 100%;
  text-align: center;
+ box-sizing: border-box;
+ text-decoration: none;
 }
-button.button.button-blue-100 {
+.button.button-blue-100 {
  --button-primary: #f1f6fe;
  --button-secondary: #000000;
 }
-button.button.button-blue-200 {
+.button.button-blue-200 {
  --button-primary: #dae7fb;
  --button-secondary: #000000;
 }
-button.button.button-blue-300 {
+.button.button-blue-300 {
  --button-primary: #9ec0f5;
  --button-secondary: #000000;
 }
-button.button.button-blue-400 {
+.button.button-blue-400 {
  --button-primary: #6299ef;
  --button-secondary: #000000;
 }
-button.button.button-grey-50 {
+.button.button-grey-50 {
  --button-primary: #f6f8f9;
  --button-secondary: #000000;
 }
-button.button.button-grey-100 {
+.button.button-grey-100 {
  --button-primary: #edf0f2;
  --button-secondary: #000000;
 }
-button.button.button-grey-200 {
+.button.button-grey-200 {
  --button-primary: #c8ccd2;
  --button-secondary: #000000;
 }
-button.button.button-grey-300 {
+.button.button-grey-300 {
  --button-primary: #afb3ba;
  --button-secondary: #000000;
 }
-button.button.button-white {
+.button.button-white {
  --button-primary: #ffffff;
  --button-secondary: #000000;
 }
-button.button.button-red-200 {
+.button.button-red-200 {
  --button-primary: #feecef;
  --button-secondary: #000000;
 }
-button.button.button-warning-200 {
+.button.button-warning-200 {
  --button-primary: #fcf2cd;
  --button-secondary: #000000;
 }
-button.button.button-blue-past {
+.button.button-blue-past {
  --button-primary: #7193bb;
  --button-secondary: #ffffff;
 }
-button.button.button-blue-700 {
+.button.button-blue-700 {
  --button-primary: #2161ad;
  --button-secondary: #ffffff;
 }
-button.button.button-blue-600 {
+.button.button-blue-600 {
  --button-primary: #256dc1;
  --button-secondary: #ffffff;
 }
-button.button.button-blue-500 {
+.button.button-blue-500 {
  --button-primary: #2f7bd5;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-900 {
+.button.button-grey-900 {
  --button-primary: #141b24;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-800 {
+.button.button-grey-800 {
  --button-primary: #2e343c;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-700 {
+.button.button-grey-700 {
  --button-primary: #484e56;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-600 {
+.button.button-grey-600 {
  --button-primary: #62676f;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-500 {
+.button.button-grey-500 {
  --button-primary: #7c8188;
  --button-secondary: #ffffff;
 }
-button.button.button-grey-400 {
+.button.button-grey-400 {
  --button-primary: #959aa0;
  --button-secondary: #ffffff;
 }
-button.button.button-black {
+.button.button-black {
  --button-primary: #000000;
  --button-secondary: #ffffff;
 }
-button.button.button-red-500 {
+.button.button-red-500 {
  --button-primary: #ce1234;
  --button-secondary: #ffffff;
 }
-button.button.button-warning-500 {
+.button.button-warning-500 {
  --button-primary: #edba08;
  --button-secondary: #ffffff;
 }
-button.button.button-green-500 {
+.button.button-green-500 {
  --button-primary: #11955e;
  --button-secondary: #ffffff;
 }
-button.button.ghost {
+.button.ghost {
  color: var(--button-primary);
  background: transparent;
  border: 1px solid var(--button-primary);
 }
-button.button.small {
+.button.small {
  padding: 0.5em 1.1666666667em;
 }
 

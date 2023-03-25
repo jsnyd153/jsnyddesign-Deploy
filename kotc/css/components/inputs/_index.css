@@ -393,9 +393,15 @@ input:checked ~ .radio_input--number {
  --button-primary: #ffffff;
  --button-secondary: #484e56;
 }
+@media (orientation: landscape) {
+ .scoreboard_input button.button {
+  flex-direction: row;
+  width: 100%;
+ }
+}
 .scoreboard_input--container {
- --solid_backgorund: #2f7bd5;
- background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), var(--solid_backgorund);
+ --solid_background: #2f7bd5;
+ background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), var(--solid_background);
  display: flex;
  justify-content: center;
  align-items: center;
@@ -404,7 +410,7 @@ input:checked ~ .radio_input--number {
  position: relative;
 }
 .scoreboard_input--container#teamAway {
- --solid_backgorund: #d5572f;
+ --solid_background: #d5572f;
 }
 .scoreboard_input--label {
  display: flex;
@@ -438,6 +444,10 @@ input:checked ~ .radio_input--number {
  font-size: 1.125rem;
  font-weight: 500;
 }
+.scoreboard_input--name p {
+ font-weight: inherit;
+ font-size: inherit;
+}
 .scoreboard_input--display h1 {
  font-size: 0.875rem;
  line-height: 1;
@@ -454,6 +464,15 @@ input:checked ~ .radio_input--number {
 .scoreboard_input--submit {
  background-color: #484e56;
  padding: 2rem;
+}
+@media (orientation: landscape) {
+ .scoreboard_input--submit {
+  padding: 1rem 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+ }
 }
 
 .dropdown_input {
