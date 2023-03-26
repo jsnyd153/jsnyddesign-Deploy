@@ -6,16 +6,17 @@
 // Dependancy: none
 
 .profile_image {
-	font-size: 12/16 * 1rem;
 	width: 48/12 * 1em;
 	height: 48/12 * 1em;
 	position: relative;
 	box-shadow: 0 0 0 0.25rem $white;
 	background: $grey-200;
-	color: $grey-900;
 	border-radius: 50%;
 	overflow: hidden;
+	@include text_base($p: 12);
 	@include f-center;
+	font-size: 12/16 * 1rem;
+	color: $grey-900;
 	&.large {
 		font-size: 22/16 * 1rem;
 	}

@@ -234,7 +234,7 @@ function generateScheduleCards() {
 		score_Button.classList.add("button", "small");
 		score_Button.href =
 			baseUrl +
-			"/_scoreboard_for.html#" +
+			"/_scoreboard.html#" +
 			currentPageLetter +
 			sortedTeamNumber.join("");
 		score_Button.textContent = "Enter Score";
