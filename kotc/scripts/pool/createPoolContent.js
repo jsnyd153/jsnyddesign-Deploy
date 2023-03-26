@@ -67,6 +67,13 @@ function setCurrentPool() {
 		$(".main_nav--controls .dropdown_input--label span").html(
 			"Pool " + currentPageLetter
 		);
+
+		if (currentPageLetter[0] === "https") {
+			$(".main_nav--controls .dropdown_input--label span").html(
+				"Select a pool "
+			);
+			console.log("true");
+		}
 	});
 }
 
