@@ -46,9 +46,8 @@ function getURLProps() {
 
 	// Get player or match number from url
 	currentPageNumber = currentUrl.split("#").pop().match(/\d+/);
-	//Default 1 if no value
-	if (currentPageNumber == null) {
-		currentPageNumber = 1;
+	if (currentPageNumber) {
+		currentPageNumber = currentPageNumber[0];
 	}
 
 	// Get pool from URL
@@ -56,9 +55,8 @@ function getURLProps() {
 		.split("#")
 		.pop()
 		.match(/[a-zA-Z]+/);
-	//Default A if no value
-	if (currentPageLetter == "file") {
-		currentPageLetter = "A";
+	if (currentPageLetter) {
+		currentPageLetter = currentPageLetter[0];
 	}
 
 	// Log for Debugging
@@ -302,6 +300,7 @@ const playerDataGlobal = [
 		Rank: 1,
 		A: 1,
 		src: "",
+		RowRank: 1,
 	},
 	{
 		Pool: "A",
@@ -312,9 +311,10 @@ const playerDataGlobal = [
 		L: 4,
 		D: 3,
 		GP: 7,
-		Rank: 5,
+		Rank: 4,
 		A: 2,
 		src: "https://assets.opensports.net/profiles/205863qj3QFEJfG-13SN4NmGph.jpg/media_500w.jpg",
+		RowRank: 4,
 	},
 	{
 		Pool: "A",
@@ -325,9 +325,10 @@ const playerDataGlobal = [
 		L: 3,
 		D: 3,
 		GP: 7,
-		Rank: 4,
+		Rank: 3,
 		A: 3,
 		src: "https://assets.opensports.net/profiles/205863qj3QFEJfG-13SN4NmGph.jpg/media_500w.jpg",
+		RowRank: 3,
 	},
 	{
 		Pool: "A",
@@ -338,9 +339,10 @@ const playerDataGlobal = [
 		L: 4,
 		D: -3,
 		GP: 7,
-		Rank: 6,
+		Rank: 5,
 		A: 4,
 		src: "",
+		RowRank: 6,
 	},
 	{
 		Pool: "A",
@@ -351,9 +353,10 @@ const playerDataGlobal = [
 		L: 4,
 		D: -7,
 		GP: 7,
-		Rank: 8,
+		Rank: 7,
 		A: 5,
 		src: "",
+		RowRank: 7,
 	},
 	{
 		Pool: "A",
@@ -364,9 +367,10 @@ const playerDataGlobal = [
 		L: 3,
 		D: 7,
 		GP: 7,
-		Rank: 3,
+		Rank: 2,
 		A: 6,
 		src: "",
+		RowRank: 2,
 	},
 	{
 		Pool: "A",
@@ -377,9 +381,10 @@ const playerDataGlobal = [
 		L: 4,
 		D: -3,
 		GP: 7,
-		Rank: 6,
+		Rank: 5,
 		A: 7,
 		src: "",
+		RowRank: 5,
 	},
 	{
 		Pool: "A",
@@ -393,6 +398,7 @@ const playerDataGlobal = [
 		Rank: 8,
 		A: 8,
 		src: "",
+		RowRank: 8,
 	},
 	{
 		Pool: "",
@@ -406,6 +412,7 @@ const playerDataGlobal = [
 		Rank: "",
 		A: "",
 		src: "",
+		RowRank: "",
 	},
 	{
 		Pool: "B",
@@ -419,6 +426,7 @@ const playerDataGlobal = [
 		Rank: 1,
 		A: 1,
 		src: "",
+		RowRank: 1,
 	},
 	{
 		Pool: "B",
@@ -432,6 +440,7 @@ const playerDataGlobal = [
 		Rank: 4,
 		A: 2,
 		src: "",
+		RowRank: 4,
 	},
 	{
 		Pool: "B",
@@ -445,6 +454,7 @@ const playerDataGlobal = [
 		Rank: 8,
 		A: 3,
 		src: "https://assets.opensports.net/profiles/205863qj3QFEJfG-13SN4NmGph.jpg/media_500w.jpg",
+		RowRank: 8,
 	},
 	{
 		Pool: "B",
@@ -458,6 +468,7 @@ const playerDataGlobal = [
 		Rank: 6,
 		A: 4,
 		src: "",
+		RowRank: 6,
 	},
 	{
 		Pool: "B",
@@ -471,6 +482,7 @@ const playerDataGlobal = [
 		Rank: 7,
 		A: 5,
 		src: "",
+		RowRank: 7,
 	},
 	{
 		Pool: "B",
@@ -484,6 +496,7 @@ const playerDataGlobal = [
 		Rank: 3,
 		A: 6,
 		src: "",
+		RowRank: 3,
 	},
 	{
 		Pool: "B",
@@ -497,6 +510,7 @@ const playerDataGlobal = [
 		Rank: 5,
 		A: 7,
 		src: "",
+		RowRank: 5,
 	},
 	{
 		Pool: "B",
@@ -510,6 +524,7 @@ const playerDataGlobal = [
 		Rank: 2,
 		A: 8,
 		src: "",
+		RowRank: 2,
 	},
 ];
 
@@ -543,6 +558,7 @@ function processApiData(data) {
 	// 		let D = playerData[i]["D"];
 	// 		let GP = playerData[i]["GP"];
 	// 		let Rank = playerData[i]["Rank"];
+	// 		let RowRank = playerData[i]["RowRank"];
 	// 		let A = playerData[i]["A"];
 	// 		let src = playerData[i]["src"];
 	// 		playerDataGlobal.push({
@@ -555,6 +571,7 @@ function processApiData(data) {
 	// 			D,
 	// 			GP,
 	// 			Rank,
+	// 			RowRank,
 	// 			A,
 	// 			src,
 	// 		});

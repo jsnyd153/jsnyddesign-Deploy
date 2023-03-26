@@ -13,7 +13,7 @@
 	align-items: center;
 	text-decoration: none;
 
-	&:not(:last-child) {
+	&:not(.last_item) {
 		border-bottom: 1/16 * 1rem solid $grey-100;
 	}
 

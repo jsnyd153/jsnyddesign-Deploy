@@ -32,6 +32,4 @@
 }
 .circle_number::after {
  display: inline-block;
- counter-reset: rank var(--rank);
- content: counter(rank);
 }

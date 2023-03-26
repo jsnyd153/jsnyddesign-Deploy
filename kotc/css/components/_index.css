@@ -446,8 +446,6 @@ button.drag_and_drop svg path {
 }
 .circle_number::after {
  display: inline-block;
- counter-reset: rank var(--rank);
- content: counter(rank);
 }
 
 .match_number {
@@ -1157,14 +1155,16 @@ input:checked ~ .radio_input--number {
  gap: 0.625rem;
  align-items: flex-start;
 }
-.modal_bottom--pool_list > li {
+.modal_bottom--pool_list > a {
  padding: 1rem;
  border-radius: 0.25rem;
  display: flex;
  flex-direction: column;
  gap: 0.75rem;
+ text-decoration: none;
+ color: #141b24;
 }
-.modal_bottom--pool_list > li.current {
+.modal_bottom--pool_list > a.current {
  background: #2f7bd5;
  color: #ffffff;
 }
@@ -1244,7 +1244,7 @@ input:checked ~ .radio_input--number {
  align-items: center;
  text-decoration: none;
 }
-.standings_card:not(:last-child) {
+.standings_card:not(.last_item) {
  border-bottom: 0.0625rem solid #edf0f2;
 }
 .standings_card .circle_number {

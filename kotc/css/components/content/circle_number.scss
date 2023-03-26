@@ -34,7 +34,7 @@
 	&::after {
 		display: inline-block;
 		//rank - uses counter hack to access the --rank variable
-		counter-reset: rank var(--rank);
-		content: counter(rank);
+		// counter-reset: rank var(--rank);
+		// content: counter(rank);
 	}
 }

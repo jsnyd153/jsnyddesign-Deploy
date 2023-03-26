@@ -2,12 +2,12 @@
  display: grid;
  grid-template-columns: 1fr;
 }
-.card_list article {
+.card_list .standings_card {
  grid-row: auto;
 }
-.card_list[list_order=player_number] article {
- grid-row: var(--player_number);
+.card_list[list_order=player_number] .standings_card {
+ grid-row: var(--index);
 }
-.card_list[list_order=rank] article {
+.card_list[list_order=rank] .standings_card {
  grid-row: var(--rank);
 }

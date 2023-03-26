@@ -6,7 +6,7 @@
  align-items: center;
  text-decoration: none;
 }
-.standings_card:not(:last-child) {
+.standings_card:not(.last_item) {
  border-bottom: 0.0625rem solid #edf0f2;
 }
 .standings_card .circle_number {

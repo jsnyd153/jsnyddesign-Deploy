@@ -28,7 +28,9 @@ function createAllMatches() {
 					//Get Partner name
 					const partnerNumber = map[k][1 - map[k].indexOf(playerNumber)];
 					const partnerPlayer = playerDataGlobal.find(
-						(player) => player["PlayerNumber"] === partnerNumber
+						(player) =>
+							player["PlayerNumber"] === partnerNumber &&
+							player["Pool"] === poolLetter
 					)["FullName"];
 
 					//Get Oppnent names
@@ -36,10 +38,14 @@ function createAllMatches() {
 						.filter((pair) => !pair.includes(playerNumber))
 						.flat();
 					const opponentPlayer1 = playerDataGlobal.find(
-						(player) => player["PlayerNumber"] === opponentNumbers[0]
+						(player) =>
+							player["PlayerNumber"] === opponentNumbers[0] &&
+							player["Pool"] === poolLetter
 					)["FullName"];
 					const opponentPlayer2 = playerDataGlobal.find(
-						(player) => player["PlayerNumber"] === opponentNumbers[1]
+						(player) =>
+							player["PlayerNumber"] === opponentNumbers[1] &&
+							player["Pool"] === poolLetter
 					)["FullName"];
 
 					//make array from current and partner and sort by asc

@@ -57,14 +57,16 @@
  gap: 0.625rem;
  align-items: flex-start;
 }
-.modal_bottom--pool_list > li {
+.modal_bottom--pool_list > a {
  padding: 1rem;
  border-radius: 0.25rem;
  display: flex;
  flex-direction: column;
  gap: 0.75rem;
+ text-decoration: none;
+ color: #141b24;
 }
-.modal_bottom--pool_list > li.current {
+.modal_bottom--pool_list > a.current {
  background: #2f7bd5;
  color: #ffffff;
 }

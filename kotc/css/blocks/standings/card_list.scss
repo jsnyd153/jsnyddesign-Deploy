@@ -11,16 +11,16 @@
 		grid-template-columns: 1fr;
 	}
 
-	article {
+	.standings_card {
 		grid-row: auto;
 	}
 
 	//for sort method
 	//sort properties are assigned as var(--) with JS
-	&[list_order="player_number"] article {
-		grid-row: var(--player_number);
+	&[list_order="player_number"] .standings_card {
+		grid-row: var(--index);
 	}
-	&[list_order="rank"] article {
+	&[list_order="rank"] .standings_card {
 		grid-row: var(--rank);
 	}
 }

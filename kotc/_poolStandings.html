@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link rel="stylesheet" href="css/components/_index.css" />
+		<link rel="stylesheet" href="css/blocks/navigation/nav_bar.css" />
+		<link rel="stylesheet" href="css/blocks/schedule/_index.css" />
+		<link rel="stylesheet" href="css/blocks/standings/_index.css" />
+		<link rel="stylesheet" href="css/globals/globals.css" />
+	</head>
+
+	<body class="">
+		<header>
+			<h1>Tournament Name</h1>
+		</header>
+		<nav class="main_nav">
+			<div class="main_nav--controls">
+				<div class="dropdown_input modal_trigger" modal_ID="pools_all">
+					<div class="dropdown_input--label">
+						<span>Pool 1</span>
+					</div>
+					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
+						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
+					</svg>
+				</div>
+				<div class="button_container">
+					<a class="icon_button"><i>home</i></a>
+					<a class="icon_button"><i>leaderboard</i></a>
+					<a class="icon_button"><i>social_leaderboard</i></a>
+				</div>
+			</div>
+
+			<svg viewBox="0 0 375 30" class="arc" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M166.726 30C108.823 28.0508 52.9051 17.9834 0 0.862466V0H375V0.862454C322.095 17.9834 266.177 28.0508 208.274 30H166.726Z"
+				/>
+			</svg>
+		</nav>
+
+		<main class="container">
+			<h4><span class="emphasis">Plays on Nets 2 and 3</span></h4>
+
+			<form class="radio-horizontal margin-inset" id="sort_function">
+				<div class="input_group check_input">
+					<div class="check_input--container">
+						<label class="check_input--label" for="initial">
+							<input
+								class="check_input--input"
+								type="radio"
+								name="sort"
+								id="initial"
+								value="player_number"
+								checked
+							/>
+							<div class="check_input--name">
+								<p>Initial</p>
+							</div>
+						</label>
+					</div>
+					<div class="check_input--container">
+						<label class="check_input--label" for="standings">
+							<input
+								class="check_input--input"
+								type="radio"
+								name="sort"
+								value="rank"
+								id="standings"
+							/>
+
+							<div class="check_input--name">
+								<p>Standings</p>
+							</div>
+						</label>
+					</div>
+				</div>
+			</form>
+
+			<div class="card_list standings_list" list_order="" id="player_cards">
+				<!-- <article class="standings_card">
+					<div class="circle_number">1</div>
+					<div class="profile_image">
+						<span>AB</span>
+						<img
+							src="https://images.unsplash.com/photo-1678284258973-af8533fbace5?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1287&amp;q=80"
+							alt="currentName"
+						/>
+					</div>
+					<div class="standings_card--name">Jeremy Snyder</div>
+					<div class="standings_card--scores">
+						<div class="score_total" data="total">
+							<span>2</span>-<span>1</span>
+						</div>
+						<div class="score_total" data="diff" diff="positive">
+							<span>+1</span>
+						</div>
+					</div>
+				</article> -->
+			</div>
+		</main>
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="pools_all">
+				<div class="modal_bottom--handle"></div>
+				<div class="modal_bottom--content">
+					<!-- <ul class="modal_bottom--pool_list">
+						<li poolid="pool-1">
+							<h4>Pool A</h4>
+							<ul class="modal_bottom--player_list" data="pool_1000A">
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+							</ul>
+						</li>
+						<li poolid="pool-2">
+							<h4>Pool B</h4>
+							<ul class="modal_bottom--player_list" data="pool_1000A">
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+								<li class="name_card">hasjdlak</li>
+							</ul>
+						</li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="match_list"></div> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="scripts/globals.js"></script>
+		<script src="scripts/pool/createPoolContent.js"></script>
+		<!-- <script src="js/match_card.js"></script> -->
+		<script src="js/modal.js"></script>
+		<!-- <script src="google_sheet_test/gsheet.js"></script> -->
+
+		<script></script>
+	</body>
+</html>
