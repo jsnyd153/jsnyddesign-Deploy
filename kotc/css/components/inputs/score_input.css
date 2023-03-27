@@ -64,6 +64,7 @@
 .scoreboard_input--name p {
  font-weight: inherit;
  font-size: inherit;
+ color: inherit;
 }
 .scoreboard_input--display h1 {
  font-size: 0.875rem;

@@ -4,8 +4,8 @@ function createAllMatches() {
 	return;
 } //create createAllMatches
 
-function createUnorderedList() {
-	const modalListContainer = $("#pools_all .modal_bottom--content")[0];
+function generatePoolModalList() {
+	const modalListContainer = $("#poolList .modal_bottom--content")[0];
 
 	const poolMap = new Map();
 	for (const player of playerDataGlobal) {
@@ -77,7 +77,7 @@ function setCurrentPool() {
 	});
 }
 
-createUnorderedList();
+generatePoolModalList();
 // generateModalList(playerDataGlobal);
 
 function generatePoolStandings() {

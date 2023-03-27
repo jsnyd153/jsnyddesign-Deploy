@@ -31,6 +31,9 @@
 .modal_bottom[modal_active=false] {
  transform: translateY(100%);
 }
+.modal_bottom .input_group.text_input {
+ width: 100%;
+}
 .modal_bottom--handle {
  padding: 0.5rem;
  margin: -0.5rem;
@@ -74,4 +77,10 @@
  flex-direction: row;
  flex-wrap: wrap;
  gap: 0.5rem;
+}
+
+#search-results {
+ width: 100%;
+ overflow: scroll;
+ height: 50vh;
 }

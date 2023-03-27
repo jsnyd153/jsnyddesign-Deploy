@@ -1,3 +1,4 @@
+@charset "UTF-8";
 h1 {
  font-size: 1.25rem;
  line-height: 1;
@@ -32,10 +33,21 @@ h4 {
 
 p {
  font-size: 0.875rem;
- line-height: 1;
+ line-height: 1.45;
  font-family: "Public Sans", Helvetica, Arial, sans-serif;
  font-weight: 300;
  letter-spacing: -0.01em;
+ color: #62676f;
+}
+p b {
+ font-weight: 600;
+ color: #141b24;
+}
+p.reminder {
+ font-style: italic;
+ color: #7c8188;
+ font-size: 0.8125rem;
+ font-weight: 300;
 }
 
 .container > h1,
@@ -48,6 +60,12 @@ p {
  text-align: center;
 }
 
+.text_group {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+}
+
 h1 .emphasis,
 h2 .emphasis,
 h3 .emphasis,
@@ -57,6 +75,106 @@ h6 .emphasis,
 p .emphasis {
  color: #2f7bd5;
  font-weight: 600;
+}
+
+.is-blue-100 {
+ color: #f1f6fe;
+}
+
+.is-blue-200 {
+ color: #dae7fb;
+}
+
+.is-blue-300 {
+ color: #9ec0f5;
+}
+
+.is-blue-400 {
+ color: #6299ef;
+}
+
+.is-grey-50 {
+ color: #f6f8f9;
+}
+
+.is-grey-100 {
+ color: #edf0f2;
+}
+
+.is-grey-200 {
+ color: #c8ccd2;
+}
+
+.is-grey-300 {
+ color: #afb3ba;
+}
+
+.is-white {
+ color: #ffffff;
+}
+
+.is-red-200 {
+ color: #feecef;
+}
+
+.is-warning-200 {
+ color: #fcf2cd;
+}
+
+.is-blue-past {
+ color: #7193bb;
+}
+
+.is-blue-700 {
+ color: #2161ad;
+}
+
+.is-blue-600 {
+ color: #256dc1;
+}
+
+.is-blue-500 {
+ color: #2f7bd5;
+}
+
+.is-grey-900 {
+ color: #141b24;
+}
+
+.is-grey-800 {
+ color: #2e343c;
+}
+
+.is-grey-700 {
+ color: #484e56;
+}
+
+.is-grey-600 {
+ color: #62676f;
+}
+
+.is-grey-500 {
+ color: #7c8188;
+}
+
+.is-grey-400 {
+ color: #959aa0;
+}
+
+.is-black {
+ color: #000000;
+}
+
+.is-red-500 {
+ color: #ce1234;
+}
+
+.is-warning-500 {
+ color: #edba08;
+}
+
+.is-green-500 {
+ color: #11955e;
 }
 
 .button {
@@ -342,7 +460,7 @@ button.drag_and_drop svg path {
  background-color: #ffffff;
  color: #2f7bd5;
 }
-.name_card.NAME {
+.name_card.large {
  padding: 0.5rem 1rem;
 }
 
@@ -597,6 +715,88 @@ header h1 {
  font-size: 1.25rem;
  line-height: 1;
  color: #ffffff;
+}
+
+ul {
+ display: flex;
+ gap: 0.5rem;
+ flex-direction: column;
+}
+ul li {
+ font-size: 0.8125rem;
+ margin: 0 0.75rem 0 0;
+ color: #62676f;
+ display: flex;
+ gap: 0.75rem;
+ line-height: 1.45;
+ font-weight: 300;
+}
+ul li:before {
+ display: block;
+ content: "•";
+}
+ul li p {
+ font-size: inherit;
+ color: inherit;
+}
+ul li.name_card:before {
+ display: none;
+}
+ul.icon_list {
+ display: flex;
+ gap: 0.875rem;
+ flex-direction: column;
+}
+ul.icon_list li {
+ display: flex;
+ gap: 1rem;
+ align-items: center;
+ margin: 0;
+}
+ul.icon_list li:before {
+ display: none;
+}
+ul.icon_list li i {
+ font-family: "Material Symbols Outlined";
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1rem;
+ line-height: 1;
+ letter-spacing: normal;
+ text-transform: none;
+ display: inline-block;
+ white-space: nowrap;
+ word-wrap: normal;
+ direction: ltr;
+ -moz-font-feature-settings: "liga";
+ -moz-osx-font-smoothing: grayscale;
+ font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+ width: 1.25rem;
+ height: 1.25rem;
+ flex-grow: 0;
+ flex-shrink: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+ul.icon_list li p {
+ font-size: 0.8125rem;
+}
+ul.icon_list li .circle_number {
+ height: 0.875rem;
+ width: 0.875rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: #484e56;
+ color: #ffffff;
+ flex-shrink: 0;
+ flex-grow: 0;
+ border: 1px solid #141b24;
+ font-size: 0.625rem;
+}
+ul.icon_list li b {
+ font-weight: 600;
 }
 
 .toggle_input {
@@ -1048,6 +1248,7 @@ input:checked ~ .radio_input--number {
 .scoreboard_input--name p {
  font-weight: inherit;
  font-size: inherit;
+ color: inherit;
 }
 .scoreboard_input--display h1 {
  font-size: 0.875rem;
@@ -1135,6 +1336,9 @@ input:checked ~ .radio_input--number {
 .modal_bottom[modal_active=false] {
  transform: translateY(100%);
 }
+.modal_bottom .input_group.text_input {
+ width: 100%;
+}
 .modal_bottom--handle {
  padding: 0.5rem;
  margin: -0.5rem;
@@ -1178,6 +1382,12 @@ input:checked ~ .radio_input--number {
  flex-direction: row;
  flex-wrap: wrap;
  gap: 0.5rem;
+}
+
+#search-results {
+ width: 100%;
+ overflow: scroll;
+ height: 50vh;
 }
 
 .match_card {

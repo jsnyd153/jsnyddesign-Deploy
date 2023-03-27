@@ -32,10 +32,21 @@ h4 {
 
 p {
  font-size: 0.875rem;
- line-height: 1;
+ line-height: 1.45;
  font-family: "Public Sans", Helvetica, Arial, sans-serif;
  font-weight: 300;
  letter-spacing: -0.01em;
+ color: #62676f;
+}
+p b {
+ font-weight: 600;
+ color: #141b24;
+}
+p.reminder {
+ font-style: italic;
+ color: #7c8188;
+ font-size: 0.8125rem;
+ font-weight: 300;
 }
 
 .container > h1,
@@ -48,6 +59,12 @@ p {
  text-align: center;
 }
 
+.text_group {
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+}
+
 h1 .emphasis,
 h2 .emphasis,
 h3 .emphasis,
@@ -57,4 +74,104 @@ h6 .emphasis,
 p .emphasis {
  color: #2f7bd5;
  font-weight: 600;
+}
+
+.is-blue-100 {
+ color: #f1f6fe;
+}
+
+.is-blue-200 {
+ color: #dae7fb;
+}
+
+.is-blue-300 {
+ color: #9ec0f5;
+}
+
+.is-blue-400 {
+ color: #6299ef;
+}
+
+.is-grey-50 {
+ color: #f6f8f9;
+}
+
+.is-grey-100 {
+ color: #edf0f2;
+}
+
+.is-grey-200 {
+ color: #c8ccd2;
+}
+
+.is-grey-300 {
+ color: #afb3ba;
+}
+
+.is-white {
+ color: #ffffff;
+}
+
+.is-red-200 {
+ color: #feecef;
+}
+
+.is-warning-200 {
+ color: #fcf2cd;
+}
+
+.is-blue-past {
+ color: #7193bb;
+}
+
+.is-blue-700 {
+ color: #2161ad;
+}
+
+.is-blue-600 {
+ color: #256dc1;
+}
+
+.is-blue-500 {
+ color: #2f7bd5;
+}
+
+.is-grey-900 {
+ color: #141b24;
+}
+
+.is-grey-800 {
+ color: #2e343c;
+}
+
+.is-grey-700 {
+ color: #484e56;
+}
+
+.is-grey-600 {
+ color: #62676f;
+}
+
+.is-grey-500 {
+ color: #7c8188;
+}
+
+.is-grey-400 {
+ color: #959aa0;
+}
+
+.is-black {
+ color: #000000;
+}
+
+.is-red-500 {
+ color: #ce1234;
+}
+
+.is-warning-500 {
+ color: #edba08;
+}
+
+.is-green-500 {
+ color: #11955e;
 }

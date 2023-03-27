@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+
+		<link rel="stylesheet" href="css/components/_index.css" />
+		<link rel="stylesheet" href="css/blocks/navigation/nav_bar.css" />
+		<link rel="stylesheet" href="css/blocks/schedule/_index.css" />
+		<link rel="stylesheet" href="css/blocks/standings/_index.css" />
+		<link rel="stylesheet" href="css/blocks/call_to_action.css" />
+		<link rel="stylesheet" href="css/globals/globals.css" />
+	</head>
+
+	<body class="player_page" pool="A">
+		<header>
+			<h1>Tournament Name</h1>
+		</header>
+		<nav class="main_nav">
+			<div class="main_nav--controls">
+				<div class="dropdown_input modal_trigger" modal_ID="poolList">
+					<div class="dropdown_input--label">
+						<span>Select a pool</span>
+					</div>
+					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
+						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
+					</svg>
+				</div>
+				<div class="button_container">
+					<a class="icon_button" aria-label="home" href="/_home"><i>home</i></a>
+					<a
+						class="icon_button"
+						aria-label="standings"
+						href="/_poll_standings.html#A"
+						><i>leaderboard</i></a
+					>
+					<a class="icon_button" aria-label="prizes" href="/_prizes"
+						><i>workspace_premium</i></a
+					>
+				</div>
+			</div>
+
+			<svg viewBox="0 0 375 30" class="arc" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M166.726 30C108.823 28.0508 52.9051 17.9834 0 0.862466V0H375V0.862454C322.095 17.9834 266.177 28.0508 208.274 30H166.726Z"
+				/>
+			</svg>
+		</nav>
+		<main class="container margin-inset">
+			<h1 class="is-blue-500">King of the Court</h1>
+		</main>
+		<hr />
+		<main class="margin-inset">
+			<div class="text_group">
+				<h2>How it works</h2>
+				<p>
+					Each player will play a set with every other player. Rankings at the
+					end are determined by total wins, then point differential.
+				</p>
+			</div>
+
+			<ul class="icon_list">
+				<li>
+					<i>Location_on</i>
+					<p>Play on the court assigned to you.</p>
+				</li>
+				<li>
+					<i>Leaderboard</i>
+					<p>
+						Games are <u>rally scoring</u> to 15 points, win by 2, cap at 17.
+						Switch sides every 5 points
+					</p>
+				</li>
+				<li>
+					<i>Home</i>
+					<p>The home team chooses first serve or their preferred side</p>
+				</li>
+				<li>
+					<i>workspace_premium</i>
+					<p>Prizes for today are: The friendships you make along the way.</p>
+				</li>
+			</ul>
+		</main>
+		<hr />
+		<main class="margin-inset">
+			<div class="text_group">
+				<h2>Entering Scores</h2>
+				<p>Enter scores as games are played.</p>
+			</div>
+			<ul class="icon_list">
+				<li>
+					<span class="circle_number">1</span>
+					<p>Select a player, and tap current matchup to expand it.</p>
+				</li>
+				<li>
+					<span class="circle_number">2</span>
+					<p>Tap the <b>“Enter score”</b> button.</p>
+				</li>
+				<li>
+					<span class="circle_number">3</span>
+					<p>
+						On the new scoreboard screen, tap/swipe to the correct score (you
+						can also use this to keep score during the game if you are refing.)
+						Once the score is correct, press the <b>“Done”</b> button.
+					</p>
+				</li>
+				<li>
+					<span class="circle_number">4</span>
+					<p>
+						The standings and/or playoff bracket will automatically update based
+						on the score.
+					</p>
+				</li>
+			</ul>
+			<div class="text_group">
+				<p class="reminder">
+					If you make an error you can go back to the matchup and press “edit
+					score.”
+				</p>
+				<p class="reminder">
+					If there are discrepancies in the scoring, the tournament owner can
+					access the change logs.
+				</p>
+			</div>
+		</main>
+
+		<main class="call_to_action--area">
+			<div class="text_group">
+				<h2>Find your schedule</h2>
+				<p>Find your pool and player page (schedule)</p>
+			</div>
+			<button
+				type="button"
+				class="modal_trigger button"
+				modal_ID="playerSearch"
+			>
+				Search
+			</button>
+		</main>
+
+		<main class="margin-inset">
+			<div class="text_group">
+				<h2>Rules</h2>
+				<p>We’ll be using Philly pickup rules.</p>
+				<p>For if you’re unfamiliar. some key things to remember are:</p>
+			</div>
+			<ul>
+				<li>No let serves</li>
+				<li>No open hand tips/directional blocking</li>
+				<li>
+					No sets of pushes over the net. A set that accidentally goes over is
+					the other teams point.
+				</li>
+				<li>
+					Open hand receives are only allowed on hard driven attacks (meaning a
+					continuous downward path/no arc/not off the block/no serves)
+				</li>
+				<li>
+					You are allowed to cross under the net as long as it does not
+					interfere with the other team
+				</li>
+				<li>
+					Hair and clothing touching the net is not a fault. Hats and shoes are.
+				</li>
+				<li>
+					<b
+						>Most importantly, we’re here for volleyball and vibes. This isn’t
+						the AVP tour. Don’t be a dick.</b
+					>
+				</li>
+			</ul>
+			<div class="text_group">
+				<p>
+					If you have more specific question, refer to
+					<a href="#" target="_blank">East Coast Volleyball</a> or if something
+					is not covered there, the
+					<a href="#" target="_blank">Pottstown Rumble Rules</a>
+				</p>
+			</div>
+		</main>
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="poolList">
+				<div class="modal_bottom--handle"></div>
+				<div class="modal_bottom--content"></div>
+			</div>
+		</div>
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="playerSearch">
+				<div class="modal_bottom--handle"></div>
+				<h1>Search for a player</h1>
+				<div class="input_group text_input">
+					<div class="text_input--container">
+						<input
+							class="text_input--input"
+							placeholder=" "
+							type="text"
+							id="search-input"
+							oninput="searchPlayers(this.value)"
+						/>
+						<label class="text_input--label" for="search-input"
+							>Player Name</label
+						>
+					</div>
+				</div>
+
+				<div id="search-results" class="modal_bottom--player_list"></div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="scripts/globals.js"></script>
+		<script src="scripts/playerSearch.js"></script>
+		<script src="scripts/navigationButtons.js"></script>
+		<script src="js/modal.js"></script>
+		<script src="scripts/pool/poolModalContentOnly.js"></script>
+	</body>
+</html>

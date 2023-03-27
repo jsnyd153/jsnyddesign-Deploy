@@ -18,7 +18,18 @@ h4 {
 }
 
 p {
-	@include text_base($p: 14, $h: 1, $w: 300);
+	@include text_base($p: 14, $h: 1.45, $w: 300);
+	color: $grey-600;
+	b {
+		font-weight: 600;
+		color: $grey-900;
+	}
+	&.reminder {
+		font-style: italic;
+		color: $grey-500;
+		font-size: 13/16 * 1rem;
+		font-weight: 300;
+	}
 }
 
 .container {
@@ -28,10 +39,21 @@ p {
 		}
 	}
 }
+.text_group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
 
 @include text_nodes {
 	.emphasis {
 		color: $blue-500;
 		font-weight: 600;
+	}
+}
+
+@each $type in $colors_full {
+	.is-#{nth($type, 1)} {
+		color: #{nth($type, 2)};
 	}
 }

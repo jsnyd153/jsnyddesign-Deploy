@@ -1,0 +1,25 @@
+.call_to_action--area {
+ background: #484e56;
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 2rem;
+ margin: 0;
+}
+.call_to_action--area h1,
+.call_to_action--area h2,
+.call_to_action--area h3,
+.call_to_action--area h4,
+.call_to_action--area h5,
+.call_to_action--area h6,
+.call_to_action--area p {
+ color: #ffffff;
+}
+.call_to_action--area p {
+ color: #c8ccd2;
+}
+.call_to_action--area .button {
+ --button-primary: #ffffff;
+ --button-secondary: #2f7bd5;
+}

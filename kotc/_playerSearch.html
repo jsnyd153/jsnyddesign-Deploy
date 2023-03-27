@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<title>app test page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<link rel="stylesheet" href="css/components/_index.css" />
+		<link rel="stylesheet" href="css/blocks/navigation/nav_bar.css" />
+		<link rel="stylesheet" href="css/blocks/schedule/_index.css" />
+		<link rel="stylesheet" href="css/blocks/standings/_index.css" />
+		<link rel="stylesheet" href="css/globals/globals.css" />
+	</head>
+
+	<body class="player_page" pool="A">
+		<header>
+			<h1 class="modal_trigger" modal_ID="playerSearch">Search</h1>
+		</header>
+
+		</nav>
+
+		<main>
+	
+
+		</main>
+
+		<div class="modal" modal_active="false">
+			<div class="modal--back"></div>
+			<div class="modal_bottom" modal_active="false" id="playerSearch">
+				<div class="modal_bottom--handle"></div>
+                <h1>Search for a player</h1>
+                <div class="input_group text_input">
+                    <div class="text_input--container">
+                        <input
+                            class="text_input--input"
+                            placeholder=" "
+                            type="text"
+                            id="search-input"
+                            oninput="searchPlayers(this.value)"
+                        />
+                        <label class="text_input--label" for="search-input">Player Name</label>
+                    </div>
+                </div>
+    
+                <div id="search-results" class="modal_bottom--player_list"></div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<!-- need to generate the schedule -->
+		<script src="scripts/globals.js"></script>
+		<!-- <script src="scripts/individualSchedule/createScheduleContent.js"></script> -->
+		<script src="js/modal.js"></script>
+		<script>
+			function searchPlayers(query) {
+				const searchResults = document.getElementById("search-results");
+
+				searchResults.innerHTML = "";
+				const regex = new RegExp(query, "i");
+                const filteredPlayers = playerDataGlobal.filter(
+    player => player.FullName && player.playerID && (regex.test(player.FullName) || regex.test(player.playerID))
+  );
+				filteredPlayers.forEach((player) => {
+					const li = document.createElement("div");
+					const playerLink_El = document.createElement("a");
+					playerLink_El.textContent = player.FullName + ' (Pool ' + player.Pool+')';
+					playerLink_El.classList.add("name_card", "large");
+					playerLink_El.href =
+						baseUrl + "/_individualSchedule.html#" + player.playerID;
+					li.appendChild(playerLink_El);
+
+					searchResults.appendChild(li);
+				});
+			}
+		</script>
+
+		<script></script>
+	</body>
+</html>

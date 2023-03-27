@@ -1,0 +1,23 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+.call_to_action-- {
+	&area {
+		background: $grey-700;
+		text-align: center;
+		@include f-center;
+		padding: 2rem;
+		margin: 0;
+
+		@include text_nodes {
+			color: $white;
+		}
+		p {
+			color: $grey-200;
+		}
+		.button {
+			--button-primary: #{$white};
+			--button-secondary: #{$blue-500};
+		}
+	}
+}

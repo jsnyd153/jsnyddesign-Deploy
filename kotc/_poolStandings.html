@@ -30,9 +30,9 @@
 		</header>
 		<nav class="main_nav">
 			<div class="main_nav--controls">
-				<div class="dropdown_input modal_trigger" modal_ID="pools_all">
+				<div class="dropdown_input modal_trigger" modal_ID="poolList">
 					<div class="dropdown_input--label">
-						<span>Pool 1</span>
+						<span id="pool-name">Pool 1</span>
 					</div>
 					<svg class="dropdown_input--carrot" viewBox="0 0 12 8">
 						<path d="M6 7.5L0.803847 0.75L11.1962 0.750001L6 7.5Z" />
@@ -40,7 +40,7 @@
 				</div>
 				<div class="button_container">
 					<a class="icon_button" href="home"><i>home</i></a>
-					<a class="icon_button" href="_poolStandings"><i>leaderboard</i></a>
+					<a class="icon_button" href="_poolStandings#A1"><i>leaderboard</i></a>
 					<a class="icon_button" href="prizes"><i>social_leaderboard</i></a>
 				</div>
 			</div>
@@ -115,7 +115,7 @@
 
 		<div class="modal" modal_active="false">
 			<div class="modal--back"></div>
-			<div class="modal_bottom" modal_active="false" id="pools_all">
+			<div class="modal_bottom" modal_active="false" id="poolList">
 				<div class="modal_bottom--handle"></div>
 				<div class="modal_bottom--content">
 					<!-- <ul class="modal_bottom--pool_list">

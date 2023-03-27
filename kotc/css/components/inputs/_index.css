@@ -389,15 +389,15 @@ input:checked ~ .radio_input--number {
  justify-content: stretch;
  align-items: stretch;
 }
-.scoreboard_input button.button {
- --button-primary: #ffffff;
- --button-secondary: #484e56;
-}
 @media (orientation: landscape) {
- .scoreboard_input button.button {
+ .scoreboard_input {
   flex-direction: row;
   width: 100%;
  }
+}
+.scoreboard_input button.button {
+ --button-primary: #ffffff;
+ --button-secondary: #484e56;
 }
 .scoreboard_input--container {
  --solid_background: #2f7bd5;
@@ -447,6 +447,7 @@ input:checked ~ .radio_input--number {
 .scoreboard_input--name p {
  font-weight: inherit;
  font-size: inherit;
+ color: inherit;
 }
 .scoreboard_input--display h1 {
  font-size: 0.875rem;
@@ -467,11 +468,11 @@ input:checked ~ .radio_input--number {
 }
 @media (orientation: landscape) {
  .scoreboard_input--submit {
-  padding: 1rem 2rem;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  background-color: transparent;
  }
 }
 

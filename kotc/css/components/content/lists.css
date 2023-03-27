@@ -1,0 +1,82 @@
+@charset "UTF-8";
+ul {
+ display: flex;
+ gap: 0.5rem;
+ flex-direction: column;
+}
+ul li {
+ font-size: 0.8125rem;
+ margin: 0 0.75rem 0 0;
+ color: #62676f;
+ display: flex;
+ gap: 0.75rem;
+ line-height: 1.45;
+ font-weight: 300;
+}
+ul li:before {
+ display: block;
+ content: "•";
+}
+ul li p {
+ font-size: inherit;
+ color: inherit;
+}
+ul li.name_card:before {
+ display: none;
+}
+ul.icon_list {
+ display: flex;
+ gap: 0.875rem;
+ flex-direction: column;
+}
+ul.icon_list li {
+ display: flex;
+ gap: 1rem;
+ align-items: center;
+ margin: 0;
+}
+ul.icon_list li:before {
+ display: none;
+}
+ul.icon_list li i {
+ font-family: "Material Symbols Outlined";
+ font-weight: normal;
+ font-style: normal;
+ font-size: 1rem;
+ line-height: 1;
+ letter-spacing: normal;
+ text-transform: none;
+ display: inline-block;
+ white-space: nowrap;
+ word-wrap: normal;
+ direction: ltr;
+ -moz-font-feature-settings: "liga";
+ -moz-osx-font-smoothing: grayscale;
+ font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+ width: 1.25rem;
+ height: 1.25rem;
+ flex-grow: 0;
+ flex-shrink: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+ul.icon_list li p {
+ font-size: 0.8125rem;
+}
+ul.icon_list li .circle_number {
+ height: 0.875rem;
+ width: 0.875rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: #484e56;
+ color: #ffffff;
+ flex-shrink: 0;
+ flex-grow: 0;
+ border: 1px solid #141b24;
+ font-size: 0.625rem;
+}
+ul.icon_list li b {
+ font-weight: 600;
+}
