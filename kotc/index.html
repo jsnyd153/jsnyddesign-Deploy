@@ -56,8 +56,16 @@
 
 		<!-- need to generate the schedule -->
 		<script src="js/modal.js"></script>
+		<!-- Load only the Google Sheets API -->
+		<script src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
 
-		<script src="https://apis.google.com/js/api.js"></script>
+		<script>
+			function onApiLoad() {
+				gapi.client.load("sheets", "v4", function () {
+					// Your code that uses the sheets API goes here
+				});
+			}
+		</script>
 
 		<script>
 			// Load the Google API client library
