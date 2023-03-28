@@ -10,6 +10,7 @@
 		<!--Add buttons to initiate auth sequence and sign out-->
 		<button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
 		<button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+		<button onclick="listMajors()">Run function</button>
 
 		<pre id="content" style="white-space: pre-wrap"></pre>
 
@@ -106,6 +107,8 @@
 				}
 			}
 
+			// listMajors();
+
 			/**
 			 *  Sign out the user upon button click.
 			 */
@@ -124,6 +127,7 @@
 			 * Print the names and majors of students in a sample spreadsheet:
 			 * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
 			 */
+
 			let dataAPIGlobalAccess = [];
 			async function listMajors() {
 				let response;
