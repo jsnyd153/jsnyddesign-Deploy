@@ -1,6 +1,7 @@
 function navigationLinks() {
 	$(".main_nav .icon_button").each(function () {
 		const type = $(this).attr("aria-label");
+		console.log();
 
 		if (type == "home") {
 			$(this).attr("href", baseUrl + "/_home");
@@ -11,7 +12,7 @@ function navigationLinks() {
 			$(this).find("i").html("leaderboard");
 		}
 		if (type == "prizes") {
-			$(this).attr("href", baseUrl + "/prizes");
+			$(this).attr("href", baseUrl + "/_prizes");
 			$(this).find("i").html("workspace_premium");
 		}
 	});

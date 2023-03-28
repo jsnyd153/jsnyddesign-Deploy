@@ -33,10 +33,17 @@
 			<h1>index</h1>
 		</header>
 
-		<main id="">
-			<a href="kotc/_home" class="button">home</a>
-			<a href="kotc/_poolStandings.html#A" class="button">Pool</a>
-			<a href="kotc/_individualSchedule.html#A1" class="button">Player</a>
+		<main class="main_nav" id="">
+			<div class="button_container">
+				<a class="icon_button" aria-label="home" href="/_home"><i></i></a>
+				<a
+					class="icon_button"
+					aria-label="standings"
+					href="/_poll_standings.html#A"
+					><i></i
+				></a>
+				<a class="icon_button" aria-label="prizes" href="/_prizes"><i></i></a>
+			</div>
 		</main>
 
 		<div class="modal" modal_active="false">
@@ -53,7 +60,16 @@
 
 		<!-- need to generate the schedule -->
 		<!-- <script src="js/sheetGenerateSchedule.js"></script> -->
-
+		<script>
+			function createAllMatches() {
+				return;
+			}
+			function generatePageContent() {
+				return;
+			}
+		</script>
+		<script src="scripts/globals.js"></script>
+		<script src="scripts/navigationButtons.js"></script>
 		<!-- need to generate the schedule -->
 		<script src="js/modal.js"></script>
 	</body>
