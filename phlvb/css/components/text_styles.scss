@@ -1,6 +1,8 @@
 @use "sass:color";
 @use "../abstracts" as *;
 
+@import url("https://use.typekit.net/cue8qlh.css");
+
 // @mixin fluid_size_text($scale: 2.5, $floor: 38/16) {
 // 	$cap: $scale * 1440 / 100 /16 * 1;
 // 	font-size: calc($scale * 1vw + $floor * 1rem);
