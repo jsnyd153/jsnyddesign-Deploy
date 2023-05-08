@@ -1,274 +1,726 @@
 /*css/components/colors.scss*/
-.background_area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
+.has-brand-900-background {
+ --background_color: #192d62;
 }
-.background_area .background_fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.has-brand-900-background ~ * {
+ --background_color: #192d62;
 }
-.background_area .background_fill img,
-.background_area .background_fill video,
-.background_area .background_fill iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.has-brand-900-background.background_fill {
+ --background_color: #192d62;
 }
 
-.background_area .background_fill {
-  background-color: var(--background_color);
+.is-brand-900 {
+ color: #192d62;
 }
 
-.has-white-background {
-  --background_color: rgba(255, 255, 255, 0.25);
-}
-.has-white-background ~ * {
-  --background_color: rgba(255, 255, 255, 0.25);
-}
-.has-white-background.background_fill {
-  --background_color: rgba(255, 255, 255, 0.25);
+.has-brand-900-fill {
+ fill: #192d62;
 }
 
-.is-white {
-  color: rgba(255, 255, 255, 0.25);
+.has-brand-900-stroke {
+ stroke: #192d62;
 }
 
-.has-white-fill {
-  fill: rgba(255, 255, 255, 0.25);
+.has-brand-800-background {
+ --background_color: #1c326f;
+}
+.has-brand-800-background ~ * {
+ --background_color: #1c326f;
+}
+.has-brand-800-background.background_fill {
+ --background_color: #1c326f;
 }
 
-.has-white-stroke {
-  stroke: rgba(255, 255, 255, 0.25);
+.is-brand-800 {
+ color: #1c326f;
 }
 
-.has-gold-300-background {
-  --background_color: rgba(249, 218, 1, 0.25);
-}
-.has-gold-300-background ~ * {
-  --background_color: rgba(249, 218, 1, 0.25);
-}
-.has-gold-300-background.background_fill {
-  --background_color: rgba(249, 218, 1, 0.25);
+.has-brand-800-fill {
+ fill: #1c326f;
 }
 
-.is-gold-300 {
-  color: rgba(249, 218, 1, 0.25);
+.has-brand-800-stroke {
+ stroke: #1c326f;
 }
 
-.has-gold-300-fill {
-  fill: rgba(249, 218, 1, 0.25);
+.has-brand-800t-background {
+ --background_color: rgba(29, 52, 114, 0.8);
+}
+.has-brand-800t-background ~ * {
+ --background_color: rgba(29, 52, 114, 0.8);
+}
+.has-brand-800t-background.background_fill {
+ --background_color: rgba(29, 52, 114, 0.8);
 }
 
-.has-gold-300-stroke {
-  stroke: rgba(249, 218, 1, 0.25);
+.is-brand-800t {
+ color: rgba(29, 52, 114, 0.8);
 }
 
-.has-gold-500-background {
-  --background_color: rgba(232, 168, 12, 0.25);
-}
-.has-gold-500-background ~ * {
-  --background_color: rgba(232, 168, 12, 0.25);
-}
-.has-gold-500-background.background_fill {
-  --background_color: rgba(232, 168, 12, 0.25);
+.has-brand-800t-fill {
+ fill: rgba(29, 52, 114, 0.8);
 }
 
-.is-gold-500 {
-  color: rgba(232, 168, 12, 0.25);
+.has-brand-800t-stroke {
+ stroke: rgba(29, 52, 114, 0.8);
 }
 
-.has-gold-500-fill {
-  fill: rgba(232, 168, 12, 0.25);
+.has-brand-800-background {
+ --background_color: #1c326f;
+}
+.has-brand-800-background ~ * {
+ --background_color: #1c326f;
+}
+.has-brand-800-background.background_fill {
+ --background_color: #1c326f;
 }
 
-.has-gold-500-stroke {
-  stroke: rgba(232, 168, 12, 0.25);
+.is-brand-800 {
+ color: #1c326f;
 }
 
-.has-gold-700-background {
-  --background_color: rgba(214, 117, 22, 0.25);
-}
-.has-gold-700-background ~ * {
-  --background_color: rgba(214, 117, 22, 0.25);
-}
-.has-gold-700-background.background_fill {
-  --background_color: rgba(214, 117, 22, 0.25);
+.has-brand-800-fill {
+ fill: #1c326f;
 }
 
-.is-gold-700 {
-  color: rgba(214, 117, 22, 0.25);
+.has-brand-800-stroke {
+ stroke: #1c326f;
 }
 
-.has-gold-700-fill {
-  fill: rgba(214, 117, 22, 0.25);
+.has-brand-800t-background {
+ --background_color: rgba(33, 60, 131, 0.8);
+}
+.has-brand-800t-background ~ * {
+ --background_color: rgba(33, 60, 131, 0.8);
+}
+.has-brand-800t-background.background_fill {
+ --background_color: rgba(33, 60, 131, 0.8);
 }
 
-.has-gold-700-stroke {
-  stroke: rgba(214, 117, 22, 0.25);
+.is-brand-800t {
+ color: rgba(33, 60, 131, 0.8);
 }
 
-.has-grey-100-background {
-  --background_color: rgba(249, 249, 249, 0.25);
-}
-.has-grey-100-background ~ * {
-  --background_color: rgba(249, 249, 249, 0.25);
-}
-.has-grey-100-background.background_fill {
-  --background_color: rgba(249, 249, 249, 0.25);
+.has-brand-800t-fill {
+ fill: rgba(33, 60, 131, 0.8);
 }
 
-.is-grey-100 {
-  color: rgba(249, 249, 249, 0.25);
+.has-brand-800t-stroke {
+ stroke: rgba(33, 60, 131, 0.8);
 }
 
-.has-grey-100-fill {
-  fill: rgba(249, 249, 249, 0.25);
+.has-brand-500-background {
+ --background_color: #76affe;
+}
+.has-brand-500-background ~ * {
+ --background_color: #76affe;
+}
+.has-brand-500-background.background_fill {
+ --background_color: #76affe;
 }
 
-.has-grey-100-stroke {
-  stroke: rgba(249, 249, 249, 0.25);
+.is-brand-500 {
+ color: #76affe;
 }
 
-.has-grey-200-background {
-  --background_color: rgba(208, 209, 212, 0.25);
-}
-.has-grey-200-background ~ * {
-  --background_color: rgba(208, 209, 212, 0.25);
-}
-.has-grey-200-background.background_fill {
-  --background_color: rgba(208, 209, 212, 0.25);
+.has-brand-500-fill {
+ fill: #76affe;
 }
 
-.is-grey-200 {
-  color: rgba(208, 209, 212, 0.25);
+.has-brand-500-stroke {
+ stroke: #76affe;
 }
 
-.has-grey-200-fill {
-  fill: rgba(208, 209, 212, 0.25);
+.has-brand-200-background {
+ --background_color: #a9bfeb;
+}
+.has-brand-200-background ~ * {
+ --background_color: #a9bfeb;
+}
+.has-brand-200-background.background_fill {
+ --background_color: #a9bfeb;
 }
 
-.has-grey-200-stroke {
-  stroke: rgba(208, 209, 212, 0.25);
+.is-brand-200 {
+ color: #a9bfeb;
 }
 
-.has-grey-400-background {
-  --background_color: rgba(193, 193, 191, 0.25);
-}
-.has-grey-400-background ~ * {
-  --background_color: rgba(193, 193, 191, 0.25);
-}
-.has-grey-400-background.background_fill {
-  --background_color: rgba(193, 193, 191, 0.25);
+.has-brand-200-fill {
+ fill: #a9bfeb;
 }
 
-.is-grey-400 {
-  color: rgba(193, 193, 191, 0.25);
+.has-brand-200-stroke {
+ stroke: #a9bfeb;
 }
 
-.has-grey-400-fill {
-  fill: rgba(193, 193, 191, 0.25);
+.has-brand-100-background {
+ --background_color: #bccceb;
+}
+.has-brand-100-background ~ * {
+ --background_color: #bccceb;
+}
+.has-brand-100-background.background_fill {
+ --background_color: #bccceb;
 }
 
-.has-grey-400-stroke {
-  stroke: rgba(193, 193, 191, 0.25);
+.is-brand-100 {
+ color: #bccceb;
 }
 
-.has-grey-700-background {
-  --background_color: rgba(35, 43, 58, 0.25);
-}
-.has-grey-700-background ~ * {
-  --background_color: rgba(35, 43, 58, 0.25);
-}
-.has-grey-700-background.background_fill {
-  --background_color: rgba(35, 43, 58, 0.25);
+.has-brand-100-fill {
+ fill: #bccceb;
 }
 
-.is-grey-700 {
-  color: rgba(35, 43, 58, 0.25);
+.has-brand-100-stroke {
+ stroke: #bccceb;
 }
 
-.has-grey-700-fill {
-  fill: rgba(35, 43, 58, 0.25);
+.has-indoor-900-background {
+ --background_color: #592817;
+}
+.has-indoor-900-background ~ * {
+ --background_color: #592817;
+}
+.has-indoor-900-background.background_fill {
+ --background_color: #592817;
 }
 
-.has-grey-700-stroke {
-  stroke: rgba(35, 43, 58, 0.25);
+.is-indoor-900 {
+ color: #592817;
 }
 
-.has-grey-800-background {
-  --background_color: rgba(8, 24, 33, 0.25);
-}
-.has-grey-800-background ~ * {
-  --background_color: rgba(8, 24, 33, 0.25);
-}
-.has-grey-800-background.background_fill {
-  --background_color: rgba(8, 24, 33, 0.25);
+.has-indoor-900-fill {
+ fill: #592817;
 }
 
-.is-grey-800 {
-  color: rgba(8, 24, 33, 0.25);
+.has-indoor-900-stroke {
+ stroke: #592817;
 }
 
-.has-grey-800-fill {
-  fill: rgba(8, 24, 33, 0.25);
+.has-indoor-800-background {
+ --background_color: #662e1a;
+}
+.has-indoor-800-background ~ * {
+ --background_color: #662e1a;
+}
+.has-indoor-800-background.background_fill {
+ --background_color: #662e1a;
 }
 
-.has-grey-800-stroke {
-  stroke: rgba(8, 24, 33, 0.25);
+.is-indoor-800 {
+ color: #662e1a;
 }
 
-.has-grey-900-background {
-  --background_color: rgba(5, 0, 1, 0.25);
-}
-.has-grey-900-background ~ * {
-  --background_color: rgba(5, 0, 1, 0.25);
-}
-.has-grey-900-background.background_fill {
-  --background_color: rgba(5, 0, 1, 0.25);
+.has-indoor-800-fill {
+ fill: #662e1a;
 }
 
-.is-grey-900 {
-  color: rgba(5, 0, 1, 0.25);
+.has-indoor-800-stroke {
+ stroke: #662e1a;
 }
 
-.has-grey-900-fill {
-  fill: rgba(5, 0, 1, 0.25);
+.has-indoor-800t-background {
+ --background_color: rgba(105, 47, 27, 0.8);
+}
+.has-indoor-800t-background ~ * {
+ --background_color: rgba(105, 47, 27, 0.8);
+}
+.has-indoor-800t-background.background_fill {
+ --background_color: rgba(105, 47, 27, 0.8);
 }
 
-.has-grey-900-stroke {
-  stroke: rgba(5, 0, 1, 0.25);
+.is-indoor-800t {
+ color: rgba(105, 47, 27, 0.8);
 }
 
-.has-black-background {
-  --background_color: rgba(0, 0, 0, 0.25);
-}
-.has-black-background ~ * {
-  --background_color: rgba(0, 0, 0, 0.25);
-}
-.has-black-background.background_fill {
-  --background_color: rgba(0, 0, 0, 0.25);
+.has-indoor-800t-fill {
+ fill: rgba(105, 47, 27, 0.8);
 }
 
-.is-black {
-  color: rgba(0, 0, 0, 0.25);
+.has-indoor-800t-stroke {
+ stroke: rgba(105, 47, 27, 0.8);
 }
 
-.has-black-fill {
-  fill: rgba(0, 0, 0, 0.25);
+.has-indoor-800-background {
+ --background_color: #70321d;
+}
+.has-indoor-800-background ~ * {
+ --background_color: #70321d;
+}
+.has-indoor-800-background.background_fill {
+ --background_color: #70321d;
 }
 
-.has-black-stroke {
-  stroke: rgba(0, 0, 0, 0.25);
+.is-indoor-800 {
+ color: #70321d;
+}
+
+.has-indoor-800-fill {
+ fill: #70321d;
+}
+
+.has-indoor-800-stroke {
+ stroke: #70321d;
+}
+
+.has-indoor-800t-background {
+ --background_color: rgba(121, 55, 31, 0.8);
+}
+.has-indoor-800t-background ~ * {
+ --background_color: rgba(121, 55, 31, 0.8);
+}
+.has-indoor-800t-background.background_fill {
+ --background_color: rgba(121, 55, 31, 0.8);
+}
+
+.is-indoor-800t {
+ color: rgba(121, 55, 31, 0.8);
+}
+
+.has-indoor-800t-fill {
+ fill: rgba(121, 55, 31, 0.8);
+}
+
+.has-indoor-800t-stroke {
+ stroke: rgba(121, 55, 31, 0.8);
+}
+
+.has-indoor-500-background {
+ --background_color: #f16122;
+}
+.has-indoor-500-background ~ * {
+ --background_color: #f16122;
+}
+.has-indoor-500-background.background_fill {
+ --background_color: #f16122;
+}
+
+.is-indoor-500 {
+ color: #f16122;
+}
+
+.has-indoor-500-fill {
+ fill: #f16122;
+}
+
+.has-indoor-500-stroke {
+ stroke: #f16122;
+}
+
+.has-indoor-200-background {
+ --background_color: #f0c4b5;
+}
+.has-indoor-200-background ~ * {
+ --background_color: #f0c4b5;
+}
+.has-indoor-200-background.background_fill {
+ --background_color: #f0c4b5;
+}
+
+.is-indoor-200 {
+ color: #f0c4b5;
+}
+
+.has-indoor-200-fill {
+ fill: #f0c4b5;
+}
+
+.has-indoor-200-stroke {
+ stroke: #f0c4b5;
+}
+
+.has-indoor-100-background {
+ --background_color: #ebd5cd;
+}
+.has-indoor-100-background ~ * {
+ --background_color: #ebd5cd;
+}
+.has-indoor-100-background.background_fill {
+ --background_color: #ebd5cd;
+}
+
+.is-indoor-100 {
+ color: #ebd5cd;
+}
+
+.has-indoor-100-fill {
+ fill: #ebd5cd;
+}
+
+.has-indoor-100-stroke {
+ stroke: #ebd5cd;
+}
+
+.has-grass-900-background {
+ --background_color: #3b520e;
+}
+.has-grass-900-background ~ * {
+ --background_color: #3b520e;
+}
+.has-grass-900-background.background_fill {
+ --background_color: #3b520e;
+}
+
+.is-grass-900 {
+ color: #3b520e;
+}
+
+.has-grass-900-fill {
+ fill: #3b520e;
+}
+
+.has-grass-900-stroke {
+ stroke: #3b520e;
+}
+
+.has-grass-800-background {
+ --background_color: #456010;
+}
+.has-grass-800-background ~ * {
+ --background_color: #456010;
+}
+.has-grass-800-background.background_fill {
+ --background_color: #456010;
+}
+
+.is-grass-800 {
+ color: #456010;
+}
+
+.has-grass-800-fill {
+ fill: #456010;
+}
+
+.has-grass-800-stroke {
+ stroke: #456010;
+}
+
+.has-grass-800t-background {
+ --background_color: rgba(72, 99, 17, 0.8);
+}
+.has-grass-800t-background ~ * {
+ --background_color: rgba(72, 99, 17, 0.8);
+}
+.has-grass-800t-background.background_fill {
+ --background_color: rgba(72, 99, 17, 0.8);
+}
+
+.is-grass-800t {
+ color: rgba(72, 99, 17, 0.8);
+}
+
+.has-grass-800t-fill {
+ fill: rgba(72, 99, 17, 0.8);
+}
+
+.has-grass-800t-stroke {
+ stroke: rgba(72, 99, 17, 0.8);
+}
+
+.has-grass-800-background {
+ --background_color: #4f6e13;
+}
+.has-grass-800-background ~ * {
+ --background_color: #4f6e13;
+}
+.has-grass-800-background.background_fill {
+ --background_color: #4f6e13;
+}
+
+.is-grass-800 {
+ color: #4f6e13;
+}
+
+.has-grass-800-fill {
+ fill: #4f6e13;
+}
+
+.has-grass-800-stroke {
+ stroke: #4f6e13;
+}
+
+.has-grass-800t-background {
+ --background_color: rgba(84, 117, 20, 0.8);
+}
+.has-grass-800t-background ~ * {
+ --background_color: rgba(84, 117, 20, 0.8);
+}
+.has-grass-800t-background.background_fill {
+ --background_color: rgba(84, 117, 20, 0.8);
+}
+
+.is-grass-800t {
+ color: rgba(84, 117, 20, 0.8);
+}
+
+.has-grass-800t-fill {
+ fill: rgba(84, 117, 20, 0.8);
+}
+
+.has-grass-800t-stroke {
+ stroke: rgba(84, 117, 20, 0.8);
+}
+
+.has-grass-500-background {
+ --background_color: #94d13d;
+}
+.has-grass-500-background ~ * {
+ --background_color: #94d13d;
+}
+.has-grass-500-background.background_fill {
+ --background_color: #94d13d;
+}
+
+.is-grass-500 {
+ color: #94d13d;
+}
+
+.has-grass-500-fill {
+ fill: #94d13d;
+}
+
+.has-grass-500-stroke {
+ stroke: #94d13d;
+}
+
+.has-grass-200-background {
+ --background_color: #d1f095;
+}
+.has-grass-200-background ~ * {
+ --background_color: #d1f095;
+}
+.has-grass-200-background.background_fill {
+ --background_color: #d1f095;
+}
+
+.is-grass-200 {
+ color: #d1f095;
+}
+
+.has-grass-200-fill {
+ fill: #d1f095;
+}
+
+.has-grass-200-stroke {
+ stroke: #d1f095;
+}
+
+.has-grass-100-background {
+ --background_color: #e2f5ba;
+}
+.has-grass-100-background ~ * {
+ --background_color: #e2f5ba;
+}
+.has-grass-100-background.background_fill {
+ --background_color: #e2f5ba;
+}
+
+.is-grass-100 {
+ color: #e2f5ba;
+}
+
+.has-grass-100-fill {
+ fill: #e2f5ba;
+}
+
+.has-grass-100-stroke {
+ stroke: #e2f5ba;
+}
+
+.has-beach-900-background {
+ --background_color: #625619;
+}
+.has-beach-900-background ~ * {
+ --background_color: #625619;
+}
+.has-beach-900-background.background_fill {
+ --background_color: #625619;
+}
+
+.is-beach-900 {
+ color: #625619;
+}
+
+.has-beach-900-fill {
+ fill: #625619;
+}
+
+.has-beach-900-stroke {
+ stroke: #625619;
+}
+
+.has-beach-800-background {
+ --background_color: #6f611c;
+}
+.has-beach-800-background ~ * {
+ --background_color: #6f611c;
+}
+.has-beach-800-background.background_fill {
+ --background_color: #6f611c;
+}
+
+.is-beach-800 {
+ color: #6f611c;
+}
+
+.has-beach-800-fill {
+ fill: #6f611c;
+}
+
+.has-beach-800-stroke {
+ stroke: #6f611c;
+}
+
+.has-beach-800t-background {
+ --background_color: rgba(114, 100, 29, 0.8);
+}
+.has-beach-800t-background ~ * {
+ --background_color: rgba(114, 100, 29, 0.8);
+}
+.has-beach-800t-background.background_fill {
+ --background_color: rgba(114, 100, 29, 0.8);
+}
+
+.is-beach-800t {
+ color: rgba(114, 100, 29, 0.8);
+}
+
+.has-beach-800t-fill {
+ fill: rgba(114, 100, 29, 0.8);
+}
+
+.has-beach-800t-stroke {
+ stroke: rgba(114, 100, 29, 0.8);
+}
+
+.has-beach-500-background {
+ --background_color: #f9d452;
+}
+.has-beach-500-background ~ * {
+ --background_color: #f9d452;
+}
+.has-beach-500-background.background_fill {
+ --background_color: #f9d452;
+}
+
+.is-beach-500 {
+ color: #f9d452;
+}
+
+.has-beach-500-fill {
+ fill: #f9d452;
+}
+
+.has-beach-500-stroke {
+ stroke: #f9d452;
+}
+
+.has-beach-300t-background {
+ --background_color: rgba(223, 215, 176, 0.8);
+}
+.has-beach-300t-background ~ * {
+ --background_color: rgba(223, 215, 176, 0.8);
+}
+.has-beach-300t-background.background_fill {
+ --background_color: rgba(223, 215, 176, 0.8);
+}
+
+.is-beach-300t {
+ color: rgba(223, 215, 176, 0.8);
+}
+
+.has-beach-300t-fill {
+ fill: rgba(223, 215, 176, 0.8);
+}
+
+.has-beach-300t-stroke {
+ stroke: rgba(223, 215, 176, 0.8);
+}
+
+.has-beach-300-background {
+ --background_color: #f0e6b5;
+}
+.has-beach-300-background ~ * {
+ --background_color: #f0e6b5;
+}
+.has-beach-300-background.background_fill {
+ --background_color: #f0e6b5;
+}
+
+.is-beach-300 {
+ color: #f0e6b5;
+}
+
+.has-beach-300-fill {
+ fill: #f0e6b5;
+}
+
+.has-beach-300-stroke {
+ stroke: #f0e6b5;
+}
+
+.has-beach-200t-background {
+ --background_color: rgba(229, 223, 190, 0.8);
+}
+.has-beach-200t-background ~ * {
+ --background_color: rgba(229, 223, 190, 0.8);
+}
+.has-beach-200t-background.background_fill {
+ --background_color: rgba(229, 223, 190, 0.8);
+}
+
+.is-beach-200t {
+ color: rgba(229, 223, 190, 0.8);
+}
+
+.has-beach-200t-fill {
+ fill: rgba(229, 223, 190, 0.8);
+}
+
+.has-beach-200t-stroke {
+ stroke: rgba(229, 223, 190, 0.8);
+}
+
+.has-beach-200-background {
+ --background_color: #f0e6b5;
+}
+.has-beach-200-background ~ * {
+ --background_color: #f0e6b5;
+}
+.has-beach-200-background.background_fill {
+ --background_color: #f0e6b5;
+}
+
+.is-beach-200 {
+ color: #f0e6b5;
+}
+
+.has-beach-200-fill {
+ fill: #f0e6b5;
+}
+
+.has-beach-200-stroke {
+ stroke: #f0e6b5;
+}
+
+.has-beach-100-background {
+ --background_color: #ebe6cd;
+}
+.has-beach-100-background ~ * {
+ --background_color: #ebe6cd;
+}
+.has-beach-100-background.background_fill {
+ --background_color: #ebe6cd;
+}
+
+.is-beach-100 {
+ color: #ebe6cd;
+}
+
+.has-beach-100-fill {
+ fill: #ebe6cd;
+}
+
+.has-beach-100-stroke {
+ stroke: #ebe6cd;
 }

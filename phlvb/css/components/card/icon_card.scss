@@ -5,6 +5,10 @@
 // Visual: https://www.figma.com/file/oxtfUo8w4dRLkkJmcEBwpA/PHLVB---Website?type=design&node-id=230%3A60458&t=qtCFQvZbBAM85yM2-1
 // Dependancy: none
 
+//================================================
+/*css/components/cards/icon_card.scss*/
+//================================================
+
 .icon_card {
 	padding: 32/16 * 1rem;
 	border-radius: 12/16 * 1rem;
@@ -66,8 +70,8 @@
 			}
 		}
 		&icon {
-			width: 1.2em;
-			height: 1.2em;
+			width: 2.125em;
+			height: 2.125em;
 			flex-shrink: 0;
 			.fill {
 				fill: currentColor;

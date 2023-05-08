@@ -1,5 +1,6 @@
+/*css/components/text_styles.scss*/
 h1 {
- font-size: calc(2.0657vw + 2.14084375rem);
+ font-size: calc(2.2657vw + 1.51584375rem);
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 500;
  line-height: 105%;
@@ -8,7 +9,7 @@ h1 {
 }
 @media (min-width: 1440px) {
  h1 {
-  font-size: 3.99997375rem;
+  font-size: 3.55497375rem;
  }
 }
 h1.feature {
@@ -28,47 +29,47 @@ h1.feature span {
 h2 {
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 500;
- font-size: calc(0.939vw + 1.77993125rem);
+ font-size: calc(1.439vw + 1.40493125rem);
  line-height: 115%;
  letter-spacing: -0.02em;
  color: var(--theme_color-100);
 }
 @media (min-width: 1440px) {
  h2 {
-  font-size: 2.62503125rem;
+  font-size: 2.70003125rem;
  }
 }
 
 h3 {
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 500;
- font-size: calc(0.7273vw + 1.15845rem);
+ font-size: calc(0.9273vw + 1.03345rem);
  line-height: 125%;
  letter-spacing: -0.02em;
  color: var(--theme_color-200);
 }
 @media (min-width: 1440px) {
  h3 {
-  font-size: 1.81302rem;
+  font-size: 1.86802rem;
  }
 }
 
 h4 {
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 500;
- font-size: calc(0.4695vw + 1.3274625rem);
+ font-size: calc(0.9695vw + 0.9524625rem);
  line-height: 125%;
  letter-spacing: -0.02em;
  color: var(--theme_color-200);
 }
 @media (min-width: 1440px) {
  h4 {
-  font-size: 1.7500125rem;
+  font-size: 1.8250125rem;
  }
 }
 
 h5 {
- font-size: calc(0.1878vw + 1.1434875rem);
+ font-size: calc(0.6878vw + 0.7684875rem);
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 500;
  line-height: 120%;
@@ -77,7 +78,7 @@ h5 {
 }
 @media (min-width: 1440px) {
  h5 {
-  font-size: 1.3125075rem;
+  font-size: 1.3875075rem;
  }
 }
 
@@ -93,7 +94,7 @@ h6 {
 }
 
 p {
- font-size: calc(0.1878vw + 0.8934875rem);
+ font-size: calc(0.344vw + 0.7684875rem);
  font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
  font-weight: 400;
  line-height: 135%;
@@ -102,7 +103,7 @@ p {
 }
 @media (min-width: 1440px) {
  p {
-  font-size: 1.0625075rem;
+  font-size: 1.0780875rem;
  }
 }
 p b {

@@ -27,8 +27,12 @@
 	}
 }
 
+//================================================
+/*css/components/text_styles.scss*/
+//================================================
+
 h1 {
-	@include fluid_size_text($scale: 2.0657, $floor: 34.2535/16);
+	@include fluid_size_text($scale: 2.2657, $floor: 24.2535/16);
 	font-family: $sans_font;
 	font-weight: 500;
 	line-height: 105%;
@@ -46,7 +50,7 @@ h1 {
 h2 {
 	font-family: $sans_font;
 	font-weight: 500;
-	@include fluid_size_text(0.939, $floor: 28.4789/16);
+	@include fluid_size_text(1.439, $floor: 22.4789/16);
 	line-height: 115%;
 	letter-spacing: -0.02em;
 	color: var(--theme_color-100);
@@ -55,7 +59,7 @@ h2 {
 h3 {
 	font-family: $sans_font;
 	font-weight: 500;
-	@include fluid_size_text($scale: 0.7273, $floor: 18.5352/16);
+	@include fluid_size_text($scale: 0.9273, $floor: 16.5352/16);
 	line-height: 125%;
 	letter-spacing: -0.02em;
 	color: var(--theme_color-200);
@@ -63,13 +67,13 @@ h3 {
 h4 {
 	font-family: $sans_font;
 	font-weight: 500;
-	@include fluid_size_text($scale: 0.4695, $floor: 21.2394/16);
+	@include fluid_size_text($scale: 0.9695, $floor: 15.2394/16);
 	line-height: 125%;
 	letter-spacing: -0.02em;
 	color: var(--theme_color-200);
 }
 h5 {
-	@include fluid_size_text($scale: 0.1878, $floor: 18.2958/16);
+	@include fluid_size_text($scale: 0.6878, $floor: 12.2958/16);
 	font-family: $sans_font;
 	font-weight: 500;
 	line-height: 120%;
@@ -88,7 +92,7 @@ h6 {
 }
 
 p {
-	@include fluid_size_text($scale: 0.1878, $floor: 14.2958/16);
+	@include fluid_size_text($scale: 0.344, $floor: 12.2958/16);
 	font-family: $sans_font;
 	font-weight: 400;
 	line-height: 135%;

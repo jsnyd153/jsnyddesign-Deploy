@@ -1,3 +1,4 @@
+/*css/components/buttons/button.scss*/
 .button {
  --inital_background: var(--theme_color-500);
  --inital_text: var(--theme_color-900);

@@ -1,3 +1,4 @@
+/*css/components/cards/event_card.scss*/
 .event_card {
  display: flex;
  flex-direction: column;
@@ -114,6 +115,7 @@ a.has-media:hover .event_card--media_area img {
 }
 .event_card--title h4 {
  color: var(--theme_color-100);
+ line-height: 110%;
 }
 a:hover .event_card--title h4 {
  color: var(--theme_color-900);
@@ -146,4 +148,12 @@ a.has-media:hover .event_card--title h4 {
 }
 .has-media .event_card--location {
  align-self: start;
+}
+.has-media .event_card--location .location {
+ padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+ font-size: 0.625rem;
+ color: #ffffff;
+}
+.has-media:hover .event_card--location .location {
+ color: #ffffff;
 }

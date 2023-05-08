@@ -1,3 +1,4 @@
+/*css/components/cards/icon_card.scss*/
 .icon_card {
  padding: 2rem;
  border-radius: 0.75rem;
@@ -63,8 +64,8 @@ a:hover .icon_card--header {
  color: inherit;
 }
 .icon_card--icon {
- width: 1.2em;
- height: 1.2em;
+ width: 2.125em;
+ height: 2.125em;
  flex-shrink: 0;
 }
 .icon_card--icon .fill {

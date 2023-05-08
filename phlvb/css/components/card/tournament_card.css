@@ -1,11 +1,12 @@
-.league_card {
+/*css/components/cards/tournament_card.scss*/
+.tournament_card {
  display: flex;
  flex-direction: column;
  align-items: stretch;
  padding: 1.5rem;
  gap: 1rem;
 }
-.league_card--date {
+.tournament_card--date {
  font-size: 0.875rem;
  line-height: 100%;
  font-weight: "Roc Grotesk", Helvetica, Arial, sans-serif;
@@ -18,69 +19,70 @@
  gap: inherit;
  color: var(--theme_color-100);
 }
-a:hover .league_card--date {
+a:hover .tournament_card--date {
  color: var(--theme_color-900);
 }
-.league_card--date .expected {
- font-weight: 400;
- color: var(--theme_color-200);
-}
-a:hover .league_card--date .expected {
- color: var(--theme_color-800);
-}
-.league_card--description {
+.tournament_card--description {
  display: grid;
  gap: 1rem;
  grid-template-columns: 1fr 1fr auto;
 }
 @media (max-width: 767px) {
- .league_card--description {
+ .tournament_card--description {
   grid-template-columns: 1fr auto;
  }
 }
 @media (max-width: 477px) {
- .league_card--description {
+ .tournament_card--description {
   grid-template-columns: 1fr;
  }
 }
-.league_card--title {
+.tournament_card--title {
  display: flex;
  flex-direction: column;
  gap: 0.25rem;
 }
-.league_card--title h1,
-.league_card--title h2,
-.league_card--title h3,
-.league_card--title h4,
-.league_card--title h5,
-.league_card--title h6 {
+.tournament_card--title h1,
+.tournament_card--title h2,
+.tournament_card--title h3,
+.tournament_card--title h4,
+.tournament_card--title h5,
+.tournament_card--title h6 {
  color: var(--theme_color-100);
 }
-a:hover .league_card--title h1,
-a:hover .league_card--title h2,
-a:hover .league_card--title h3,
-a:hover .league_card--title h4,
-a:hover .league_card--title h5,
-a:hover .league_card--title h6 {
+a:hover .tournament_card--title h1,
+a:hover .tournament_card--title h2,
+a:hover .tournament_card--title h3,
+a:hover .tournament_card--title h4,
+a:hover .tournament_card--title h5,
+a:hover .tournament_card--title h6 {
  color: var(--theme_color-900);
 }
-.league_card--body p {
+.tournament_card--body p {
  font-size: 0.9375rem;
 }
+.tournament_card--body .host {
+ font-weight: 600;
+ text-decoration: underline;
+ color: var(--theme_color-100);
+}
+a:hover .tournament_card--body .host {
+ color: var(--theme_color-900);
+}
 @media (max-width: 767px) {
- .league_card--body {
+ .tournament_card--body {
   grid-column: 1;
  }
 }
 @media (max-width: 767px) {
- .league_card--location {
+ .tournament_card--location {
   grid-row: 1;
   grid-column: 2;
   margin-top: 0.5rem;
  }
 }
 @media (max-width: 477px) {
- .league_card--location {
+ .tournament_card--location {
   margin-right: auto;
   grid-row: auto;
   grid-column: auto;

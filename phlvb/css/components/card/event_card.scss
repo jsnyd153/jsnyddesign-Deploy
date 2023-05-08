@@ -5,6 +5,10 @@
 // Visual: https://www.figma.com/file/oxtfUo8w4dRLkkJmcEBwpA/PHLVB---Website?node-id=148%3A10022&t=YZtFunZ3xKrlzhUX-1
 // Dependancy: none
 
+//================================================
+/*css/components/cards/event_card.scss*/
+//================================================
+
 .event_card {
 	display: flex;
 	flex-direction: column;
@@ -121,6 +125,7 @@
 			gap: 0.25rem;
 			h4 {
 				color: var(--theme_color-100);
+				line-height: 110%;
 				a:hover & {
 					color: var(--theme_color-900);
 				}
@@ -155,6 +160,16 @@
 			align-self: end;
 			.has-media & {
 				align-self: start;
+				.location {
+					padding: 4/16 * 1rem 8/16 * 1rem 4/16 * 1rem 8/16 * 1rem;
+					font-size: 10/16 * 1rem;
+					color: $white;
+				}
+			}
+			.has-media:hover & {
+				.location {
+					color: $white;
+				}
 			}
 		}
 	}

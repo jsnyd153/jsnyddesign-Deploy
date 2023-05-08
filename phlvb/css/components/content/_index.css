@@ -1,3 +1,4 @@
+/*css/components/content/inline_alert.scss*/
 .inline_alert--container {
  padding: 2rem;
  border-radius: 0.625rem;
@@ -32,6 +33,7 @@
  color: var(--theme_color-200);
 }
 
+/*css/components/content/intro_area.scss*/
 .intro_area {
  gap: var(--gap);
  display: flex;
@@ -63,6 +65,7 @@
  }
 }
 
+/*css/components/content/list_styles.scss*/
 .text_content ul {
  display: flex;
  flex-direction: column;
@@ -88,6 +91,7 @@
  box-shadow: inset 0 0 0 0.75em var(--theme_color-900), 0 0 0 1px var(--theme_color-100);
 }
 
+/*css/components/content/media_area.scss*/
 .media_area {
  display: flex;
  justify-content: center;
@@ -122,6 +126,7 @@
     object-fit: cover;
 }
 
+/*css/components/content/person_profile.scss*/
 .person_profile--item {
  display: flex;
  flex-direction: column;
@@ -188,6 +193,7 @@
  align-self: end;
 }
 
+/*css/components/content/team_profile.scss*/
 .team_profile--item {
  display: flex;
  flex-direction: column;
@@ -236,6 +242,7 @@
  font-weight: 500;
 }
 
+/*css/components/content/text_area.scss*/
 .text_area {
  gap: 1.5rem;
  display: flex;
