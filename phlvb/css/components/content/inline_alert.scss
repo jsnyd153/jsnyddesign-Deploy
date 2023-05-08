@@ -1,0 +1,43 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Inline Alert
+// Visual:https://www.figma.com/file/oxtfUo8w4dRLkkJmcEBwpA/PHLVB---Website?type=design&node-id=279%3A41977&t=bhCXKXPaHAZvEoa9-1
+// Dependancy: text_area
+
+.inline_alert {
+	&-- {
+		&container {
+			padding: 32/16 * 1rem;
+			border-radius: 10/16 * 1rem;
+			border: 1px dashed var(--theme_color-500);
+			display: flex;
+			gap: 24/16 * 1rem;
+			align-items: center;
+			background-color: var(--theme_color-700t);
+		}
+
+		&icon {
+			flex-grow: 0;
+			flex-shrink: 0;
+			font-family: Times;
+			font-size: 20/16 * 1rem;
+			background-color: var(--theme_color-500);
+			width: 30/16 * 1rem;
+			height: 30/16 * 1rem;
+			@include f-center;
+			color: var(--theme_color-900);
+			border-radius: 50%;
+		}
+		&text_content {
+			flex-grow: 1;
+			p.large,
+			p.jumbo {
+				color: var(--theme_color-100);
+			}
+			p {
+				color: var(--theme_color-200);
+			}
+		}
+	}
+}

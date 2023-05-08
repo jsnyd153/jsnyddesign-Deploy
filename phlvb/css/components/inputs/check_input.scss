@@ -1,0 +1,166 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Toggle Input
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=80%3A2086&t=27fcPh1EOu6TvhVo-1
+// Dependancy: none
+
+form {
+	&.radio-horizontal {
+		.input_group {
+			display: flex;
+			gap: 10/16 * 1rem;
+			flex-direction: row;
+			--input_size: #{14/16 * 1rem};
+		}
+	}
+}
+
+.check_input {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	&-- {
+		//label functions as the container for radio so the entire object is clickable
+		&container {
+			width: 100%;
+		}
+		&label {
+			display: flex;
+			gap: 0.5rem;
+			align-items: center;
+			position: relative;
+		} //label
+		&input {
+			display: none;
+		} //input
+		&icon {
+			color: $grey-400;
+			width: 20/16 * 1rem;
+			height: 20/16 * 1rem;
+			border-radius: 50%;
+			border: 3/32 * 1em solid currentColor;
+			font-size: 20/16 * 1rem;
+			@include f-center;
+			svg {
+				fill: none;
+				// padding: 1/5 * 1em;
+				width: 75%;
+				* {
+					fill: none;
+					stroke: currentColor;
+					stroke-width: 3/32 * 1em;
+					display: none;
+				}
+			}
+			input:checked ~ & {
+				color: $blue-500;
+				.check {
+					display: initial;
+				}
+				.emphasis & {
+					color: $white;
+					background-color: $blue-500;
+					border-color: $blue-500;
+				}
+				.emphasis.icon-inner & {
+					color: $blue-500;
+					background-color: $white;
+					border-color: $white;
+				}
+			}
+			.add_new & {
+				color: $grey-200;
+				.plus {
+					display: initial;
+				}
+				.check {
+					display: none;
+				}
+			}
+			.icon-inner & {
+				position: absolute;
+				left: 1rem;
+				height: 14/16 * 1rem;
+				width: 14/16 * 1rem;
+				border-width: 1/16 * 1rem;
+				svg {
+					// padding: 0 0.125rem;
+					path {
+						stroke-width: 2;
+					}
+					.check {
+						display: initial;
+						stroke: $blue-500;
+					}
+				}
+			}
+		} // icon
+
+		&name {
+			text-align: center;
+			font-family: $sans_font;
+			padding: 1rem 1rem;
+			border-radius: 0.25rem;
+			border: 1px solid currentColor;
+			background-color: transparent;
+			background-color: var(--background_color);
+			font-size: var(--input_size);
+			height: var(--input_size);
+			line-height: 100%;
+			letter-spacing: -0.01em;
+			color: $grey-500;
+			flex-grow: 1;
+			font-weight: 300;
+
+			.has-dropdown & {
+				padding: 0rem 1rem;
+				display: flex;
+				flex-direction: column;
+				min-height: calc(var(--input_size) + 1rem + 1rem);
+				justify-content: center;
+				gap: 0.25rem;
+			}
+
+			.selected_item {
+				font-size: 0.5rem;
+				&:empty {
+					display: none;
+				}
+			}
+
+			input:checked ~ & {
+				border-color: $blue-500;
+				background-color: $grey-50;
+				color: $blue-500;
+
+				.emphasis & {
+					border-color: $blue-300;
+					background-color: $blue-500;
+					color: $white;
+				}
+			}
+			.add_new & {
+				color: $grey-200;
+				border-color: $grey-200;
+			}
+			.icon-inner & {
+				p {
+					margin-left: 1.5rem;
+				}
+			}
+		} //name
+
+		&icon + &name {
+			text-align: left;
+		}
+		&row {
+			.input_group {
+				display: flex;
+				gap: 10/16 * 1rem;
+				flex-direction: row;
+				--input_size: #{14/16 * 1rem};
+			}
+		}
+	} //--
+}

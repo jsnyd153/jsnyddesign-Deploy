@@ -1,0 +1,13 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+form {
+	display: flex;
+	flex-direction: column;
+	// padding: 1rem;
+	--background_color: #{$white};
+	background-color: var(--background_color);
+	gap: 1rem;
+	&.inset {
+		padding: 1rem;
+	}
+}

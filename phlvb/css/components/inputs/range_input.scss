@@ -1,0 +1,82 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Range Input
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=113%3A4993&t=27fcPh1EOu6TvhVo-1
+// Dependancy: range_slider.js
+
+@mixin crossBrowserHidden {
+	-webkit-appearance: none;
+	appearance: none;
+	opacity: 0;
+}
+
+.range_input {
+	--thumb_size: 1.75rem;
+	--track_height: 0.25rem;
+
+	&-- {
+		&container {
+			position: relative;
+			//fill space of the number display
+			border-top: 1.5rem solid transparent;
+			margin: calc(var(--thumb_size) / 2);
+		}
+
+		&input {
+			width: 100%;
+			height: var(--track_height);
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 3;
+			@include crossBrowserHidden;
+		}
+
+		&input::-webkit-slider-thumb,
+		&input::-moz-range-thumb {
+			@include crossBrowserHidden;
+			width: var(--thumb_size);
+			height: var(--thumb_size);
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		&thumb {
+			width: var(--thumb_size);
+			height: var(--thumb_size);
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			//normal center + keeps the thumb from over shooting the track at 100%
+			transform: translate(-50%, -50%);
+			background-color: $blue-500;
+			z-index: 2;
+			//modified in js based on the input value
+			left: 0;
+
+			span {
+				display: block;
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				transform: translate(-50%, -0.5rem);
+				@include text_base;
+				color: $grey-500;
+			}
+		}
+
+		&track {
+			height: var(--track_height);
+			width: 100%;
+			border-radius: var(--track_height);
+			background-color: $blue-300;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			position: absolute;
+			z-index: 1;
+		}
+	}
+}

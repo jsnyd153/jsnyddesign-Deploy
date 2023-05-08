@@ -1,0 +1,94 @@
+.scoreboard_input {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ gap: 0.125rem;
+ justify-content: stretch;
+ align-items: stretch;
+}
+@media (orientation: landscape) {
+ .scoreboard_input {
+  flex-direction: row;
+  width: 100%;
+ }
+}
+.scoreboard_input button.button {
+ --button-primary: #ffffff;
+ --button-secondary: #484e56;
+}
+.scoreboard_input--container {
+ --solid_background: #2f7bd5;
+ background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), var(--solid_background);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ text-align: center;
+ position: relative;
+}
+.scoreboard_input--container#teamAway {
+ --solid_background: #d5572f;
+}
+.scoreboard_input--label {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ padding: 2rem 0;
+}
+.scoreboard_input--label button.up,
+.scoreboard_input--label button.down {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 50%;
+ background: rgba(0, 0, 0, 0);
+ border: 0;
+ outline: 0;
+}
+.scoreboard_input--label button.down {
+ top: auto;
+ bottom: 0;
+}
+.scoreboard_input--name {
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ color: #ffffff;
+ font-size: 1.125rem;
+ font-weight: 500;
+}
+.scoreboard_input--name p {
+ font-weight: inherit;
+ font-size: inherit;
+ color: inherit;
+}
+.scoreboard_input--display h1 {
+ font-size: 0.875rem;
+ line-height: 1;
+ font-family: "Public Sans", Helvetica, Arial, sans-serif;
+ font-weight: 300;
+ letter-spacing: -0.01em;
+ font-size: 12.75rem;
+ color: #ffffff;
+ font-weight: 800;
+}
+.scoreboard_input--input {
+ display: none;
+}
+.scoreboard_input--submit {
+ background-color: #484e56;
+ padding: 2rem;
+}
+@media (orientation: landscape) {
+ .scoreboard_input--submit {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+ }
+}

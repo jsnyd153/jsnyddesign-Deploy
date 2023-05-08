@@ -1,0 +1,10 @@
+form {
+ display: flex;
+ flex-direction: column;
+ --background_color: #ffffff;
+ background-color: var(--background_color);
+ gap: 1rem;
+}
+form.inset {
+ padding: 1rem;
+}

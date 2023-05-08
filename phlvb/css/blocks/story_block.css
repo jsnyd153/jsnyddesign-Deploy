@@ -1,0 +1,125 @@
+.story_block--section {
+ padding: var(--gap) 0;
+ row-gap: 2.5rem;
+}
+@media (min-width: 1440px) {
+ .story_block--section {
+  row-gap: 3rem;
+ }
+}
+@media (max-width: 991px) {
+ .story_block--section {
+  row-gap: 2rem;
+ }
+}
+.story_block--row {
+ --columns: 12;
+ display: grid;
+ grid-column: 2/-2;
+ grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+ gap: var(--gap);
+ --start: calc((14 - var(--columns)) / 2 + 1);
+ grid-column: var(--start)/span var(--columns);
+ position: relative;
+}
+.story_block--row.inset {
+ --columns: 10;
+}
+@media (max-width: 991px) {
+ .story_block--row.inset {
+  --columns: 12;
+ }
+}
+.story_block--row.narrow {
+ --columns: 8;
+}
+@media (max-width: 991px) {
+ .story_block--row.narrow {
+  --columns: 10;
+ }
+}
+@media (max-width: 767px) {
+ .story_block--row.narrow {
+  --columns: 12;
+ }
+}
+.story_block--media_area {
+ grid-column: span calc(var(--columns) / 2 - 1);
+}
+@media (max-width: 767px) {
+ .story_block--media_area {
+  padding: 0 var(--rp);
+  grid-column: 1/-1;
+  grid-row: 1;
+ }
+}
+@media (max-width: 477px) {
+ .story_block--media_area {
+  padding: 0;
+ }
+}
+.story_block--text_area {
+ grid-column: span calc(var(--columns) / 2 + 1);
+ padding: var(--rp);
+}
+@media (max-width: 767px) {
+ .story_block--text_area {
+  grid-column: 1/-1;
+  padding: 0.5rem var(--rp);
+ }
+}
+@media (max-width: 477px) {
+ .story_block--text_area {
+  padding: 0;
+ }
+}
+.story_block--single {
+ --span: 8;
+ grid-column: 1/span var(--span);
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+ padding: var(--rp) 0;
+}
+.inset .story_block--single {
+ --span: 7;
+}
+.story_block--single > .text_area,
+.story_block--single > .media_area {
+ margin: 0 var(--rp);
+}
+@media (max-width: 991px) {
+ .story_block--single {
+  --span: 9;
+ }
+ .inset .story_block--single {
+  --span: 9;
+ }
+}
+@media (max-width: 767px) {
+ .story_block--single {
+  grid-column: 1/span var(--columns);
+  padding: var(--rp);
+ }
+ .story_block--single > .text_area,
+.story_block--single > .media_area {
+  margin: 0 2rem;
+ }
+}
+@media (max-width: 477px) {
+ .story_block--single {
+  padding: 0;
+ }
+ .story_block--single > .text_area,
+.story_block--single > .media_area {
+  margin: 0;
+ }
+}
+.story_block--single.right {
+ grid-column: span var(--span)/-1;
+}
+@media (max-width: 767px) {
+ .story_block--single.right {
+  grid-column: 1/span var(--columns);
+ }
+}

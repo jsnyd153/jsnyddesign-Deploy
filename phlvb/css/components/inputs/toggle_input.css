@@ -1,0 +1,55 @@
+.toggle_input {
+ --toggle_size: 1.5rem;
+}
+.toggle_input--container {
+ position: relative;
+}
+.toggle_input--input {
+ position: absolute;
+ opacity: 0;
+ z-index: -1;
+ max-height: 0;
+ max-width: 0;
+}
+.toggle_input--label {
+ color: #c8ccd2;
+ display: block;
+ width: calc(var(--toggle_size) * 2);
+ background-color: currentColor;
+ height: var(--toggle_size);
+ border-radius: var(--toggle_size);
+ outline: 0.125rem solid currentColor;
+ position: relative;
+ transition: 0.3s all;
+}
+.toggle_input--label::after {
+ display: block;
+ content: "";
+ height: var(--toggle_size);
+ width: var(--toggle_size);
+ background-color: #ffffff;
+ border-radius: 50%;
+ transition: 0.3s all;
+}
+input:checked + .toggle_input--label {
+ color: #2f7bd5;
+}
+input:checked + .toggle_input--label::after {
+ transform: translateX(100%);
+}
+.toggle_input--row {
+ display: flex;
+ gap: 1rem;
+}
+.toggle_input--description {
+ flex-grow: 1;
+ width: 100%;
+}
+
+[has-prizes=true] #noPrizes {
+ display: none;
+}
+
+[has-prizes=false] #hasPrizes {
+ display: none;
+}

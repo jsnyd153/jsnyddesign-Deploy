@@ -1,0 +1,120 @@
+@use "sass:color";
+@use "../abstracts" as *;
+
+// Story Block
+// Visual:https://www.figma.com/file/oxtfUo8w4dRLkkJmcEBwpA/PHLVB---Website?type=design&node-id=279%3A41769&t=mtKVidobmbDz1PFi-1
+// Dependancy: text_area, media_area
+
+.story_block {
+	&-- {
+		&section {
+			padding: var(--gap) 0;
+			row-gap: 40/16 * 1rem;
+			@include xl {
+				row-gap: 48/16 * 1rem;
+			}
+			@include md {
+				row-gap: 32/16 * 1rem;
+			}
+		}
+
+		&row {
+			@include inner_grid($c: 12);
+			//calculate columns on the section level grid > adjust --columns for change the width of the row
+			//centers the content inside the row
+			//only accepts even --column values
+			--start: calc((14 - var(--columns)) / 2 + 1);
+			grid-column: var(--start) / span var(--columns);
+			position: relative;
+
+			&.inset {
+				--columns: 10;
+				@include md {
+					--columns: 12;
+				}
+			}
+			&.narrow {
+				--columns: 8;
+				@include md {
+					--columns: 10;
+				}
+				@include sm {
+					--columns: 12;
+				}
+			}
+		} //row
+
+		&media_area {
+			//only works with even --column value
+			grid-column: span calc(var(--columns) / 2 - 1);
+			@include sm {
+				padding: 0 var(--rp);
+				//full width, force image to first item in the row
+				grid-column: 1/-1;
+				grid-row: 1;
+			}
+			@include xs {
+				padding: 0;
+			}
+		}
+
+		&text_area {
+			grid-column: span calc(var(--columns) / 2 + 1);
+			padding: var(--rp);
+			@include sm {
+				grid-column: 1/-1;
+				padding: 0.5rem var(--rp);
+			}
+			@include xs {
+				padding: 0;
+			}
+		}
+
+		&single {
+			--span: 8;
+			grid-column: 1 / span var(--span);
+			.inset & {
+				--span: 7;
+			}
+			display: flex;
+			flex-direction: column;
+			gap: 24/16 * 1rem;
+			padding: var(--rp) 0;
+
+			> .text_area,
+			> .media_area {
+				margin: 0 var(--rp);
+			}
+
+			@include md {
+				--span: 9;
+				.inset & {
+					--span: 9;
+				}
+			}
+
+			@include sm {
+				grid-column: 1 / span var(--columns);
+				padding: var(--rp);
+				> .text_area,
+				> .media_area {
+					margin: 0 32/16 * 1rem;
+				}
+			}
+			@include xs {
+				padding: 0;
+				> .text_area,
+				> .media_area {
+					margin: 0;
+				}
+			}
+
+			&.right {
+				grid-column: span var(--span) / -1;
+				@include sm {
+					grid-column: 1 / span var(--columns);
+				}
+			}
+		}
+	}
+}

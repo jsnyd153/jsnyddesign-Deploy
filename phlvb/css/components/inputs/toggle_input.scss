@@ -1,0 +1,67 @@
+@use "sass:color";
+@use "../../abstracts" as *;
+
+// Toggle Input
+// Visual: https://www.figma.com/file/UcgZxmAdDH7Msie63Hz42r/King-of-the-court?node-id=80%3A2086&t=27fcPh1EOu6TvhVo-1
+// Dependancy: none
+
+.toggle_input {
+	--toggle_size: #{24/16 * 1rem};
+	&-- {
+		&container {
+			position: relative;
+		}
+		&input {
+			position: absolute;
+			opacity: 0;
+			z-index: -1;
+			max-height: 0;
+			max-width: 0;
+		}
+		&label {
+			color: $grey-200;
+			display: block;
+			width: calc(var(--toggle_size) * 2);
+			background-color: currentColor;
+			height: var(--toggle_size);
+			border-radius: var(--toggle_size);
+			outline: 0.125rem solid currentColor;
+			position: relative;
+			transition: 0.3s all;
+
+			&::after {
+				display: block;
+				content: "";
+				height: var(--toggle_size);
+				width: var(--toggle_size);
+				background-color: $white;
+				border-radius: 50%;
+				transition: 0.3s all;
+			}
+			input:checked + & {
+				color: $blue-500;
+				&::after {
+					transform: translateX(100%);
+				}
+			}
+		}
+		&row {
+			display: flex;
+			gap: 1rem;
+		}
+		&description {
+			flex-grow: 1;
+			width: 100%;
+		}
+	} //--
+}
+
+// Individual Toggles
+
+[has-prizes="true"] #noPrizes {
+	display: none;
+}
+
+[has-prizes="false"] #hasPrizes {
+	display: none;
+}

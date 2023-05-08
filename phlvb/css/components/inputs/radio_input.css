@@ -1,0 +1,23 @@
+.radio_input {
+ display: flex;
+ flex-direction: row;
+ gap: 1rem;
+}
+.radio_input--input {
+ display: none;
+}
+.radio_input--number {
+ color: #c8ccd2;
+ border: 0.0625rem solid #c8ccd2;
+ width: 1.5rem;
+ height: 1.5rem;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+input:checked ~ .radio_input--number {
+ border: 0.0625rem solid #2f7bd5;
+ background: #2f7bd5;
+ color: #ffffff;
+}
