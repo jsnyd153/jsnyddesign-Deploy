@@ -1,3 +1,4 @@
+/*css/components/cards/icon_card.scss*/
 .icon_card {
  padding: 2rem;
  border-radius: 0.75rem;
@@ -63,8 +64,8 @@ a:hover .icon_card--header {
  color: inherit;
 }
 .icon_card--icon {
- width: 2.25em;
- height: 2.25em;
+ width: 2.125em;
+ height: 2.125em;
  flex-shrink: 0;
 }
 .icon_card--icon .fill {
@@ -81,6 +82,7 @@ a.icon_card:hover.for-grass {
  background: #94d13d;
 }
 
+/*css/components/cards/resource_card.scss*/
 .resource_card {
  padding: 1.5rem;
  border-radius: 0.75rem;
@@ -164,6 +166,7 @@ a:hover .resource_card--text_content h6 {
  color: var(--theme_color-900);
 }
 
+/*css/components/cards/tournament_card.scss*/
 .tournament_card {
  display: flex;
  flex-direction: column;
@@ -174,7 +177,7 @@ a:hover .resource_card--text_content h6 {
 .tournament_card--date {
  font-size: 0.875rem;
  line-height: 100%;
- font-weight: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-weight: "roc-grotesk", Helvetica, sans-serif;
  text-transform: uppercase;
  display: flex;
  gap: 0.625rem;
@@ -255,6 +258,7 @@ a:hover .tournament_card--body .host {
  }
 }
 
+/*css/components/cards/event_card.scss*/
 .event_card {
  display: flex;
  flex-direction: column;
@@ -279,7 +283,7 @@ a:hover .tournament_card--body .host {
 .event_card--date {
  font-size: 0.875rem;
  line-height: 100%;
- font-weight: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-weight: "roc-grotesk", Helvetica, sans-serif;
  text-transform: uppercase;
  display: flex;
  gap: 0.625rem;
@@ -389,7 +393,7 @@ a.has-media:hover .event_card--title h4 {
  gap: 0.5em;
  font-size: 0.875rem;
  line-height: 100%;
- font-weight: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-weight: "roc-grotesk", Helvetica, sans-serif;
 }
 .has-media .event_card--level {
  align-self: start;
@@ -414,6 +418,7 @@ a.has-media:hover .event_card--title h4 {
  color: #ffffff;
 }
 
+/*css/components/cards/league_card.scss*/
 .league_card {
  display: flex;
  flex-direction: column;
@@ -424,7 +429,7 @@ a.has-media:hover .event_card--title h4 {
 .league_card--date {
  font-size: 0.875rem;
  line-height: 100%;
- font-weight: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-weight: "roc-grotesk", Helvetica, sans-serif;
  text-transform: uppercase;
  display: flex;
  gap: 0.625rem;

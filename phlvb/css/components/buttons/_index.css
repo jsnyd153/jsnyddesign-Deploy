@@ -1,3 +1,4 @@
+/*css/components/buttons/button.scss*/
 .button {
  --inital_background: var(--theme_color-500);
  --inital_text: var(--theme_color-900);
@@ -5,7 +6,7 @@
  --hover_text: var(--theme_color-200);
  color: var(--inital_text);
  position: relative;
- font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-family: "roc-grotesk", Helvetica, sans-serif;
  font-size: 0.9375rem;
  border: 1px solid var(--inital_background);
  padding: 0.6666666667em 1.6666666667em 0.5833333333em 1.6666666667em;
@@ -158,6 +159,7 @@
  align-items: flex-start;
 }
 
+/*css/components/buttons/filters.scss*/
 .checkbox_filter--label {
  display: flex;
  padding: 0.625rem 0.9375rem;
@@ -169,7 +171,7 @@
  gap: 0.625rem;
  align-items: center;
  border-radius: 2rem;
- font-family: "Roc Grotesk", Helvetica, Arial, sans-serif;
+ font-family: "roc-grotesk", Helvetica, sans-serif;
  transition: 0.125s all;
 }
 .checkbox_filter--label.echo {
