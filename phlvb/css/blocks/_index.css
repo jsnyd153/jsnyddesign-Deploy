@@ -535,6 +535,8 @@
  gap: var(--gap);
  grid-auto-flow: column;
  grid-auto-columns: 38%;
+ -webkit-mask-image: linear-gradient(to left, transparent 0%, black 10%);
+ mask-image: linear-gradient(to left, transparent 0%, black 10%);
  overflow-x: scroll;
  scroll-snap-type: x mandatory;
  height: 100%;
